@@ -7,6 +7,15 @@
     --font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #5aadcc;
+        --secondary-color: #ff9d5c;
+        --text-color: #e0e0e0;
+        --background-color: #121212;
+    }
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
 
