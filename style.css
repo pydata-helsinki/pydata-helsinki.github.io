@@ -2,6 +2,7 @@
     --primary-color: #398BAB;
     --secondary-color: #E87C32;
     --text-color: #333;
+    --secondary-text-color: color-mix(in srgb, var(--text-color) 60%, var(--secondary-color) 40%);
     --background-color: #f9f9f9;
     --max-width: 800px;
     --font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -53,6 +54,12 @@ h1 {
     padding-bottom: 0.5rem;
 }
 
+hgroup > p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-text-color);
+}
+
 h2 {
     font-size: 1.8rem;
 }
@@ -77,6 +84,27 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--secondary-color);
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    a {
+        color: var(--primary-color);
+    }
 }
 
 @media (max-width: 600px) {
