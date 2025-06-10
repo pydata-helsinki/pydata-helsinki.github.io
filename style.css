@@ -32,7 +32,8 @@ img, picture, video, canvas, svg {
 
 body {
     font-family: var(--font-family);
-    font-size: 1rem;
+    font-weight: 450;
+    font-size: 1.1rem;
     color: var(--text-color);
     background-color: var(--background-color);
     padding: 2rem 1rem;
@@ -84,6 +85,21 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.banner {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
 }
 
 footer {
