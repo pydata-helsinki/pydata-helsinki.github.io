@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="466.667" height="466.667">
+  <style>
+    #bg { fill: #ffffff }
+    @media (prefers-color-scheme: dark) {
+      #bg { fill: #0f0f0f }
+    }
+  </style>
+  <path id="bg" d="M0 0h466.667v466.667H0z" stroke="none" />
+  <path d="M269.249-99.004h103.572V-.731H269.249z" style="fill:#ee9041" transform="skewY(27.598)scale(.88622 1)"/>
+  <path d="M154.092 116.419h103.572v98.273H154.092zm-.136 110.017h103.572v98.273H153.956z" style="fill:#449db8" transform="skewY(27.598)scale(.88622 1)"/>
+  <path d="M-372.263 360.547h103.572v98.273h-103.572z" style="fill:#657a83" transform="skewY(-27.598)scale(-.88622 1)"/>
+  <path d="m142.19 178.97 90.365 47.792 92.003-47.306-91.279-47.626z" style="fill:#ee9041"/>
+</svg>
