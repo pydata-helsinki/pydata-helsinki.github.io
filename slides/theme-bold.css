@@ -1,0 +1,327 @@
+/* PyData Helsinki – BOLD Reveal.js theme (dark stage)
+   A louder, projection-first fork of theme.css. Used by decks that want the
+   "Twilight Cathedral, projected" identity turned up: near-black stage, teal
+   and orange glowing off it, Bricolage Grotesque display headings, extreme
+   weight/scale contrast, one signature title entrance.
+
+   Load order (in the deck <head>):
+     <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="theme-bold.css">
+
+   Shares every class hook with theme.css (title-slide, agenda-slide,
+   calendar-slide, callout, badge, kicker, columns, qr, logo, muted) so any
+   existing deck can switch to it by swapping the one stylesheet link.
+*/
+
+:root {
+  /* Brand palette — dark stage. Teal/orange brightened to glow on near-black. */
+  --primary-color: #5aadcc;          /* teal: headings, links */
+  --primary-bright: #7cc6e3;         /* teal hover / glow source */
+  --secondary-color: #ff9d5c;        /* orange: rules, emphasis, strong */
+  --text-color: #ececec;             /* near-white body */
+  --secondary-text-color: color-mix(in srgb, var(--text-color) 62%, var(--secondary-color) 38%);
+  --background-color: #0e1214;       /* near-black, faint teal-cool lean */
+  --muted-bg: #181d20;
+  --surface: #14191c;
+  --code-bg: #0c0f11;
+  --code-border: #2a3136;
+  --link-color: var(--primary-color);
+  --selection-bg: color-mix(in oklab, var(--primary-color) 30%, black);
+
+  /* Depth: on a dark stage, glow reads where shadow can't. */
+  --shadow-color: 0 10px 40px rgba(0,0,0,.55);
+  --teal-glow: 0 0 32px rgba(124,198,227,.28);
+  --orange-glow: 0 0 26px rgba(255,157,92,.45);
+
+  /* Display face for headings; body stays on the native system stack. */
+  --display-font: "Bricolage Grotesque", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  /* Motion */
+  --ease-out-quint: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* Base Reveal hooks */
+.reveal {
+  color: var(--text-color);
+  background: var(--background-color);
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 36px; /* Reveal scales from this */
+}
+
+.reveal ::selection { background: var(--selection-bg); }
+
+.reveal .slides { text-wrap: balance; }
+.reveal .slide-background { background: var(--background-color); }
+
+/* Headings — Bricolage Grotesque, heavy, tight, with a soft teal glow */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  color: var(--primary-color);
+  font-family: var(--display-font);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 .55em 0;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  text-shadow: var(--teal-glow);
+}
+
+.reveal h1 {
+  font-size: 1.95em; /* ~70px at base 36 */
+  border-bottom: 7px solid var(--secondary-color);
+  padding-bottom: .22em;
+}
+
+.reveal h2 { font-size: 1.4em; }
+.reveal h3 { font-size: 1.1em; }
+.reveal h4 { font-size: .98em; }
+
+/* Body & lists — native stack, lighter weight for strong contrast vs headings */
+.reveal p, .reveal ul, .reveal ol { margin: 0 0 .9em 0; }
+.reveal ul, .reveal ol { padding-left: 1.1em; }
+.reveal li { margin: .3em 0; }
+
+/* Links */
+.reveal a { color: var(--link-color); text-decoration: none; }
+.reveal a:hover { color: var(--primary-bright); text-decoration: underline; }
+
+/* Emphasis — orange carries the focal point */
+.reveal strong { color: var(--secondary-color); font-weight: 700; }
+
+/* Blockquotes — bold fork drops the side-stripe for an oversized glowing
+   quote glyph on a rounded surface. Distinctive, not the AI reflex. */
+.reveal blockquote {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--secondary-color) 35%, transparent);
+  border-radius: 16px;
+  padding: .7em 1em .7em 1.5em;
+  box-shadow: var(--shadow-color);
+  font-style: italic;
+}
+.reveal blockquote::before {
+  content: "\201C";
+  position: absolute;
+  top: -.08em;
+  left: .14em;
+  font-family: var(--display-font);
+  font-weight: 800;
+  font-size: 2.4em;
+  line-height: 1;
+  color: var(--secondary-color);
+  text-shadow: var(--orange-glow);
+}
+
+/* Code */
+.reveal pre, .reveal code, .reveal kbd, .reveal samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.reveal pre code { white-space: pre-wrap; }
+.reveal pre {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 12px;
+  padding: .8em 1em;
+  box-shadow: var(--shadow-color);
+}
+.reveal code { background: color-mix(in srgb, var(--code-bg) 70%, transparent); padding: 0 .2em; border-radius: .25em; }
+
+/* Tables */
+.reveal table { border-collapse: collapse; width: 100%; font-size: .8em; }
+.reveal th, .reveal td { border: none; padding: .5em .6em; }
+.reveal th { background: var(--muted-bg); color: var(--text-color); }
+.reveal tbody tr + tr td { border-top: 1px solid color-mix(in srgb, var(--text-color) 10%, transparent); }
+
+/* Images — soft shadow + glow lift on the dark stage */
+.reveal section img { border-radius: 14px; box-shadow: var(--shadow-color); }
+
+/* Sponsor / host logos: clean light plate so any-color wordmark reads on black */
+.reveal section img.logo {
+  background: #ffffff;
+  padding: .55em .9em;
+  border-radius: 14px;
+  box-shadow: var(--shadow-color);
+}
+
+/* Fragments */
+.reveal .fragment.highlight-current-red,
+.reveal .fragment.highlight-current { color: var(--secondary-color); }
+
+/* Navigation controls */
+.reveal .controls { color: var(--primary-color); }
+
+/* Progress bar — orange, glowing */
+.reveal .progress {
+  background: color-mix(in oklab, var(--primary-color) 14%, transparent);
+  height: 6px;
+}
+.reveal .progress span { background: var(--secondary-color); box-shadow: var(--orange-glow); }
+
+/* Speaker notes */
+.reveal .speaker-notes, .reveal .speaker-controls-notes { font-size: 16px; }
+
+/* ---- Title slide --------------------------------------------------------- */
+.reveal section.title-slide {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: .75em;
+  align-content: center;
+}
+
+.reveal section.title-slide h1 {
+  position: relative;
+  font-size: 3em;            /* hero scale — short title can shout */
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: .1em 0 .25em 0;
+  border-bottom: none;       /* replaced by the animated ::after rule */
+  padding-bottom: .2em;
+}
+
+/* The orange rule under the hero title — wipes in from the centre on reveal */
+.reveal section.title-slide h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 9px;
+  width: 6em;
+  max-width: 72%;
+  background: var(--secondary-color);
+  border-radius: 999px;
+  box-shadow: var(--orange-glow);
+  transform: translateX(-50%) scaleX(1);
+  transform-origin: center;
+}
+
+.reveal section.title-slide h2 {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--secondary-text-color);
+  text-shadow: none;
+  margin-top: .35em;
+}
+
+.reveal section.title-slide .kicker {
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 600;
+  font-size: .5em;
+  color: var(--secondary-color);
+}
+
+/* Signature entrance — title slide only, fires once when it becomes present.
+   Resting state is fully visible (opacity 1); the animation is pure enhancement,
+   so headless / print / reduced-motion renders the slide intact. */
+@keyframes bold-rise {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes bold-wipe {
+  from { transform: translateX(-50%) scaleX(0); }
+  to   { transform: translateX(-50%) scaleX(1); }
+}
+
+.reveal section.title-slide.present .kicker { animation: bold-rise .6s .05s both var(--ease-out-quint); }
+.reveal section.title-slide.present h1     { animation: bold-rise .7s .14s both var(--ease-out-quint); }
+.reveal section.title-slide.present h2     { animation: bold-rise .7s .30s both var(--ease-out-quint); }
+.reveal section.title-slide.present h1::after { animation: bold-wipe .7s .44s both var(--ease-out-quint); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal section.title-slide.present .kicker,
+  .reveal section.title-slide.present h1,
+  .reveal section.title-slide.present h2,
+  .reveal section.title-slide.present h1::after { animation: none !important; }
+}
+
+/* ---- Agenda slide -------------------------------------------------------- */
+.reveal section.agenda-slide {
+  font-size: 0.72em;
+  text-align: left;
+
+  p, div { font-size: 1em; }
+
+  ul { list-style: none; padding-left: 3em; }
+
+  .emoji {
+    font-size: 1.1em;
+    text-shadow: 0 0 8px rgba(0,0,0,.6);
+  }
+
+  table.agenda-table {
+    border-collapse: collapse;
+    & tr, & td, & th { border: none; text-align: left; background: transparent; }
+    & th {
+      font-variant-numeric: tabular-nums;
+      color: var(--secondary-color);   /* times glow orange, scan fast */
+      text-shadow: none;
+      padding-right: .8em;
+    }
+    & td { color: var(--text-color); }
+  }
+}
+
+/* ---- Calendar slide ------------------------------------------------------ */
+.reveal section.calendar-slide {
+  table tr > td:first-child { min-width: 5em; }
+  tr, th, td { border: none; }
+}
+
+/* ---- Callout (card) ------------------------------------------------------ */
+.reveal .callout {
+  background: var(--surface);
+  border: 2px solid var(--secondary-color);
+  border-radius: 18px;
+  padding: .9em;
+  margin: .5em;
+  box-shadow: var(--shadow-color), var(--orange-glow);
+
+  & > p { margin: 0; }
+}
+
+/* ---- Badge / pill -------------------------------------------------------- */
+.reveal .badge {
+  display: inline-block;
+  font-size: .7em;
+  font-weight: 700;
+  letter-spacing: .02em;
+  padding: .3em .7em;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--secondary-color) 22%, transparent);
+  color: var(--secondary-color);
+  border: 1px solid color-mix(in srgb, var(--secondary-color) 55%, transparent);
+}
+
+/* Helpers */
+.reveal .muted { color: var(--secondary-text-color); }
+.reveal figcaption { color: var(--secondary-text-color); font-size: .55em; margin-top: .4em; }
+.reveal .center { text-align: center; }
+
+/* Logos that opt out of the plate (already light/transparent) */
+.reveal img.logo.bare { background: none; padding: 0; box-shadow: none; }
+
+.reveal .img-wrapper {
+  display: inline-block;
+  position: absolute;
+  width: 3em;
+  height: 3em;
+  margin-left: 2em;
+
+  & > img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  &.big { width: 4.5em; height: 4.5em; }
+}
+
+.reveal img.qr { image-rendering: pixelated; }
+.reveal table img.qr { vertical-align: top; margin: 5px; }
