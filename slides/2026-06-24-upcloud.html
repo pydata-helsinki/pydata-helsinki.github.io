@@ -52,7 +52,7 @@
 </section>
 <section id="tonights-host" class="slide level1">
 <h1>Tonight's host</h1>
-<p><img data-src="assets/Upcloud_Logo_White.svg" class="logo bare" alt="UpCloud" style="max-width: 500px; margin: .3em auto;" /></p>
+<p><img data-src="assets/Upcloud_Logo_White.svg" class="logo bare logo-dark" alt="UpCloud" style="max-width: 500px; margin: .3em auto;" /><img data-src="assets/Upcloud_Logo-Purple.svg" class="logo bare logo-light" alt="UpCloud" style="max-width: 500px; margin: .3em auto;" /></p>
 <div class="callout">
 <p>Welcome words from UpCloud at 17:05 👋</p>
 </div>
@@ -362,6 +362,38 @@ style="width:5em;height:5em" /></p>
           RevealZoom
         ]
       });
+
+      // Light/dark theme for projectors that wash out the dark stage.
+      // Toggle with the `t` key; or load with ?theme=light. Choice persists.
+      (function () {
+        var root = document.documentElement, KEY = 'pydata-slide-theme';
+        var pref = new URLSearchParams(location.search).get('theme')
+                   || localStorage.getItem(KEY);
+        if (pref === 'light') root.setAttribute('data-theme', 'light');
+        document.addEventListener('keydown', function (e) {
+          if (e.key !== 't' || e.metaKey || e.ctrlKey || e.altKey) return;
+          var light = root.getAttribute('data-theme') === 'light';
+          if (light) root.removeAttribute('data-theme');
+          else root.setAttribute('data-theme', 'light');
+          localStorage.setItem(KEY, light ? 'dark' : 'light');
+        });
+      })();
+
+      // Attract loop for the pre-event wait: press `a` to auto-advance the deck
+      // on a 10s loop while people arrive; press `a` again — or just navigate
+      // manually — to stop it before the talks begin. Start it with ?attract.
+      (function () {
+        var on = false;
+        function setAuto(state) {
+          on = state;
+          Reveal.configure({ autoSlide: state ? 10000 : 0, loop: state });
+        }
+        if (new URLSearchParams(location.search).has('attract')) setAuto(true);
+        document.addEventListener('keydown', function (e) {
+          if (e.key !== 'a' || e.metaKey || e.ctrlKey || e.altKey) return;
+          setAuto(!on);
+        });
+      })();
     </script>
     </body>
 </html>

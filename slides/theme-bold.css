@@ -325,3 +325,37 @@
 
 .reveal img.qr { image-rendering: pixelated; }
 .reveal table img.qr { vertical-align: top; margin: 5px; }
+
+/* ---- Light projector variant -------------------------------------------- *
+   Some projectors wash a dark stage out to mud. Setting data-theme="light" on
+   <html> flips the palette to a bright, high-contrast light deck while keeping
+   the same teal/orange identity (deepened to hold ≥4.5:1 on near-white) and the
+   same class hooks. Glow gives way to real shadow — glow only reads on black.
+   The deck toggles this with the `t` key or a `?theme=light` URL param.        */
+:root[data-theme="light"] {
+  --primary-color: #15788f;          /* deep teal — 4.7:1 on the light bg */
+  --primary-bright: #0e5e72;
+  --secondary-color: #bd4d0e;        /* deep orange — 4.6:1, safe for <strong> */
+  --text-color: #1c2024;
+  --secondary-text-color: #565d64;   /* muted, still 6:1 */
+  --background-color: #f6f7f9;
+  --muted-bg: #e9edf1;
+  --surface: #ffffff;
+  --code-bg: #f0f2f5;
+  --code-border: #d4dae0;
+  --selection-bg: color-mix(in srgb, var(--primary-color) 22%, white);
+
+  /* On light, shadow does the lifting; neutralise the glows (kept as
+     transparent shadows so multi-layer box-shadow lists stay valid). */
+  --shadow-color: 0 6px 24px rgba(30, 40, 55, .10);
+  --teal-glow: 0 0 0 transparent;
+  --orange-glow: 0 0 0 transparent;
+}
+
+/* Logo swap: the white wordmark vanishes on light, so show the purple one. */
+.reveal img.logo-light { display: none; }
+:root[data-theme="light"] .reveal img.logo-dark { display: none; }
+:root[data-theme="light"] .reveal img.logo-light { display: inline-block; }
+
+/* The dark halo behind agenda emoji isn't needed on a light bg. */
+:root[data-theme="light"] .reveal section.agenda-slide .emoji { text-shadow: none; }
