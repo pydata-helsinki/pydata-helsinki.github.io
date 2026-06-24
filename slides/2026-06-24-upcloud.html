@@ -37,6 +37,67 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="theme-bold.css"/>
+  <style>
+    /* ---- Network slide: a drifting tag-cloud of tools & topics ------------
+       Teal = tools (echoing the heading/link hue), orange = topics, dashed
+       neutral = "& more". Pills wander on a transform-only loop, desynced via
+       per-pill --dur/--delay/--rot so the cloud never marches in step. The
+       resting transform carries the scatter rotation, so reduced-motion (and
+       headless/print) renders a still, legibly scattered cloud.            */
+    .reveal section.network-slide .lead {
+      max-width: 24ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .reveal .pill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: .5em .55em;
+      max-width: 90%;
+      margin: 1em auto;
+    }
+    .reveal .pill-cloud .pill {
+      font-size: var(--fs, .64em);
+      font-weight: 700;
+      letter-spacing: .01em;
+      line-height: 1;
+      padding: .42em .85em;
+      border-radius: 999px;
+      white-space: nowrap;
+      will-change: transform;
+      transform: rotate(var(--rot, 0deg));
+      animation: pill-drift var(--dur, 6s) ease-in-out var(--delay, 0s) infinite;
+    }
+    .reveal .pill-cloud .pill.tech {
+      background: color-mix(in srgb, var(--primary-color) 16%, transparent);
+      color: var(--primary-bright);
+      border: 1px solid color-mix(in srgb, var(--primary-color) 48%, transparent);
+      box-shadow: 0 0 18px color-mix(in srgb, var(--primary-color) 16%, transparent);
+    }
+    .reveal .pill-cloud .pill.topic {
+      background: color-mix(in srgb, var(--secondary-color) 16%, transparent);
+      color: var(--secondary-color);
+      border: 1px solid color-mix(in srgb, var(--secondary-color) 48%, transparent);
+      box-shadow: 0 0 18px color-mix(in srgb, var(--secondary-color) 18%, transparent);
+    }
+    .reveal .pill-cloud .pill.more {
+      background: color-mix(in srgb, var(--text-color) 7%, transparent);
+      color: var(--secondary-text-color);
+      border: 1px dashed color-mix(in srgb, var(--text-color) 28%, transparent);
+    }
+    @keyframes pill-drift {
+      0%   { transform: translate(0, 0) rotate(var(--rot, 0deg)); }
+      25%  { transform: translate(.5em, -.5em) rotate(calc(var(--rot, 0deg) + 2deg)); }
+      50%  { transform: translate(-.4em, .35em) rotate(var(--rot, 0deg)); }
+      75%  { transform: translate(.35em, .5em) rotate(calc(var(--rot, 0deg) - 2deg)); }
+      100% { transform: translate(0, 0) rotate(var(--rot, 0deg)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal .pill-cloud .pill { animation: none; }
+    }
+  </style>
 </head>
 <body>
   <div class="reveal">
@@ -104,15 +165,23 @@
     </tbody>
   </table>
 </section>
-<section id="pydata-helsinki-1" class="slide level1">
+<section id="pydata-helsinki-1" class="slide level1 network-slide">
 <h1>PyData Helsinki</h1>
-<p>PyData is a global network of users and developers of data analysis
-tools</p>
-<p>This means Pandas, NumPy, PySpark, etc — and also R, Julia, and other
-non-Python tools</p>
-<p>And statistics, neural networks, databases, visualization, and
-more</p>
-<p>Focus on open source tools and their real-world use</p>
+<p class="lead">PyData is a global network of users and developers of data
+analysis tools</p>
+<div class="pill-cloud" aria-label="Tools and topics: Pandas, NumPy, PySpark, R, Julia, statistics, neural networks, databases, visualisation, and more">
+<span class="pill tech"  style="--dur:6.5s;--delay:-1.2s;--rot:-3deg;--fs:.72em">Pandas</span>
+<span class="pill tech"  style="--dur:7.2s;--delay:-4.0s;--rot:2deg;--fs:.68em">NumPy</span>
+<span class="pill topic" style="--dur:6.8s;--delay:-3.3s;--rot:3deg;--fs:.66em">statistics</span>
+<span class="pill tech"  style="--dur:5.8s;--delay:-2.5s;--rot:-1deg;--fs:.62em">PySpark</span>
+<span class="pill topic" style="--dur:7.0s;--delay:-1.9s;--rot:-2deg;--fs:.7em">neural networks</span>
+<span class="pill tech"  style="--dur:6.0s;--delay:-5.1s;--rot:4deg;--fs:.66em">R</span>
+<span class="pill topic" style="--dur:5.6s;--delay:-4.6s;--rot:1deg;--fs:.64em">databases</span>
+<span class="pill tech"  style="--dur:7.6s;--delay:-0.6s;--rot:-2deg;--fs:.66em">Julia</span>
+<span class="pill topic" style="--dur:6.3s;--delay:-2.2s;--rot:-3deg;--fs:.66em">visualisation</span>
+<span class="pill more"  style="--dur:7.4s;--delay:-3.8s;--rot:2deg;--fs:.58em">&amp; more</span>
+</div>
+<p class="lead">Focus on open source tools and their real-world use</p>
 </section>
 <section id="call-for-talks" class="slide level1">
 <h1>We're looking for talks</h1>
