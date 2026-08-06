@@ -151,3 +151,19 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+.listed-on {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.listed-on a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.listed-on img {
+    border-radius: 8px;
+}

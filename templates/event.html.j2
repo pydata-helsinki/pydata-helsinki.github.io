@@ -2,9 +2,9 @@
 {% from "_talk.html.j2" import talk_line %}
 {% block title %}{{ event.title }} – PyData Helsinki{% endblock %}
 {% block canonical %}{{ event.url }}{% endblock %}
-{% block og_title %}{{ event.title }} – PyData Helsinki{% endblock %}
+{% block og_title %}{{ event.title }}, {{ event.display_date }} – PyData Helsinki{% endblock %}
 {% block og_type %}article{% endblock %}
-{% block description %}{% if event.summary %}{{ event.summary }}{% else %}PyData Helsinki: {{ event.title }} on {{ event.display_date }}{% if event.venue.name %} at {{ event.venue.name }}{% endif %}.{% endif %}{% endblock %}
+{% block description %}{{ event.display_date }}{% if event.venue.name %} at {{ event.venue.name }}{% endif %}. {% if event.summary %}{{ event.summary }}{% else %}PyData Helsinki: {{ event.title }}.{% endif %}{% endblock %}
 {% block head_extra %}
   <script type="application/ld+json">
 {{ jsonld | safe }}
