@@ -161,11 +161,13 @@ class Event:
         if self.mode == "online":
             data["location"] = {
                 "@type": "VirtualLocation",
+                "@id": f"{self.url}#location",
                 "url": self.registration.get("url", self.url),
             }
         else:
             place: dict = {
                 "@type": "Place",
+                "@id": f"{self.url}#location",
                 "name": self.venue.get("name", "Helsinki"),
                 "address": {
                     "@type": "PostalAddress",
@@ -186,6 +188,7 @@ class Event:
         if self.registration.get("url"):
             offer = {
                 "@type": "Offer",
+                "@id": f"{self.url}#offer",
                 "url": self.registration["url"],
                 "price": 0,
                 "priceCurrency": "EUR",
@@ -195,6 +198,7 @@ class Event:
             # RSVPs not open yet: no registration url in the YAML.
             offer = {
                 "@type": "Offer",
+                "@id": f"{self.url}#offer",
                 "url": self.url,
                 "price": 0,
                 "priceCurrency": "EUR",
@@ -224,13 +228,14 @@ class Event:
             data["performer"] = performers
         sub_events = []
         for t in self.talks:
-            # Google flags sub-events missing what the parent has, so inherit.
+            # Google flags sub-events missing what the parent has, so inherit,
+            # referencing the parent's nodes by @id instead of repeating them.
             se: dict = {
                 "@type": "Event",
                 "name": t["title"],
                 "eventStatus": data["eventStatus"],
-                "location": data["location"],
-                "organizer": ORGANIZER,
+                "location": {"@id": data["location"]["@id"]},
+                "organizer": {"@id": ORGANIZER["@id"]},
                 "image": DEFAULT_IMAGE,
                 "inLanguage": "en",
                 "isAccessibleForFree": True,
@@ -243,7 +248,7 @@ class Event:
             if t.get("description"):
                 se["description"] = t["description"]
             if "offers" in data:
-                se["offers"] = data["offers"]
+                se["offers"] = {"@id": data["offers"]["@id"]}
             if t["speakers"]:
                 se["performer"] = [_person(s) for s in t["speakers"]]
             if t.get("video"):
@@ -419,6 +424,8 @@ def main() -> None:
     for e in upcoming:
         d = e.jsonld(upcoming=True)
         d.pop("@context")
+        # The page's graph already defines the Organization node in full.
+        d["organizer"] = {"@id": ORGANIZER["@id"]}
         graph.append(d)
     (out / "index.html").write_text(
         env.get_template("index.html.j2").render(
