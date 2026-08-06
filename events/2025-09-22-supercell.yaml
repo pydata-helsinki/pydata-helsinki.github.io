@@ -1,0 +1,32 @@
+title: Meetup at Supercell
+start: 2025-09-22 18:00
+end: 2025-09-22 20:30
+venue:
+  name: Supercell
+registration:
+  url: https://www.meetup.com/pydatahelsinki/events/310561378/
+  platform: Meetup
+talks:
+  - speaker: Heikki Arponen
+    speaker_url: https://www.linkedin.com/in/heikki-arponen-24859034/
+    title: Reinforcement learning for games at Supercell
+    video: https://youtu.be/agi67rZKvjA
+  - speaker: Chandreyee Roy
+    speaker_url: https://www.linkedin.com/in/chandreyeeroy89/
+    title: Exploring sleep and activity using wearables
+    video: https://youtu.be/8wVO10BJEyU
+  - speaker: Allan Nevala
+    speaker_url: https://allannevala.com/
+    title: Meeting your people. For real.
+    video: https://youtu.be/fEybelD2CyI
+    lightning: true
+  - speaker: Alexander Kevin Gilbert
+    speaker_url: https://www.linkedin.com/in/alexander-kevin-gilbert-2449b5237/
+    title: Estimating weight of cars from their dimensions
+    video: https://youtu.be/9w7NaH_QF90
+    lightning: true
+  - speaker: Teemu Säilynoja
+    speaker_url: https://teemusailynoja.github.io/
+    title: Marimo - a reactive, git-friendly Python notebook
+    video: https://youtu.be/mHerPwsPwgc
+    lightning: true

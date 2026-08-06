@@ -1,0 +1,28 @@
+title: Meetup at Elisa
+start: 2026-03-19 17:30
+end: 2026-03-19 20:30
+venue:
+  name: Elisa
+  url: https://elisa.fi/
+registration:
+  url: https://www.meetup.com/pydatahelsinki/events/313128987/
+  platform: Meetup
+talks:
+  - speaker: Nina Marila
+    speaker_url: https://www.linkedin.com/in/nina-marila/
+    title: Data & AI at Elisa
+  - speaker: Esko Heinonen
+    speaker_url: https://www.linkedin.com/in/esko-heinonen/
+    title: Optimization problems in electricity markets
+  - title: PyData Helsinki Quiz
+  - speaker: Eero Lihavainen
+    speaker_url: https://www.linkedin.com/in/eero-lihavainen-b1606a121/
+    title: How fast can you read data from Delta Lake without a cluster?
+  - speaker: Udit Asopa
+    speaker_url: https://www.linkedin.com/in/uditasopa/
+    title: Goodbye argparse, Hello Typer
+    lightning: true
+  - speaker: Sardana Ivanova
+    speaker_url: https://sardana.codes/
+    title: "Teaching AI to Write Poetry in Three Languages: Fine-Tuning mBART for a Museum Exhibit"
+    lightning: true

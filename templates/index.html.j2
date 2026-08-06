@@ -1,0 +1,145 @@
+{% extends "base.html.j2" %}
+{% block head_extra %}
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site_url }}/#organization",
+      "name": "PyData Helsinki",
+      "url": "{{ site_url }}/",
+      "logo": "{{ site_url }}/assets/favicon.svg",
+      "image": "{{ default_image }}",
+      "email": "pydata-helsinki-organisers@googlegroups.com",
+      "description": "A meetup group of Python and data enthusiasts in Helsinki, Finland. Talks on machine learning, data engineering, MLOps, visualization, and statistical modeling with open-source tools.",
+      "areaServed": {
+        "@type": "City",
+        "name": "Helsinki",
+        "address": {"@type": "PostalAddress", "addressCountry": "FI"}
+      },
+      "sameAs": [
+        "https://www.meetup.com/pydata-helsinki/",
+        "https://www.linkedin.com/company/pydata-helsinki/",
+        "https://fosstodon.org/@pydata_helsinki",
+        "https://www.youtube.com/@PyData_Helsinki"
+      ],
+      "sponsor": {
+        "@type": "Organization",
+        "name": "NumFOCUS",
+        "url": "https://numfocus.org/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "{{ site_url }}/",
+      "name": "PyData Helsinki",
+      "publisher": {"@id": "{{ site_url }}/#organization"},
+      "inLanguage": "en"
+    }
+  ]
+}
+  </script>
+{% endblock %}
+{% block body %}
+    <div class="banner">
+        <picture>
+            <source type="image/avif" media="(min-width: 768px)" srcset="assets/pydata-helsinki-banner-16x9.avif">
+            <source type="image/avif" media="(min-width: 480px)" srcset="assets/pydata-helsinki-banner-4x3.avif">
+            <source type="image/avif" srcset="assets/pydata-helsinki-banner-1x1.avif">
+            <source media="(min-width: 768px)" srcset="assets/pydata-helsinki-banner-16x9.png">
+            <source media="(min-width: 480px)" srcset="assets/pydata-helsinki-banner-4x3.png">
+            <img
+                src="assets/pydata-helsinki-banner-1x1.png"
+                alt="Helsinki Cathedral at Nightfall, photo by Tapio Haaja, overlaid with 'PyData Helsinki'"
+                class="banner-image"
+            >
+        </picture>
+    </div>
+    <hgroup>
+    <h1>PyData Helsinki</h1>
+    <p>A group of Python and data enthusiasts in Helsinki, Finland</p>
+    </hgroup>
+    <h2 id="about">About</h2>
+    <p>
+        This meetup is for those who work or aspire to work in fields like
+        machine learning, data engineering, MLOps, visualization, and statistical modeling.
+        We share real-world experiences about solving problems in these fields using open-source tools,
+        including but not limited to Python and its libraries – users of R, Julia or other languages are welcome.
+    </p>
+    <p>
+        We welcome speakers to talk about these tools and experiences using them, regardless of the level (beginner, intermediate, advanced are welcome).
+        The usual talk is about half an hour long, but lightning talks of 5–10 minutes are great too!
+        Occasionally we will include a debate! Come with a thought-provoking question or a hot take,
+        and we'll set up a discussion where everyone can take part.
+    </p>
+    <ul>
+        <li>Subscribe to our <a href="/events.ics">event calendar (iCal)</a> or the <a href="/feed.xml">Atom feed</a></li>
+        <li>Join the conversation on <a href="https://helsinki-python.github.io/discord">the Helsinki Python Discord</a></li>
+        <li>Contact us via email: <a href="mailto:pydata-helsinki-organisers@googlegroups.com">pydata-helsinki-organisers@googlegroups.com</a></li>
+        <li>Follow us on the Fediverse: <a href="https://fosstodon.org/@pydata_helsinki" rel="me">@pydata_helsinki@fosstodon.org</a></li>
+        <li>And on LinkedIn: <a href="https://www.linkedin.com/company/pydata-helsinki/" rel="me">PyData Helsinki</a></li>
+        <li>If we succeed in recording talks (no promises), we'll put them up on <a href="https://www.youtube.com/@PyData_Helsinki" rel="me">YouTube</a></li>
+    </ul>
+    <h2 id="sponsors">Sponsors</h2>
+    <ul>
+        <li> We are always looking for sponsors who can provide us a venue and food and drinks for our meetup.
+             In return, you can present your company or product at the meetup.
+             See <a href="/for-companies/">information for companies</a> for details.
+        </li>
+        <li> The Meetup group is sponsored by <a href="https://numfocus.org/">NumFOCUS</a>: Promoting open code for better science.
+        </li>
+    </ul>
+    <h2 id="give-talk">Give a talk</h2>
+    <p>
+        We welcome speakers at any level, from beginner to advanced.
+        Suitable topics include data science, AI, Python, Julia, R, etc.
+        See <a href="/for-speakers/">information for speakers</a> for ideas and practicalities,
+        and contact us by email or on the Discord server if you're interested.
+    </p>
+
+    <h2 id="upcoming">Upcoming events</h2>
+    <ul>
+      {% for event in upcoming %}
+      {% include "_event_list_item.html.j2" %}
+      {% endfor %}
+      <li>Please <a href="/for-companies/">offer your venue</a>
+      by contacting us at <a href="mailto:pydata-helsinki-organisers@googlegroups.com">pydata-helsinki-organisers@googlegroups.com</a>
+      or on <a href="https://helsinki-python.github.io/discord">the Helsinki Python Discord</a>.</li>
+    </ul>
+    <h2>Past events</h2>
+    <ul>
+      {% for event in past %}
+      {% include "_event_list_item.html.j2" %}
+      {% endfor %}
+    </ul>
+    <h2>Organisers</h2>
+    <ul>
+        <li>Daniel Vahla</li>
+        <li><a href="https://hugovk.dev">Hugo van Kemenade</a></li>
+        <li><a href="https://jouniseppanen.com">Jouni Seppänen</a></li>
+        <li><a href="https://www.linkedin.com/in/nikofohr/">Niko Föhr</a></li>
+        <li><a href="https://www.linkedin.com/in/prerna-k-sharma/">Prerna Kumari</a></li>
+        <li>Teemu Säilynoja</li>
+    </ul>
+
+    <h2>Community</h2>
+    <ul>
+        <li><a href="https://helsinki-python.github.io/">Helsinki Python</a> is a local Python user group in the Greater Helsinki region.</li>
+        <li><a href="https://www.meetup.com/datatribe-meetup-group/">DataTribe</a> is a community for data professionals, engineers, analysts and anyone interested in data.</li>
+        <li><a href="https://www.helsinkidataweek.fi/">Helsinki Data Week</a> is not only an annual week but a community that runs data meetups.</li>
+        <li><a href="https://www.linkedin.com/company/pyladies-tampere/">PyLadies Tampere</a> is a mentorship group focused on helping more women become active participants and leaders in the Python open-source community.</li>
+        <li><a href="https://archipylago.dev/">Archipylago</a> is a community in Turku with meetups and sprints.</li>
+        <li><a href="https://www.techtrib.es/">Techtribes</a> collects the tech meetups in Finland in one place.</li>
+    </ul>
+
+    <footer>
+    <h2>About PyData</h2>
+    <p>
+        PyData is an educational program of NumFOCUS, a 501(c)3 non-profit organization in the United States. PyData provides a forum for the international community of users and developers of data analysis tools to share ideas and learn from each other. The global PyData network promotes discussion of best practices, new approaches, and emerging technologies for data management, processing, analytics, and visualization. PyData communities approach data science using many languages, including (but not limited to) Python, Julia, and R.
+    </p>
+    <p>
+        The PyData Code of Conduct governs this meetup. To discuss any issues or concerns relating to the code of conduct or the behavior of anyone at a PyData meetup, please contact the local group organizers (message us on the meetup page). Please also submit a report of any potential Code of Conduct violation <a href="https://numfocus.typeform.com/to/ynjGdT">directly to NumFOCUS</a>. Thank you for helping us to maintain a welcoming and friendly PyData community!
+    </p>
+    </footer>
+{% endblock %}

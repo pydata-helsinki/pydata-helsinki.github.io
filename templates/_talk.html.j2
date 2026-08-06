@@ -1,0 +1,11 @@
+{# Shared talk line: speaker(s) (with optional links), talk title (linked to video if any). #}
+{% macro talk_line(talk) %}
+{%- for s in talk.speakers %}
+  {%- if s.url %}<a href="{{ s.url }}">{{ s.name }}</a>{% else %}{{ s.name }}{% endif %}
+  {%- if not loop.last %} &amp; {% endif %}
+  {%- if loop.last %}:
+{% endif %}
+{%- endfor %}
+{%- if talk.video %}<a href="{{ talk.video }}"><strong>{{ talk.title }}</strong></a>{% else %}<strong>{{ talk.title }}</strong>{% endif %}
+{%- if talk.lightning %} (⚡️&nbsp;lightning talk){% endif %}
+{%- endmacro %}

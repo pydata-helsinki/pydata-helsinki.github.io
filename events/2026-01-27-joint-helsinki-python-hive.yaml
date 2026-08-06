@@ -1,0 +1,21 @@
+title: Joint meetup with Helsinki Python at Hive Helsinki
+start: 2026-01-27 17:30
+venue:
+  name: Hive Helsinki
+  url: https://www.hive.fi/
+joint_with:
+  - Helsinki Python
+registration:
+  url: https://www.meetup.com/helpy-meetups/events/312829000
+  platform: Meetup
+talks:
+  - speakers:
+      - name: Felipe Dessoy Caraballo
+      - name: Nikolai Zharkevich
+    title: Wrapping chatbots
+  - title: PyData Helsinki Quiz
+  - speaker: Mikael Koponen
+    title: Refurbishing Old PDFs for Comfortable Reading
+  - speaker: Alex Grönholm
+    title: My year at JetBrains
+    lightning: true

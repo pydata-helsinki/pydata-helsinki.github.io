@@ -1,0 +1,14 @@
+{# One <li> in the index event listings. Anchor ids match the old hand-written site. #}
+{% from "_talk.html.j2" import talk_line %}
+<li id="{{ event.anchor }}">
+  <p><a href="/events/{{ event.slug }}/">{{ event.title }}</a>
+    on <time datetime="{{ event.machine_date }}">{{ event.display_date }}</time>.
+    {%- if event.talks %} Talks:{% elif not event.month %} No talks.{% endif %}</p>
+  {% if event.talks %}
+  <ul>
+    {% for talk in event.talks %}
+    <li>{{ talk_line(talk) }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</li>

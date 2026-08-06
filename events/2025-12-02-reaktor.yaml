@@ -1,0 +1,28 @@
+title: Meetup at Reaktor
+start: 2025-12-02 18:00
+end: 2025-12-02 20:30
+venue:
+  name: Reaktor
+  url: https://reaktor.com/
+registration:
+  url: https://www.meetup.com/pydatahelsinki/events/311972268/
+  platform: Meetup
+talks:
+  - speaker: Ville Rantanen
+    title: Bottling AI
+  - title: "Panel Discussion: How to Land a (Data) Job in Today's Market"
+    description: >-
+      Our panelists:
+      <a href="https://www.linkedin.com/in/marko-aalto-0b73862/">Marko Aalto</a>
+      thrives at the intersection of business, technology and AI. Decades of experience,
+      including two startups, of building cool things. He works currently at
+      <a href="https://reaktor.com">Reaktor</a> as VP of Data &amp; AI.
+      <a href="https://www.linkedin.com/in/hanna-hagstr%C3%B6m-b8b7931/">Hanna Hagström</a>
+      is an experienced AI &amp; data leader with over 25 years of expertise in digital
+      transformation, data solutions, and AI, currently the CEO and co-founder of
+      <a href="https://www.lakeview.fi/">Lakeview</a>.
+      <a href="https://www.linkedin.com/in/jerry-pussinen-20a3a7140/">Jerry Pussinen</a>
+      is an engineering leader who has conducted over 300 tech interviews and most
+      recently shaped the tech hiring efforts at
+      <a href="https://www.linkedin.com/company/wolt-oy/">Wolt</a>.
+  - title: PyData Helsinki Quiz

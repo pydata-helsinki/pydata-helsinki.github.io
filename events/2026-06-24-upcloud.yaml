@@ -1,0 +1,18 @@
+title: Meetup at Upcloud
+start: 2026-06-24 17:30
+end: 2026-06-24 20:30
+venue:
+  name: UpCloud
+registration:
+  url: https://www.meetup.com/pydatahelsinki/events/314755648/
+  platform: Meetup
+talks:
+  - speaker: Seija Sirkiä
+    speaker_url: https://www.linkedin.com/in/seija/
+    title: NPS - Not Proper (data) Science?
+  - speaker: Touko Väänänen
+    speaker_url: https://www.linkedin.com/in/touko-v%C3%A4%C3%A4n%C3%A4nen-89150114a
+    title: Choosing projects under uncertain preferences for impacts
+  - speaker: Alexander Kevin Gilbert
+    speaker_url: https://www.linkedin.com/in/alexander-kevin-gilbert-2449b5237/
+    title: Learning Data Engineering (not) from scratch

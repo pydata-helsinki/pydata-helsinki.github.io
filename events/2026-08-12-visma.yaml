@@ -1,0 +1,19 @@
+title: Meetup at Visma
+start: 2026-08-12 17:30
+end: 2026-08-12 20:30
+venue:
+  name: Visma
+  address: ""  # TODO: add street address for better event SEO
+registration:
+  url: https://www.meetup.com/pydatahelsinki/events/315105052/
+  platform: Meetup
+talks:
+  - speaker: Babäk Firoozi Fooladi
+    speaker_url: https://babakfi.foo/
+    title: What is a survival model?
+  - speaker: Allan Nevala
+    speaker_url: https://allannevala.com/
+    title: Mistral LLM - Custom Benchmarks
+  - speaker: Anna Korolyuk
+    speaker_url: https://fi.linkedin.com/in/anna-korolyuk-892b1410
+    title: Implementing Kalman filter in Python - from linear to non linear

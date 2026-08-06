@@ -1,0 +1,24 @@
+title: Meetup at RELEX
+start: 2026-02-26 17:30
+end: 2026-02-26 20:30
+venue:
+  name: RELEX
+  url: https://www.relexsolutions.com/
+registration:
+  url: https://www.meetup.com/pydatahelsinki/events/313126835/
+  platform: Meetup
+talks:
+  - speaker: Juuso Montonen
+    speaker_url: https://www.linkedin.com/in/juuso-montonen-7127ab20/
+    title: Refactoring bespoke integrations with dlt
+  - speaker: Stanislav Bashkyrtsev
+    speaker_url: https://www.linkedin.com/in/stasbashkyrtsev/
+    title: How indexes work in relational databases
+  - speaker: Miikka Koskinen
+    speaker_url: https://miikka.me/
+    title: You could use DuckDB
+    lightning: true
+  - speaker: Olusola Akinsulere
+    speaker_url: https://www.linkedin.com/in/akinsulereolusola/
+    title: "Zero to Pipeline: When Data Connectors Just Work"
+    lightning: true
