@@ -7,7 +7,7 @@
 #     "icalendar",
 # ]
 # ///
-"""Static site builder for pydata-helsinki.github.io.
+"""Static site builder for pydata-helsinki.fi
 
 Reads one YAML file per event from events/, renders:
   - index.html (upcoming + past event listings, prose from template)
@@ -37,7 +37,7 @@ from icalendar import vCalAddress
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 ROOT = Path(__file__).parent
-SITE_URL = "https://pydata-helsinki.github.io"
+SITE_URL = "https://pydata-helsinki.fi"
 TZ = ZoneInfo("Europe/Helsinki")
 DEFAULT_IMAGE = f"{SITE_URL}/assets/pydata-helsinki-banner-1200x630.webp"
 
@@ -312,7 +312,7 @@ def build_ics(events: list[Event], updated: datetime | None = None) -> bytes:
     updated = updated.astimezone(timezone.utc)
 
     cal = ICalendar()
-    cal.add("prodid", "-//PyData Helsinki//pydata-helsinki.github.io//EN")
+    cal.add("prodid", "-//PyData Helsinki//pydata-helsinki.fi//EN")
     cal.add("version", "2.0")
     cal.add("x-wr-calname", "PyData Helsinki")
     cal.add("x-wr-timezone", "Europe/Helsinki")
@@ -320,7 +320,7 @@ def build_ics(events: list[Event], updated: datetime | None = None) -> bytes:
         if ev.start is None:
             continue  # month-precision historical events don't belong in a calendar
         ie = IEvent()
-        ie.add("uid", f"{ev.slug}@pydata-helsinki.github.io")
+        ie.add("uid", f"{ev.slug}@pydata-helsinki.fi")
         ie.add("summary", f"PyData Helsinki: {ev.title}")
         ie.add("dtstart", ev.start)
         ie.add("dtend", ev.end or (ev.start + timedelta(hours=3)))
