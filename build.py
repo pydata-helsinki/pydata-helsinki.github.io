@@ -473,7 +473,7 @@ def main() -> None:
             print(f"warning: static item {name} not found, skipping")
             continue
         if src.is_dir():
-            shutil.copytree(src, out / name)
+            shutil.copytree(src, out / name, ignore=shutil.ignore_patterns("*.xcf"))
         else:
             shutil.copy2(src, out / name)
 
