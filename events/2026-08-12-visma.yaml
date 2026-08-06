@@ -14,6 +14,9 @@ summary: >-
   An evening of talks at Visma: custom LLM benchmarks, survival models,
   and Kalman filters — plus snacks, drinks, networking, and the (in)famous
   PyData Helsinki quiz.
+
+  Please be on time! Latecomers may be unable to get in, since Visma
+  personnel need to be there to let you in through locked doors.
 schedule:
   - time: "17:30"
     item: Doors open
