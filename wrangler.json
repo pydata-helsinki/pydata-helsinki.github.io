@@ -1,0 +1,8 @@
+{
+  "name": "pydata-helsinki",
+  "compatibility_date": "2026-08-06",
+  "assets": {
+    "directory": "./_site/"
+  }
+}
+
