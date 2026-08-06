@@ -3,17 +3,60 @@ start: 2026-08-12 17:30
 end: 2026-08-12 20:30
 venue:
   name: Visma
-  address: ""  # TODO: add street address for better event SEO
+  address: Mall of Tripla, Workery East D
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/315105052/
   platform: Meetup
+  opens: 2026-08-04 09:45
+summary: >-
+  An evening of talks at Visma: custom LLM benchmarks, survival models,
+  and Kalman filters — plus snacks, drinks, networking, and the (in)famous
+  PyData Helsinki quiz.
+schedule:
+  - time: "17:30"
+    item: Doors open
+  - time: "18:00"
+    item: Welcoming words from the host
+  - time: "18:10"
+    item: "Talk: Mistral LLM – Custom Benchmarks (Allan Nevala)"
+  - time: "18:40"
+    item: "Talk: What is a survival model? (Babäk Firoozi Fooladi)"
+  - time: "19:10"
+    item: Break — snacks, drinks, networking
+  - time: "19:40"
+    item: The (in)famous PyData Helsinki quiz
+  - time: "19:50"
+    item: "Talk: Implementing Kalman filter in Python (Anna Korolyuk)"
+  - time: "20:30"
+    item: End of programme
+  - time: "21:00"
+    item: Continue discussions at a nearby bar
 talks:
-  - speaker: Babäk Firoozi Fooladi
-    speaker_url: https://babakfi.foo/
-    title: What is a survival model?
   - speaker: Allan Nevala
     speaker_url: https://allannevala.com/
     title: Mistral LLM - Custom Benchmarks
+    start: 2026-08-12 18:10
+    end: 2026-08-12 18:40
+    description: >-
+      Allan shows his custom Mistral LLM benchmarks in Jupyter notebooks:
+      the comparison methodology, the use of Pydantic AI, data
+      visualisations, and how Mistral performed on various tasks relative
+      to models from other providers such as Google and Anthropic. The
+      results so far have been surprising.
+  - speaker: Babäk Firoozi Fooladi
+    speaker_url: https://babakfi.foo/
+    title: What is a survival model?
+    start: 2026-08-12 18:40
+    end: 2026-08-12 19:10
+    description: >-
+      Ever heard of survival models, time-to-event models, or duration
+      models? If not, join the meetup to get familiar.
   - speaker: Anna Korolyuk
     speaker_url: https://fi.linkedin.com/in/anna-korolyuk-892b1410
     title: Implementing Kalman filter in Python - from linear to non linear
+    start: 2026-08-12 19:50
+    end: 2026-08-12 20:30
+    description: >-
+      Kalman filters power sensor fusion in drones, fintech, and robotics.
+      This talk walks through implementing them in Python, from the linear
+      case to non-linear variants.

@@ -47,6 +47,15 @@
     to hear when it does. Attendance is free of charge.</p>
     {% endif %}
 
+    {% if event.schedule %}
+    <h2>Schedule</h2>
+    <ul>
+      {% for row in event.schedule %}
+      <li><time>{{ row.time }}</time> — {{ row.item }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
     {% if event.talks %}
     <h2>Programme</h2>
     <ul>

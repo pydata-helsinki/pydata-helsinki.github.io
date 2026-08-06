@@ -75,6 +75,7 @@ class Event:
     status: str = "scheduled"  # scheduled | cancelled
     mode: str = "offline"  # offline | online
     venue: dict = field(default_factory=dict)
+    schedule: list = field(default_factory=list)  # [{time, item}] display-only timetable
     registration: dict = field(default_factory=dict)
     sponsor: dict = field(default_factory=dict)
     joint_with: list = field(default_factory=list)
@@ -174,8 +175,9 @@ class Event:
             if self.venue.get("address"):
                 place["address"]["streetAddress"] = self.venue["address"]
             data["location"] = place
+        offer = None
         if self.registration.get("url"):
-            data["offers"] = {
+            offer = {
                 "@type": "Offer",
                 "url": self.registration["url"],
                 "price": 0,
@@ -191,6 +193,7 @@ class Event:
                 "priceCurrency": "EUR",
                 "availability": "https://schema.org/PreSale",
             }
+        if offer:
             opens = self.registration.get("opens")
             if opens:
                 offer["validFrom"] = (
@@ -214,7 +217,26 @@ class Event:
             data["performer"] = performers
         sub_events = []
         for t in self.talks:
-            se: dict = {"@type": "Event", "name": t["title"]}
+            # Google flags sub-events missing what the parent has, so inherit.
+            se: dict = {
+                "@type": "Event",
+                "name": t["title"],
+                "eventStatus": data["eventStatus"],
+                "location": data["location"],
+                "organizer": ORGANIZER,
+                "image": DEFAULT_IMAGE,
+                "inLanguage": "en",
+                "isAccessibleForFree": True,
+                "startDate": t["start"].isoformat() if t.get("start") else data["startDate"],
+            }
+            if t.get("end"):
+                se["endDate"] = t["end"].isoformat()
+            elif "endDate" in data:
+                se["endDate"] = data["endDate"]
+            if t.get("description"):
+                se["description"] = t["description"]
+            if "offers" in data:
+                se["offers"] = data["offers"]
             if t["speakers"]:
                 se["performer"] = [_person(s) for s in t["speakers"]]
             if t.get("video"):
@@ -235,6 +257,14 @@ def _person(s: dict) -> dict:
     )}
 
 
+def _as_datetime(val) -> datetime:
+    if isinstance(val, str):  # "2026-08-12 17:30" (YAML needs :ss for datetime)
+        val = datetime.fromisoformat(val)
+    if isinstance(val, datetime):
+        return val.replace(tzinfo=TZ)
+    return datetime.combine(val, datetime.min.time(), TZ)  # plain date
+
+
 def load_events(events_dir: Path) -> list[Event]:
     events = []
     for path in sorted(events_dir.glob("*.yaml")):
@@ -242,18 +272,16 @@ def load_events(events_dir: Path) -> list[Event]:
         ev = Event(slug=path.stem, **raw)
         for attr in ("start", "end"):
             val = getattr(ev, attr)
-            if val is None:
-                continue
-            if isinstance(val, str):  # "2026-08-12 17:30" (YAML needs :ss for datetime)
-                val = datetime.fromisoformat(val)
-            if isinstance(val, datetime):
-                val = val.replace(tzinfo=TZ)
-            else:  # plain date
-                val = datetime.combine(val, datetime.min.time(), TZ)
-            setattr(ev, attr, val)
+            if val is not None:
+                setattr(ev, attr, _as_datetime(val))
         if ev.start is None and not ev.month:
             raise ValueError(f"{path.name}: needs either 'start' or 'month'")
+        if ev.registration.get("opens"):
+            ev.registration["opens"] = _as_datetime(ev.registration["opens"])
         for t in ev.talks:
+            for key in ("start", "end"):
+                if t.get(key):
+                    t[key] = _as_datetime(t[key])
             if t.get("speaker"):
                 t["speakers"] = [{"name": t["speaker"], "url": t.get("speaker_url")}]
             else:
