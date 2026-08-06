@@ -172,3 +172,47 @@ footer {
     height: 320px;
     border-radius: 8px;
 }
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.feed-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.feed-links svg {
+    display: inline-block;
+}
+
+/* Heading injected into the add-to-calendar dropdown (shadow part) */
+add-to-calendar-button::part(atcb-list)::before {
+    content: "Subscribe in:";
+    display: block;
+    padding: 0.7em 1em 0.1em;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+add-to-calendar-button::part(atcb-button) {
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+    font-size: 24px;
+    box-shadow: none;
+    background: transparent;
+}
+
+.feed-links add-to-calendar-button {
+    transform: translateY(-2px);
+}
+
+.feed-links a[href*="fosstodon"] {
+    transform: translateY(2px);
+}
