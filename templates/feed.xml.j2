@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>PyData Helsinki events</title>
+  <id>{{ site_url }}/feed.xml</id>
+  <link href="{{ site_url }}/" />
+  <link rel="self" href="{{ site_url }}/feed.xml" />
+  <updated>{{ updated.strftime("%Y-%m-%dT%H:%M:%SZ") }}</updated>
+  <author><name>PyData Helsinki</name></author>
+  {% for event in events %}
+  <entry>
+    <title>PyData Helsinki: {{ event.title }}</title>
+    <id>{{ event.url }}</id>
+    <link href="{{ event.url }}" />
+    <updated>{% if event.start %}{{ event.start.isoformat() }}{% else %}{{ event.month }}-01T00:00:00Z{% endif %}</updated>
+    <content type="html">
+      &lt;p&gt;{{ event.display_date }}{% if event.venue.name %} at {{ event.venue.name }}{% endif %}&lt;/p&gt;
+      {% if event.talks %}&lt;ul&gt;{% for talk in event.talks %}&lt;li&gt;{% if talk.speaker %}{{ talk.speaker }}: {% endif %}{{ talk.title }}&lt;/li&gt;{% endfor %}&lt;/ul&gt;{% endif %}
+    </content>
+  </entry>
+  {% endfor %}
+</feed>

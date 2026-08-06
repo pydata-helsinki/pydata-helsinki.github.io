@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>{% block title %}PyData Helsinki meetup{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css?v=4">
+  <link rel="canonical" href="{% block canonical %}{{ site_url }}/{% endblock %}">
+  <link rel="alternate" type="application/atom+xml" title="PyData Helsinki events (Atom)" href="{{ site_url }}/feed.xml">
+  <link rel="alternate" type="application/feed+json" title="PyData Helsinki events (JSON Feed)" href="{{ site_url }}/events.json">
+  <link rel="alternate" type="text/calendar" title="PyData Helsinki events (iCalendar)" href="{{ site_url }}/events.ics">
+
+  <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/site.webmanifest" />
+
+  <meta property="og:title" content="{% block og_title %}PyData Helsinki meetup: Python and data enthusiasts{% endblock %}">
+  <meta name="description" content="{% block description %}Join our meetup! We share real-world experiences solving problems using open-source tools in machine learning, data engineering, etc.{% endblock %}">
+  <meta property="og:description" content="{{ self.description() }}">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <meta property="og:image" content="{{ default_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+{% block head_extra %}{% endblock %}
+</head>
+<body>
+{% block body %}{% endblock %}
+</body>
+</html>

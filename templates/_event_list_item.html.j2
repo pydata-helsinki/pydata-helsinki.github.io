@@ -1,0 +1,19 @@
+{# One <li> in the index event listings. Anchor ids match the old hand-written site. #}
+<li id="{{ event.anchor }}">
+  <p><a href="/events/{{ event.slug }}/">{{ event.title }}</a>
+    on <time datetime="{{ event.machine_date }}">{{ event.display_date }}</time>.
+    {%- if event.talks %} Talks:{% elif not event.month %} No talks.{% endif %}</p>
+  {% if event.talks %}
+  <ul>
+    {% for talk in event.talks %}
+    <li>
+      {%- if talk.speaker %}
+        {%- if talk.speaker_url %}<a href="{{ talk.speaker_url }}">{{ talk.speaker }}</a>{% else %}{{ talk.speaker }}{% endif %}:
+      {% endif %}
+      {%- if talk.video %}<a href="{{ talk.video }}"><strong>{{ talk.title }}</strong></a>{% else %}<strong>{{ talk.title }}</strong>{% endif %}
+      {%- if talk.lightning %} (⚡️&nbsp;lightning talk){% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</li>

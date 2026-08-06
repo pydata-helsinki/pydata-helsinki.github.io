@@ -1,0 +1,40 @@
+title: Meetup sponsored by Cactos at Sofia Helsinki
+start: 2025-11-11 18:00
+end: 2025-11-11 20:30
+venue:
+  name: Sofia Helsinki
+sponsor:
+  name: Cactos
+  url: https://cactos.com/
+registration:
+  url: https://www.meetup.com/pydatahelsinki/events/311001464/
+  platform: Meetup
+talks:
+  - speaker: Jussi Pyörre
+    speaker_url: https://www.linkedin.com/in/jussi-py%C3%B6rre-5a11571/
+    title: "Intro to Cactos: Energy, but better"
+    video: https://youtu.be/bzXZHWK_ZHs
+  - speaker: Olli Ruokojoki
+    speaker_url: https://www.linkedin.com/in/olli-ruokojoki-864a20223/
+    title: "Data-Driven Batteries: Modeling State of Charge and Health from Operational Data"
+    video: https://youtu.be/GaBrvgLTMI4
+  - speaker: Tuomas Sivula
+    speaker_url: https://www.linkedin.com/in/tuomas-sivula/
+    title: Stochastic Models in Energy Storage Operating Environments
+    video: https://youtu.be/kDGvEBUfSmo
+  - title: PyData Helsinki Quiz
+  - speaker: Quentin Salomé
+    speaker_url: https://www.linkedin.com/in/quentin-salome/
+    title: Estimating the surface area of lakes using satellite images
+    video: https://youtu.be/mYo9WQpb0ZY
+    lightning: true
+  - speaker: Osvaldo Martin
+    speaker_url: https://aloctavodia.github.io/
+    title: "ArviZ 1.0: Refactoring for flexibility, extensibility, and power"
+    video: https://youtu.be/cDp8fxLWiXI
+    lightning: true
+  - speaker: Jouni Seppänen
+    speaker_url: https://jouniseppanen.com/
+    title: Python Visualisation Tools
+    video: https://youtu.be/ZUnZoblropk
+    lightning: true

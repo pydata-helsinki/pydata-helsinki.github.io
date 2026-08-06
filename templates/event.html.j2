@@ -1,0 +1,69 @@
+{% extends "base.html.j2" %}
+{% block title %}{{ event.title }} – PyData Helsinki{% endblock %}
+{% block canonical %}{{ event.url }}{% endblock %}
+{% block og_title %}{{ event.title }} – PyData Helsinki{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block description %}{% if event.summary %}{{ event.summary }}{% else %}PyData Helsinki: {{ event.title }} on {{ event.display_date }}{% if event.venue.name %} at {{ event.venue.name }}{% endif %}.{% endif %}{% endblock %}
+{% block head_extra %}
+  <script type="application/ld+json">
+{{ jsonld | safe }}
+  </script>
+{% endblock %}
+{% block body %}
+    <nav><a href="/">← PyData Helsinki</a></nav>
+    <hgroup>
+    <h1>{{ event.title }}</h1>
+    <p>
+      <time datetime="{{ event.machine_date }}">{{ event.display_date }}</time>
+      {%- if event.venue.name %} ·
+        {%- if event.venue.url %} <a href="{{ event.venue.url }}">{{ event.venue.name }}</a>
+        {%- else %} {{ event.venue.name }}
+        {%- endif %}
+        {%- if event.venue.address %}, {{ event.venue.address }}{% endif %}
+      {%- endif %}
+      {%- if event.status == "cancelled" %} · <strong>Cancelled</strong>{% endif %}
+    </p>
+    </hgroup>
+
+    {% if event.summary %}
+    <p>{{ event.summary }}</p>
+    {% endif %}
+
+    {% if is_upcoming and event.registration.url and event.status != "cancelled" %}
+    <p><strong><a href="{{ event.registration.url }}">Register on {{ event.registration.platform | default("Meetup") }} →</a></strong>
+    Attendance is free of charge.</p>
+    {% endif %}
+
+    {% if event.talks %}
+    <h2>Programme</h2>
+    <ul>
+      {% for talk in event.talks %}
+      <li>
+        {%- if talk.speaker %}
+          {%- if talk.speaker_url %}<a href="{{ talk.speaker_url }}">{{ talk.speaker }}</a>{% else %}{{ talk.speaker }}{% endif %}:
+        {% endif %}
+        {%- if talk.video %}<a href="{{ talk.video }}"><strong>{{ talk.title }}</strong></a>{% else %}<strong>{{ talk.title }}</strong>{% endif %}
+        {%- if talk.lightning %} (⚡️&nbsp;lightning talk){% endif %}
+        {%- if talk.description %}
+        <p>{{ talk.description | safe }}</p>
+        {%- endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if event.joint_with %}
+    <p>Organised together with
+      {%- for partner in event.joint_with %} {{ partner }}{% if not loop.last %},{% endif %}{% endfor %}.</p>
+    {% endif %}
+
+    {% if not is_upcoming and event.registration.url %}
+    <p>This event has taken place. The original event listing is
+    <a href="{{ event.registration.url }}">on {{ event.registration.platform | default("Meetup") }}</a>.</p>
+    {% endif %}
+
+    <footer>
+    <p><a href="/">PyData Helsinki</a> · <a href="/#upcoming">Upcoming events</a> ·
+       <a href="/events.ics">Subscribe to our calendar</a></p>
+    </footer>
+{% endblock %}

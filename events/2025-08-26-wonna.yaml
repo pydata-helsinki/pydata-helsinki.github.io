@@ -1,0 +1,18 @@
+title: Meetup at Wonna
+start: 2025-08-26 18:00
+end: 2025-08-26 20:30
+venue:
+  name: Wonna
+  address: Elimäenkatu 17-19
+registration:
+  url: https://www.meetup.com/pydatahelsinki/events/308276812/
+  platform: Meetup
+talks:
+  - speaker: Teemu Säilynoja
+    speaker_url: https://teemusailynoja.github.io/
+    title: "Bayesian Beasts: Iterative modelling with PyMC to forecast Korkeasaari visits"
+    video: https://youtu.be/VXrKLX5Wjs8
+  - speaker: Allan Nevala
+    speaker_url: https://allannevala.com/
+    title: "The Model Kitchen: Live Python Performance Lab"
+    video: https://youtu.be/HXSAfFz2R8g
