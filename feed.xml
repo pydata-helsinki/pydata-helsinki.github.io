@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>PyData Helsinki events</title>
+  <id>https://pydata-helsinki.github.io/feed.xml</id>
+  <link href="https://pydata-helsinki.github.io/" />
+  <link rel="self" href="https://pydata-helsinki.github.io/feed.xml" />
+  <updated>2026-08-06T17:14:20Z</updated>
+  <author><name>PyData Helsinki</name></author>
+  <entry>
+    <title>PyData Helsinki: Meetup at Visma</title>
+    <id>https://pydata-helsinki.github.io/events/2026-08-12-visma/</id>
+    <link href="https://pydata-helsinki.github.io/events/2026-08-12-visma/" />
+    <updated>2026-08-12T17:30:00+03:00</updated>
+    <content type="html">
+      &lt;p&gt;12 August 2026, 17:30 at Visma&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Allan Nevala: Mistral LLM - Custom Benchmarks&lt;/li&gt;&lt;li&gt;Babäk Firoozi Fooladi: What is a survival model?&lt;/li&gt;&lt;li&gt;Anna Korolyuk: Implementing Kalman filter in Python - from linear to non linear&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Pub Night at Thirsty Scholar</title>
+    <id>https://pydata-helsinki.github.io/events/2026-08-04-pub-night-thirsty-scholar/</id>
+    <link href="https://pydata-helsinki.github.io/events/2026-08-04-pub-night-thirsty-scholar/" />
+    <updated>2026-08-04T17:00:00+03:00</updated>
+    <content type="html">
+      &lt;p&gt;4 August 2026, 17:00 at Thirsty Scholar&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Meetup at Upcloud</title>
+    <id>https://pydata-helsinki.github.io/events/2026-06-24-upcloud/</id>
+    <link href="https://pydata-helsinki.github.io/events/2026-06-24-upcloud/" />
+    <updated>2026-06-24T17:30:00+03:00</updated>
+    <content type="html">
+      &lt;p&gt;24 June 2026, 17:30 at UpCloud&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Seija Sirkiä: NPS - Not Proper (data) Science?&lt;/li&gt;&lt;li&gt;Touko Väänänen: Choosing projects under uncertain preferences for impacts&lt;/li&gt;&lt;li&gt;Alexander Kevin Gilbert: Learning Data Engineering (not) from scratch&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Joint meetup with Helsinki Python</title>
+    <id>https://pydata-helsinki.github.io/events/2026-04-21-joint-helsinki-python/</id>
+    <link href="https://pydata-helsinki.github.io/events/2026-04-21-joint-helsinki-python/" />
+    <updated>2026-04-21T17:30:00+03:00</updated>
+    <content type="html">
+      &lt;p&gt;21 April 2026, 17:30 at TEK &amp; ILRY&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Meetup at Elisa</title>
+    <id>https://pydata-helsinki.github.io/events/2026-03-19-elisa/</id>
+    <link href="https://pydata-helsinki.github.io/events/2026-03-19-elisa/" />
+    <updated>2026-03-19T17:30:00+02:00</updated>
+    <content type="html">
+      &lt;p&gt;19 March 2026, 17:30 at Elisa&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Nina Marila: Data &amp; AI at Elisa&lt;/li&gt;&lt;li&gt;Esko Heinonen: Optimization problems in electricity markets&lt;/li&gt;&lt;li&gt;PyData Helsinki Quiz&lt;/li&gt;&lt;li&gt;Eero Lihavainen: How fast can you read data from Delta Lake without a cluster?&lt;/li&gt;&lt;li&gt;Udit Asopa: Goodbye argparse, Hello Typer&lt;/li&gt;&lt;li&gt;Sardana Ivanova: Teaching AI to Write Poetry in Three Languages: Fine-Tuning mBART for a Museum Exhibit&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Meetup at RELEX</title>
+    <id>https://pydata-helsinki.github.io/events/2026-02-26-relex/</id>
+    <link href="https://pydata-helsinki.github.io/events/2026-02-26-relex/" />
+    <updated>2026-02-26T17:30:00+02:00</updated>
+    <content type="html">
+      &lt;p&gt;26 February 2026, 17:30 at RELEX&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Juuso Montonen: Refactoring bespoke integrations with dlt&lt;/li&gt;&lt;li&gt;Stanislav Bashkyrtsev: How indexes work in relational databases&lt;/li&gt;&lt;li&gt;Miikka Koskinen: You could use DuckDB&lt;/li&gt;&lt;li&gt;Olusola Akinsulere: Zero to Pipeline: When Data Connectors Just Work&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Joint meetup with Helsinki Python at Hive Helsinki</title>
+    <id>https://pydata-helsinki.github.io/events/2026-01-27-joint-helsinki-python-hive/</id>
+    <link href="https://pydata-helsinki.github.io/events/2026-01-27-joint-helsinki-python-hive/" />
+    <updated>2026-01-27T17:30:00+02:00</updated>
+    <content type="html">
+      &lt;p&gt;27 January 2026, 17:30 at Hive Helsinki&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Wrapping chatbots&lt;/li&gt;&lt;li&gt;PyData Helsinki Quiz&lt;/li&gt;&lt;li&gt;Mikael Koponen: Refurbishing Old PDFs for Comfortable Reading&lt;/li&gt;&lt;li&gt;Alex Grönholm: My year at JetBrains&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Meetup at Reaktor</title>
+    <id>https://pydata-helsinki.github.io/events/2025-12-02-reaktor/</id>
+    <link href="https://pydata-helsinki.github.io/events/2025-12-02-reaktor/" />
+    <updated>2025-12-02T18:00:00+02:00</updated>
+    <content type="html">
+      &lt;p&gt;2 December 2025, 18:00 at Reaktor&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Ville Rantanen: Bottling AI&lt;/li&gt;&lt;li&gt;Panel Discussion: How to Land a (Data) Job in Today&#39;s Market&lt;/li&gt;&lt;li&gt;PyData Helsinki Quiz&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Meetup sponsored by Cactos at Sofia Helsinki</title>
+    <id>https://pydata-helsinki.github.io/events/2025-11-11-cactos-sofia/</id>
+    <link href="https://pydata-helsinki.github.io/events/2025-11-11-cactos-sofia/" />
+    <updated>2025-11-11T18:00:00+02:00</updated>
+    <content type="html">
+      &lt;p&gt;11 November 2025, 18:00 at Sofia Helsinki&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Jussi Pyörre: Intro to Cactos: Energy, but better&lt;/li&gt;&lt;li&gt;Olli Ruokojoki: Data-Driven Batteries: Modeling State of Charge and Health from Operational Data&lt;/li&gt;&lt;li&gt;Tuomas Sivula: Stochastic Models in Energy Storage Operating Environments&lt;/li&gt;&lt;li&gt;PyData Helsinki Quiz&lt;/li&gt;&lt;li&gt;Quentin Salomé: Estimating the surface area of lakes using satellite images&lt;/li&gt;&lt;li&gt;Osvaldo Martin: ArviZ 1.0: Refactoring for flexibility, extensibility, and power&lt;/li&gt;&lt;li&gt;Jouni Seppänen: Python Visualisation Tools&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Meetup at Supercell</title>
+    <id>https://pydata-helsinki.github.io/events/2025-09-22-supercell/</id>
+    <link href="https://pydata-helsinki.github.io/events/2025-09-22-supercell/" />
+    <updated>2025-09-22T18:00:00+03:00</updated>
+    <content type="html">
+      &lt;p&gt;22 September 2025, 18:00 at Supercell&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Heikki Arponen: Reinforcement learning for games at Supercell&lt;/li&gt;&lt;li&gt;Chandreyee Roy: Exploring sleep and activity using wearables&lt;/li&gt;&lt;li&gt;Allan Nevala: Meeting your people. For real.&lt;/li&gt;&lt;li&gt;Alexander Kevin Gilbert: Estimating weight of cars from their dimensions&lt;/li&gt;&lt;li&gt;Teemu Säilynoja: Marimo - a reactive, git-friendly Python notebook&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Meetup at Wonna</title>
+    <id>https://pydata-helsinki.github.io/events/2025-08-26-wonna/</id>
+    <link href="https://pydata-helsinki.github.io/events/2025-08-26-wonna/" />
+    <updated>2025-08-26T18:00:00+03:00</updated>
+    <content type="html">
+      &lt;p&gt;26 August 2025, 18:00 at Wonna&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Teemu Säilynoja: Bayesian Beasts: Iterative modelling with PyMC to forecast Korkeasaari visits&lt;/li&gt;&lt;li&gt;Allan Nevala: The Model Kitchen: Live Python Performance Lab&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Summer Picnic with Helsinki Python and DataTribe</title>
+    <id>https://pydata-helsinki.github.io/events/2025-07-27-summer-picnic/</id>
+    <link href="https://pydata-helsinki.github.io/events/2025-07-27-summer-picnic/" />
+    <updated>2025-07-27T14:00:00+03:00</updated>
+    <content type="html">
+      &lt;p&gt;27 July 2025, 14:00 at Meripuisto&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Pub evening in Kaisla</title>
+    <id>https://pydata-helsinki.github.io/events/2025-06-25-pub-kaisla/</id>
+    <link href="https://pydata-helsinki.github.io/events/2025-06-25-pub-kaisla/" />
+    <updated>2025-06-25T17:00:00+03:00</updated>
+    <content type="html">
+      &lt;p&gt;25 June 2025, 17:00 at Kaisla&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Online meetup: NLP &amp; Feature Store</title>
+    <id>https://pydata-helsinki.github.io/events/2021-03-online-nlp-feature-store/</id>
+    <link href="https://pydata-helsinki.github.io/events/2021-03-online-nlp-feature-store/" />
+    <updated>2021-03-01T00:00:00Z</updated>
+    <content type="html">
+      &lt;p&gt;March 2021&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Online meetup: MLOps</title>
+    <id>https://pydata-helsinki.github.io/events/2021-02-online-mlops/</id>
+    <link href="https://pydata-helsinki.github.io/events/2021-02-online-mlops/" />
+    <updated>2021-02-01T00:00:00Z</updated>
+    <content type="html">
+      &lt;p&gt;February 2021&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Online meetup: xAI &amp; NLP</title>
+    <id>https://pydata-helsinki.github.io/events/2021-01-online-xai-nlp/</id>
+    <link href="https://pydata-helsinki.github.io/events/2021-01-online-xai-nlp/" />
+    <updated>2021-01-01T00:00:00Z</updated>
+    <content type="html">
+      &lt;p&gt;January 2021&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Online meetup: Evaluating Machine Learning Models</title>
+    <id>https://pydata-helsinki.github.io/events/2020-11-online-evaluating-ml-models/</id>
+    <link href="https://pydata-helsinki.github.io/events/2020-11-online-evaluating-ml-models/" />
+    <updated>2020-11-01T00:00:00Z</updated>
+    <content type="html">
+      &lt;p&gt;November 2020&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <title>PyData Helsinki: Online meetup: The Kick-Off Meetup</title>
+    <id>https://pydata-helsinki.github.io/events/2020-10-online-kick-off/</id>
+    <link href="https://pydata-helsinki.github.io/events/2020-10-online-kick-off/" />
+    <updated>2020-10-01T00:00:00Z</updated>
+    <content type="html">
+      &lt;p&gt;October 2020&lt;/p&gt;
+    </content>
+  </entry>
+</feed>

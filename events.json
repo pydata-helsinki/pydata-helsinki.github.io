@@ -1,0 +1,148 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "PyData Helsinki events",
+  "home_page_url": "https://pydata-helsinki.github.io/",
+  "feed_url": "https://pydata-helsinki.github.io/events.json",
+  "description": "Events of the PyData Helsinki meetup group",
+  "items": [
+    {
+      "id": "https://pydata-helsinki.github.io/events/2026-08-12-visma/",
+      "url": "https://pydata-helsinki.github.io/events/2026-08-12-visma/",
+      "title": "PyData Helsinki: Meetup at Visma",
+      "content_html": "<p>12 August 2026, 17:30 at Visma</p><ul><li>Allan Nevala: Mistral LLM - Custom Benchmarks</li><li>Babäk Firoozi Fooladi: What is a survival model?</li><li>Anna Korolyuk: Implementing Kalman filter in Python - from linear to non linear</li></ul>",
+      "date_published": "2026-08-12T17:30:00+03:00",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/315105052/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2026-08-04-pub-night-thirsty-scholar/",
+      "url": "https://pydata-helsinki.github.io/events/2026-08-04-pub-night-thirsty-scholar/",
+      "title": "PyData Helsinki: Pub Night at Thirsty Scholar",
+      "content_html": "<p>4 August 2026, 17:00 at Thirsty Scholar</p>",
+      "date_published": "2026-08-04T17:00:00+03:00",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/315760731/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2026-06-24-upcloud/",
+      "url": "https://pydata-helsinki.github.io/events/2026-06-24-upcloud/",
+      "title": "PyData Helsinki: Meetup at Upcloud",
+      "content_html": "<p>24 June 2026, 17:30 at UpCloud</p><ul><li>Seija Sirkiä: NPS - Not Proper (data) Science?</li><li>Touko Väänänen: Choosing projects under uncertain preferences for impacts</li><li>Alexander Kevin Gilbert: Learning Data Engineering (not) from scratch</li></ul>",
+      "date_published": "2026-06-24T17:30:00+03:00",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/314755648/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2026-04-21-joint-helsinki-python/",
+      "url": "https://pydata-helsinki.github.io/events/2026-04-21-joint-helsinki-python/",
+      "title": "PyData Helsinki: Joint meetup with Helsinki Python",
+      "content_html": "<p>21 April 2026, 17:30 at TEK &amp; ILRY</p>",
+      "date_published": "2026-04-21T17:30:00+03:00",
+      "external_url": "https://www.meetup.com/helpy-meetups/events/314258115/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2026-03-19-elisa/",
+      "url": "https://pydata-helsinki.github.io/events/2026-03-19-elisa/",
+      "title": "PyData Helsinki: Meetup at Elisa",
+      "content_html": "<p>19 March 2026, 17:30 at Elisa</p><ul><li>Nina Marila: Data &amp; AI at Elisa</li><li>Esko Heinonen: Optimization problems in electricity markets</li><li>PyData Helsinki Quiz</li><li>Eero Lihavainen: How fast can you read data from Delta Lake without a cluster?</li><li>Udit Asopa: Goodbye argparse, Hello Typer</li><li>Sardana Ivanova: Teaching AI to Write Poetry in Three Languages: Fine-Tuning mBART for a Museum Exhibit</li></ul>",
+      "date_published": "2026-03-19T17:30:00+02:00",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/313128987/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2026-02-26-relex/",
+      "url": "https://pydata-helsinki.github.io/events/2026-02-26-relex/",
+      "title": "PyData Helsinki: Meetup at RELEX",
+      "content_html": "<p>26 February 2026, 17:30 at RELEX</p><ul><li>Juuso Montonen: Refactoring bespoke integrations with dlt</li><li>Stanislav Bashkyrtsev: How indexes work in relational databases</li><li>Miikka Koskinen: You could use DuckDB</li><li>Olusola Akinsulere: Zero to Pipeline: When Data Connectors Just Work</li></ul>",
+      "date_published": "2026-02-26T17:30:00+02:00",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/313126835/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2026-01-27-joint-helsinki-python-hive/",
+      "url": "https://pydata-helsinki.github.io/events/2026-01-27-joint-helsinki-python-hive/",
+      "title": "PyData Helsinki: Joint meetup with Helsinki Python at Hive Helsinki",
+      "content_html": "<p>27 January 2026, 17:30 at Hive Helsinki</p><ul><li>Felipe Dessoy Caraballo &amp; Nikolai Zharkevich: Wrapping chatbots</li><li>PyData Helsinki Quiz</li><li>Mikael Koponen: Refurbishing Old PDFs for Comfortable Reading</li><li>Alex Grönholm: My year at JetBrains</li></ul>",
+      "date_published": "2026-01-27T17:30:00+02:00",
+      "external_url": "https://www.meetup.com/helpy-meetups/events/312829000"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2025-12-02-reaktor/",
+      "url": "https://pydata-helsinki.github.io/events/2025-12-02-reaktor/",
+      "title": "PyData Helsinki: Meetup at Reaktor",
+      "content_html": "<p>2 December 2025, 18:00 at Reaktor</p><ul><li>Ville Rantanen: Bottling AI</li><li>Panel Discussion: How to Land a (Data) Job in Today&#x27;s Market</li><li>PyData Helsinki Quiz</li></ul>",
+      "date_published": "2025-12-02T18:00:00+02:00",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/311972268/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2025-11-11-cactos-sofia/",
+      "url": "https://pydata-helsinki.github.io/events/2025-11-11-cactos-sofia/",
+      "title": "PyData Helsinki: Meetup sponsored by Cactos at Sofia Helsinki",
+      "content_html": "<p>11 November 2025, 18:00 at Sofia Helsinki</p><ul><li>Jussi Pyörre: Intro to Cactos: Energy, but better</li><li>Olli Ruokojoki: Data-Driven Batteries: Modeling State of Charge and Health from Operational Data</li><li>Tuomas Sivula: Stochastic Models in Energy Storage Operating Environments</li><li>PyData Helsinki Quiz</li><li>Quentin Salomé: Estimating the surface area of lakes using satellite images</li><li>Osvaldo Martin: ArviZ 1.0: Refactoring for flexibility, extensibility, and power</li><li>Jouni Seppänen: Python Visualisation Tools</li></ul>",
+      "date_published": "2025-11-11T18:00:00+02:00",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/311001464/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2025-09-22-supercell/",
+      "url": "https://pydata-helsinki.github.io/events/2025-09-22-supercell/",
+      "title": "PyData Helsinki: Meetup at Supercell",
+      "content_html": "<p>22 September 2025, 18:00 at Supercell</p><ul><li>Heikki Arponen: Reinforcement learning for games at Supercell</li><li>Chandreyee Roy: Exploring sleep and activity using wearables</li><li>Allan Nevala: Meeting your people. For real.</li><li>Alexander Kevin Gilbert: Estimating weight of cars from their dimensions</li><li>Teemu Säilynoja: Marimo - a reactive, git-friendly Python notebook</li></ul>",
+      "date_published": "2025-09-22T18:00:00+03:00",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/310561378/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2025-08-26-wonna/",
+      "url": "https://pydata-helsinki.github.io/events/2025-08-26-wonna/",
+      "title": "PyData Helsinki: Meetup at Wonna",
+      "content_html": "<p>26 August 2025, 18:00 at Wonna</p><ul><li>Teemu Säilynoja: Bayesian Beasts: Iterative modelling with PyMC to forecast Korkeasaari visits</li><li>Allan Nevala: The Model Kitchen: Live Python Performance Lab</li></ul>",
+      "date_published": "2025-08-26T18:00:00+03:00",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/308276812/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2025-07-27-summer-picnic/",
+      "url": "https://pydata-helsinki.github.io/events/2025-07-27-summer-picnic/",
+      "title": "PyData Helsinki: Summer Picnic with Helsinki Python and DataTribe",
+      "content_html": "<p>27 July 2025, 14:00 at Meripuisto</p>",
+      "date_published": "2025-07-27T14:00:00+03:00",
+      "external_url": "https://www.meetup.com/helpy-meetups/events/310089840/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2025-06-25-pub-kaisla/",
+      "url": "https://pydata-helsinki.github.io/events/2025-06-25-pub-kaisla/",
+      "title": "PyData Helsinki: Pub evening in Kaisla",
+      "content_html": "<p>25 June 2025, 17:00 at Kaisla</p>",
+      "date_published": "2025-06-25T17:00:00+03:00",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/308410563/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2021-03-online-nlp-feature-store/",
+      "url": "https://pydata-helsinki.github.io/events/2021-03-online-nlp-feature-store/",
+      "title": "PyData Helsinki: Online meetup: NLP & Feature Store",
+      "content_html": "<p>March 2021</p>",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/277015246/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2021-02-online-mlops/",
+      "url": "https://pydata-helsinki.github.io/events/2021-02-online-mlops/",
+      "title": "PyData Helsinki: Online meetup: MLOps",
+      "content_html": "<p>February 2021</p>",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/276441920/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2021-01-online-xai-nlp/",
+      "url": "https://pydata-helsinki.github.io/events/2021-01-online-xai-nlp/",
+      "title": "PyData Helsinki: Online meetup: xAI & NLP",
+      "content_html": "<p>January 2021</p>",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/275750302/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2020-11-online-evaluating-ml-models/",
+      "url": "https://pydata-helsinki.github.io/events/2020-11-online-evaluating-ml-models/",
+      "title": "PyData Helsinki: Online meetup: Evaluating Machine Learning Models",
+      "content_html": "<p>November 2020</p>",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/274697689/"
+    },
+    {
+      "id": "https://pydata-helsinki.github.io/events/2020-10-online-kick-off/",
+      "url": "https://pydata-helsinki.github.io/events/2020-10-online-kick-off/",
+      "title": "PyData Helsinki: Online meetup: The Kick-Off Meetup",
+      "content_html": "<p>October 2020</p>",
+      "external_url": "https://www.meetup.com/pydatahelsinki/events/273855308/"
+    }
+  ]
+}

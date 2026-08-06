@@ -1,0 +1,284 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PyData Helsinki//pydata-helsinki.github.io//EN
+X-WR-CALNAME:PyData Helsinki
+X-WR-TIMEZONE:Europe/Helsinki
+BEGIN:VTIMEZONE
+TZID:Europe/Helsinki
+COMMENT:This timezone only works from 1970-01-01 to 2038-01-01.
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZNAME:EET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0200
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19810329T030000
+RDATE:19820328T030000,19830327T040000,19840325T040000,19850331T040000,1986
+ 0330T040000,19870329T040000,19880327T040000,19890326T040000,19900325T04000
+ 0,19910331T040000,19920329T040000,19930328T040000,19940327T040000,19950326
+ T040000,19960331T040000,19970330T040000,19980329T040000,19990328T040000,20
+ 000326T040000,20010325T040000,20020331T040000,20030330T040000,20040328T040
+ 000,20050327T040000,20060326T040000,20070325T040000,20080330T040000,200903
+ 29T040000,20100328T040000,20110327T040000,20120325T040000,20130331T040000,
+ 20140330T040000,20150329T040000,20160327T040000,20170326T040000,20180325T0
+ 40000,20190331T040000,20200329T040000,20210328T040000,20220327T040000,2023
+ 0326T040000,20240331T040000,20250330T040000,20260329T040000,20270328T04000
+ 0,20280326T040000,20290325T040000,20300331T040000,20310330T040000,20320328
+ T040000,20330327T040000,20340326T040000,20350325T040000,20360330T040000,20
+ 370329T040000
+TZNAME:EEST
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0300
+END:DAYLIGHT
+BEGIN:STANDARD
+DTSTART:19810927T030000
+RDATE:19820926T030000,19830925T040000,19840930T040000,19850929T040000,1986
+ 0928T040000,19870927T040000,19880925T040000,19890924T040000,19900930T04000
+ 0,19910929T040000,19920927T040000,19930926T040000,19940925T040000,19950924
+ T040000,19961027T040000,19971026T040000,19981025T040000,19991031T040000,20
+ 001029T040000,20011028T040000,20021027T040000,20031026T040000,20041031T040
+ 000,20051030T040000,20061029T040000,20071028T040000,20081026T040000,200910
+ 25T040000,20101031T040000,20111030T040000,20121028T040000,20131027T040000,
+ 20141026T040000,20151025T040000,20161030T040000,20171029T040000,20181028T0
+ 40000,20191027T040000,20201025T040000,20211031T040000,20221030T040000,2023
+ 1029T040000,20241027T040000,20251026T040000,20261025T040000,20271031T04000
+ 0,20281029T040000,20291028T040000,20301027T040000,20311026T040000,20321031
+ T040000,20331030T040000,20341029T040000,20351028T040000,20361026T040000,20
+ 371025T040000
+TZNAME:EET
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0200
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Meetup at Visma
+DTSTART;TZID=Europe/Helsinki:20260812T173000
+DTEND;TZID=Europe/Helsinki:20260812T203000
+DTSTAMP:20260806T171420Z
+UID:2026-08-12-visma@pydata-helsinki.github.io
+DESCRIPTION:An evening of talks at Visma: custom LLM benchmarks\, survival
+  models\, and Kalman filters — plus snacks\, drinks\, networking\, and t
+ he (in)famous PyData Helsinki quiz.\nPlease be on time! Latecomers may be 
+ unable to get in\, since Visma personnel need to be there to let you in th
+ rough locked doors.\n\nProgramme:\n- Allan Nevala: Mistral LLM - Custom Be
+ nchmarks\n- Babäk Firoozi Fooladi: What is a survival model?\n- Anna Koro
+ lyuk: Implementing Kalman filter in Python - from linear to non linear\n\n
+ Details: https://pydata-helsinki.github.io/events/2026-08-12-visma/\nRegis
+ ter: https://www.meetup.com/pydatahelsinki/events/315105052/
+GEO:60.19852;24.931107
+LOCATION:Visma\, Mall of Tripla\, Workery East D
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2026-08-12-visma/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Pub Night at Thirsty Scholar
+DTSTART;TZID=Europe/Helsinki:20260804T170000
+DTEND;TZID=Europe/Helsinki:20260804T200000
+DTSTAMP:20260806T171420Z
+UID:2026-08-04-pub-night-thirsty-scholar@pydata-helsinki.github.io
+DESCRIPTION:Details: https://pydata-helsinki.github.io/events/2026-08-04-p
+ ub-night-thirsty-scholar/\nRegister: https://www.meetup.com/pydatahelsinki
+ /events/315760731/
+GEO:60.171242;24.949219
+LOCATION:Thirsty Scholar
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2026-08-04-pub-night-thirsty-
+ scholar/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Meetup at Upcloud
+DTSTART;TZID=Europe/Helsinki:20260624T173000
+DTEND;TZID=Europe/Helsinki:20260624T203000
+DTSTAMP:20260806T171420Z
+UID:2026-06-24-upcloud@pydata-helsinki.github.io
+DESCRIPTION:Programme:\n- Seija Sirkiä: NPS - Not Proper (data) Science?\
+ n- Touko Väänänen: Choosing projects under uncertain preferences for im
+ pacts\n- Alexander Kevin Gilbert: Learning Data Engineering (not) from scr
+ atch\n\nDetails: https://pydata-helsinki.github.io/events/2026-06-24-upclo
+ ud/\nRegister: https://www.meetup.com/pydatahelsinki/events/314755648/
+GEO:60.169056;24.94483
+LOCATION:UpCloud
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2026-06-24-upcloud/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Joint meetup with Helsinki Python
+DTSTART;TZID=Europe/Helsinki:20260421T173000
+DTEND;TZID=Europe/Helsinki:20260421T203000
+DTSTAMP:20260806T171420Z
+UID:2026-04-21-joint-helsinki-python@pydata-helsinki.github.io
+DESCRIPTION:Hosted by TEK and ILRY.\n\nDetails: https://pydata-helsinki.gi
+ thub.io/events/2026-04-21-joint-helsinki-python/\nRegister: https://www.me
+ etup.com/helpy-meetups/events/314258115/
+GEO:60.1979;24.936829
+LOCATION:TEK & ILRY
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2026-04-21-joint-helsinki-pyt
+ hon/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Meetup at Elisa
+DTSTART;TZID=Europe/Helsinki:20260319T173000
+DTEND;TZID=Europe/Helsinki:20260319T203000
+DTSTAMP:20260806T171420Z
+UID:2026-03-19-elisa@pydata-helsinki.github.io
+DESCRIPTION:Programme:\n- Nina Marila: Data & AI at Elisa\n- Esko Heinonen
+ : Optimization problems in electricity markets\n- PyData Helsinki Quiz\n- 
+ Eero Lihavainen: How fast can you read data from Delta Lake without a clus
+ ter?\n- Udit Asopa: Goodbye argparse\, Hello Typer\n- Sardana Ivanova: Tea
+ ching AI to Write Poetry in Three Languages: Fine-Tuning mBART for a Museu
+ m Exhibit\n\nDetails: https://pydata-helsinki.github.io/events/2026-03-19-
+ elisa/\nRegister: https://www.meetup.com/pydatahelsinki/events/313128987/
+GEO:60.19731;24.936693
+LOCATION:Elisa
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2026-03-19-elisa/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Meetup at RELEX
+DTSTART;TZID=Europe/Helsinki:20260226T173000
+DTEND;TZID=Europe/Helsinki:20260226T203000
+DTSTAMP:20260806T171420Z
+UID:2026-02-26-relex@pydata-helsinki.github.io
+DESCRIPTION:Programme:\n- Juuso Montonen: Refactoring bespoke integrations
+  with dlt\n- Stanislav Bashkyrtsev: How indexes work in relational databas
+ es\n- Miikka Koskinen: You could use DuckDB\n- Olusola Akinsulere: Zero to
+  Pipeline: When Data Connectors Just Work\n\nDetails: https://pydata-helsi
+ nki.github.io/events/2026-02-26-relex/\nRegister: https://www.meetup.com/p
+ ydatahelsinki/events/313126835/
+GEO:60.21268;24.918219
+LOCATION:RELEX
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2026-02-26-relex/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Joint meetup with Helsinki Python at Hive Helsink
+ i
+DTSTART;TZID=Europe/Helsinki:20260127T173000
+DTEND;TZID=Europe/Helsinki:20260127T203000
+DTSTAMP:20260806T171420Z
+UID:2026-01-27-joint-helsinki-python-hive@pydata-helsinki.github.io
+DESCRIPTION:Programme:\n- Felipe Dessoy Caraballo & Nikolai Zharkevich: Wr
+ apping chatbots\n- PyData Helsinki Quiz\n- Mikael Koponen: Refurbishing Ol
+ d PDFs for Comfortable Reading\n- Alex Grönholm: My year at JetBrains\n\n
+ Details: https://pydata-helsinki.github.io/events/2026-01-27-joint-helsink
+ i-python-hive/\nRegister: https://www.meetup.com/helpy-meetups/events/3128
+ 29000
+GEO:60.180832;24.958258
+LOCATION:Hive Helsinki
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2026-01-27-joint-helsinki-pyt
+ hon-hive/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Meetup at Reaktor
+DTSTART;TZID=Europe/Helsinki:20251202T180000
+DTEND;TZID=Europe/Helsinki:20251202T203000
+DTSTAMP:20260806T171420Z
+UID:2025-12-02-reaktor@pydata-helsinki.github.io
+DESCRIPTION:Programme:\n- Ville Rantanen: Bottling AI\n- Panel Discussion:
+  How to Land a (Data) Job in Today's Market\n- PyData Helsinki Quiz\n\nDet
+ ails: https://pydata-helsinki.github.io/events/2025-12-02-reaktor/\nRegist
+ er: https://www.meetup.com/pydatahelsinki/events/311972268/
+GEO:60.16979;24.948776
+LOCATION:Reaktor
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2025-12-02-reaktor/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Meetup sponsored by Cactos at Sofia Helsinki
+DTSTART;TZID=Europe/Helsinki:20251111T180000
+DTEND;TZID=Europe/Helsinki:20251111T203000
+DTSTAMP:20260806T171420Z
+UID:2025-11-11-cactos-sofia@pydata-helsinki.github.io
+DESCRIPTION:Programme:\n- Jussi Pyörre: Intro to Cactos: Energy\, but bet
+ ter\n- Olli Ruokojoki: Data-Driven Batteries: Modeling State of Charge and
+  Health from Operational Data\n- Tuomas Sivula: Stochastic Models in Energ
+ y Storage Operating Environments\n- PyData Helsinki Quiz\n- Quentin Salom
+ é: Estimating the surface area of lakes using satellite images\n- Osvaldo
+  Martin: ArviZ 1.0: Refactoring for flexibility\, extensibility\, and powe
+ r\n- Jouni Seppänen: Python Visualisation Tools\n\nDetails: https://pydat
+ a-helsinki.github.io/events/2025-11-11-cactos-sofia/\nRegister: https://ww
+ w.meetup.com/pydatahelsinki/events/311001464/
+GEO:60.168423;24.952051
+LOCATION:Sofia Helsinki
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2025-11-11-cactos-sofia/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Meetup at Supercell
+DTSTART;TZID=Europe/Helsinki:20250922T180000
+DTEND;TZID=Europe/Helsinki:20250922T203000
+DTSTAMP:20260806T171420Z
+UID:2025-09-22-supercell@pydata-helsinki.github.io
+DESCRIPTION:Programme:\n- Heikki Arponen: Reinforcement learning for games
+  at Supercell\n- Chandreyee Roy: Exploring sleep and activity using wearab
+ les\n- Allan Nevala: Meeting your people. For real.\n- Alexander Kevin Gil
+ bert: Estimating weight of cars from their dimensions\n- Teemu Säilynoja:
+  Marimo - a reactive\, git-friendly Python notebook\n\nDetails: https://py
+ data-helsinki.github.io/events/2025-09-22-supercell/\nRegister: https://ww
+ w.meetup.com/pydatahelsinki/events/310561378/
+GEO:60.161007;24.921534
+LOCATION:Supercell
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2025-09-22-supercell/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Meetup at Wonna
+DTSTART;TZID=Europe/Helsinki:20250826T180000
+DTEND;TZID=Europe/Helsinki:20250826T203000
+DTSTAMP:20260806T171420Z
+UID:2025-08-26-wonna@pydata-helsinki.github.io
+DESCRIPTION:Programme:\n- Teemu Säilynoja: Bayesian Beasts: Iterative mod
+ elling with PyMC to forecast Korkeasaari visits\n- Allan Nevala: The Model
+  Kitchen: Live Python Performance Lab\n\nDetails: https://pydata-helsinki.
+ github.io/events/2025-08-26-wonna/\nRegister: https://www.meetup.com/pydat
+ ahelsinki/events/308276812/
+GEO:60.195023;24.948183
+LOCATION:Wonna\, Elimäenkatu 17-19
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2025-08-26-wonna/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Summer Picnic with Helsinki Python and DataTribe
+DTSTART;TZID=Europe/Helsinki:20250727T140000
+DTEND;TZID=Europe/Helsinki:20250727T170000
+DTSTAMP:20260806T171420Z
+UID:2025-07-27-summer-picnic@pydata-helsinki.github.io
+DESCRIPTION:Details: https://pydata-helsinki.github.io/events/2025-07-27-s
+ ummer-picnic/\nRegister: https://www.meetup.com/helpy-meetups/events/31008
+ 9840/
+GEO:60.155388;24.948711
+LOCATION:Meripuisto
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2025-07-27-summer-picnic/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:PyData Helsinki: Pub evening in Kaisla
+DTSTART;TZID=Europe/Helsinki:20250625T170000
+DTEND;TZID=Europe/Helsinki:20250625T200000
+DTSTAMP:20260806T171420Z
+UID:2025-06-25-pub-kaisla@pydata-helsinki.github.io
+DESCRIPTION:Details: https://pydata-helsinki.github.io/events/2025-06-25-p
+ ub-kaisla/\nRegister: https://www.meetup.com/pydatahelsinki/events/3084105
+ 63/
+GEO:60.171909;24.946852
+LOCATION:Kaisla
+ORGANIZER;CN="PyData Helsinki":https://pydata-helsinki.github.io/
+STATUS:CONFIRMED
+URL:https://pydata-helsinki.github.io/events/2025-06-25-pub-kaisla/
+END:VEVENT
+END:VCALENDAR
