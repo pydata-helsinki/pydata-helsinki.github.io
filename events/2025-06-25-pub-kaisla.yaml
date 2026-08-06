@@ -2,6 +2,8 @@ title: Pub evening in Kaisla
 start: 2025-06-25 17:00
 venue:
   name: Kaisla
+  lat: 60.171909
+  lon: 24.946852
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/308410563/
   platform: Meetup

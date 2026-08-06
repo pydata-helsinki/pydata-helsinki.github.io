@@ -3,6 +3,8 @@ start: 2026-01-27 17:30
 venue:
   name: Hive Helsinki
   url: https://www.hive.fi/
+  lat: 60.180832
+  lon: 24.958258
 joint_with:
   - Helsinki Python
 registration:

@@ -4,6 +4,8 @@ end: 2025-08-26 20:30
 venue:
   name: Wonna
   address: Elimäenkatu 17-19
+  lat: 60.195023
+  lon: 24.948183
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/308276812/
   platform: Meetup

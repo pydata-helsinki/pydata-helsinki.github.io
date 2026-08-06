@@ -3,6 +3,8 @@ start: 2025-11-11 18:00
 end: 2025-11-11 20:30
 venue:
   name: Sofia Helsinki
+  lat: 60.168423
+  lon: 24.952051
 sponsor:
   name: Cactos
   url: https://cactos.com/

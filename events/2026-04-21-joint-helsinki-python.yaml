@@ -2,6 +2,8 @@ title: Joint meetup with Helsinki Python
 start: 2026-04-21 17:30
 venue:
   name: TEK & ILRY
+  lat: 60.1979
+  lon: 24.936829
 joint_with:
   - Helsinki Python
 summary: Hosted by TEK and ILRY.

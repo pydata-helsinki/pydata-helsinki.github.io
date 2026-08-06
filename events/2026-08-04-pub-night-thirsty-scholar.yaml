@@ -2,6 +2,8 @@ title: Pub Night at Thirsty Scholar
 start: 2026-08-04 17:00
 venue:
   name: Thirsty Scholar
+  lat: 60.171242
+  lon: 24.949219
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/315760731/
   platform: Meetup

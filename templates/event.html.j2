@@ -69,6 +69,27 @@
     </ul>
     {% endif %}
 
+    {% if event.venue.lat and event.venue.lon %}
+    <h2>Location</h2>
+    <div id="map" class="map"></div>
+    <p><a href="https://www.openstreetmap.org/?mlat={{ event.venue.lat }}&mlon={{ event.venue.lon }}#map=17/{{ event.venue.lat }}/{{ event.venue.lon }}">Open in OpenStreetMap</a></p>
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css">
+    <script defer src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+    <script>
+      addEventListener('DOMContentLoaded', () => {
+        const center = [{{ event.venue.lon }}, {{ event.venue.lat }}];
+        const map = new maplibregl.Map({
+          container: 'map',
+          style: 'https://tiles.openfreemap.org/styles/liberty',
+          center,
+          zoom: 14.5,
+          cooperativeGestures: true,
+        });
+        new maplibregl.Marker().setLngLat(center).addTo(map);
+      });
+    </script>
+    {% endif %}
+
     {% if event.joint_with %}
     <p>Organised together with
       {%- for partner in event.joint_with %} {{ partner }}{% if not loop.last %},{% endif %}{% endfor %}.</p>

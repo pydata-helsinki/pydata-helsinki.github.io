@@ -167,3 +167,8 @@ footer {
 .listed-on img {
     border-radius: 8px;
 }
+
+.map {
+    height: 320px;
+    border-radius: 8px;
+}

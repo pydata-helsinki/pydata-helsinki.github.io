@@ -175,6 +175,12 @@ class Event:
             }
             if self.venue.get("address"):
                 place["address"]["streetAddress"] = self.venue["address"]
+            if self.venue.get("lat") and self.venue.get("lon"):
+                place["geo"] = {
+                    "@type": "GeoCoordinates",
+                    "latitude": self.venue["lat"],
+                    "longitude": self.venue["lon"],
+                }
             data["location"] = place
         offer = None
         if self.registration.get("url"):
@@ -320,6 +326,8 @@ def build_ics(events: list[Event], updated: datetime | None = None) -> bytes:
             if ev.venue.get("address"):
                 loc += ", " + ev.venue["address"]
             ie.add("location", loc)
+        if ev.venue.get("lat") and ev.venue.get("lon"):
+            ie.add("geo", (ev.venue["lat"], ev.venue["lon"]))
         desc = ev.summary or ""
         if ev.talks:
             talk_lines = [

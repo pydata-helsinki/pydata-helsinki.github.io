@@ -4,6 +4,8 @@ end: 2026-08-12 20:30
 venue:
   name: Visma
   address: Mall of Tripla, Workery East D
+  lat: 60.19852
+  lon: 24.931107
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/315105052/
   platform: Meetup

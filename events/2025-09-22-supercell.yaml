@@ -3,6 +3,8 @@ start: 2025-09-22 18:00
 end: 2025-09-22 20:30
 venue:
   name: Supercell
+  lat: 60.161007
+  lon: 24.921534
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/310561378/
   platform: Meetup

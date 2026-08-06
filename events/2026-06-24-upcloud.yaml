@@ -3,6 +3,8 @@ start: 2026-06-24 17:30
 end: 2026-06-24 20:30
 venue:
   name: UpCloud
+  lat: 60.169056
+  lon: 24.94483
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/314755648/
   platform: Meetup

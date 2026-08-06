@@ -4,6 +4,8 @@ end: 2026-03-19 20:30
 venue:
   name: Elisa
   url: https://elisa.fi/
+  lat: 60.19731
+  lon: 24.936693
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/313128987/
   platform: Meetup

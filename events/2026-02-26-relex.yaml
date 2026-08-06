@@ -4,6 +4,8 @@ end: 2026-02-26 20:30
 venue:
   name: RELEX
   url: https://www.relexsolutions.com/
+  lat: 60.21268
+  lon: 24.918219
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/313126835/
   platform: Meetup
