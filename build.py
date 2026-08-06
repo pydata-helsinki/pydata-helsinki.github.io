@@ -33,6 +33,7 @@ from zoneinfo import ZoneInfo
 import yaml
 from icalendar import Calendar as ICalendar
 from icalendar import Event as IEvent
+from icalendar import vCalAddress
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 ROOT = Path(__file__).parent
@@ -331,8 +332,10 @@ def build_ics(events: list[Event], updated: datetime | None = None) -> bytes:
         if ev.registration.get("url"):
             desc += f"\nRegister: {ev.registration['url']}"
         ie.add("description", desc.strip())
-        if ev.status == "cancelled":
-            ie.add("status", "CANCELLED")
+        organizer = vCalAddress(f"{SITE_URL}/")
+        organizer.params["cn"] = "PyData Helsinki"
+        ie.add("organizer", organizer)
+        ie.add("status", "CANCELLED" if ev.status == "cancelled" else "CONFIRMED")
         cal.add_component(ie)
     cal.add_missing_timezones()
     return cal.to_ical()
@@ -402,9 +405,21 @@ def main() -> None:
     )
     past = [e for e in events if not e.is_upcoming(today)]
 
-    # Index
+    # Index. Upcoming events join the page's @graph so aggregators can pick up
+    # all event data in one fetch; same @id as the detail pages, so no dupes.
+    graph = []
+    for e in upcoming:
+        d = e.jsonld(upcoming=True)
+        d.pop("@context")
+        graph.append(d)
     (out / "index.html").write_text(
-        env.get_template("index.html.j2").render(upcoming=upcoming, past=past),
+        env.get_template("index.html.j2").render(
+            upcoming=upcoming,
+            past=past,
+            upcoming_jsonld=",\n".join(
+                json.dumps(d, indent=2, ensure_ascii=False) for d in graph
+            ),
+        ),
         encoding="utf-8",
     )
 

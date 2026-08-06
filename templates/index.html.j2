@@ -36,7 +36,9 @@
       "name": "PyData Helsinki",
       "publisher": {"@id": "{{ site_url }}/#organization"},
       "inLanguage": "en"
-    }
+    }{% if upcoming_jsonld %},
+{{ upcoming_jsonld | safe }}
+{% endif %}
   ]
 }
   </script>
