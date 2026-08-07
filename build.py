@@ -40,6 +40,7 @@ ROOT = Path(__file__).parent
 SITE_URL = "https://pydata-helsinki.fi"
 TZ = ZoneInfo("Europe/Helsinki")
 DEFAULT_IMAGE = f"{SITE_URL}/assets/pydata-helsinki-banner-1200x630.webp"
+EXT_DOCS = "https://github.com/pydata-helsinki/pydata-helsinki.github.io#json-feed-extensions"
 
 ORGANIZER = {
     "@type": "Organization",
@@ -354,7 +355,7 @@ def build_ics(events: list[Event], updated: datetime | None = None) -> bytes:
     return cal.to_ical()
 
 
-def build_json_feed(events: list[Event], today: date, community: dict) -> str:
+def build_json_feed(events: list[Event], community: dict) -> str:
     items = []
     for ev in events:
         content = f"<p>{html.escape(ev.display_date)}"
@@ -369,13 +370,37 @@ def build_json_feed(events: list[Event], today: date, community: dict) -> str:
                 else f"<li>{html.escape(str(t['title']))}</li>"
                 for t in ev.talks
             ) + "</ul>"
+        ext = {
+            "start": ev.start.isoformat() if ev.start else ev.month,
+            "status": ev.status,
+            "mode": ev.mode,
+        }
+        if ev.end:
+            ext["end"] = ev.end.isoformat()
+        if ev.venue:
+            ext["venue"] = ev.venue
+        if ev.registration.get("url"):
+            ext["registration_url"] = ev.registration["url"]
+        if not items:
+            ext = {"about": EXT_DOCS, **ext}
+        if ev.talks:
+            ext["talks"] = [
+                {
+                    "title": t["title"],
+                    **({"speakers": [
+                        {k: v for k, v in s.items() if v} for s in t["speakers"]
+                    ]} if t["speakers"] else {}),
+                    **({"video": t["video"]} if t.get("video") else {}),
+                }
+                for t in ev.talks
+            ]
         item = {
             "id": ev.url,
             "url": ev.url,
             "title": f"PyData Helsinki: {ev.title}",
             "content_html": content,
             "image": DEFAULT_IMAGE,
-            "_schema_org": ev.jsonld(upcoming=ev.is_upcoming(today)),
+            "_pydata_helsinki_event": ext,
         }
         if ev.start:
             item["date_published"] = ev.start.isoformat()
@@ -392,7 +417,11 @@ def build_json_feed(events: list[Event], today: date, community: dict) -> str:
         "icon": f"{SITE_URL}/assets/web-app-manifest-512x512.png",
         "favicon": f"{SITE_URL}/assets/favicon-96x96.png",
         "authors": [{"name": "PyData Helsinki", "url": f"{SITE_URL}/"}],
-        "_pydata_helsinki": {**community, "links": ORGANIZER["sameAs"]},
+        "_pydata_helsinki": {
+            "about": EXT_DOCS,
+            **community,
+            "links": ORGANIZER["sameAs"],
+        },
         "items": items,
     }
     return json.dumps(feed, indent=2, ensure_ascii=False, default=str)
@@ -476,7 +505,7 @@ def main() -> None:
     now = datetime.now(timezone.utc)
     (out / "events.ics").write_bytes(build_ics(events, now))
     (out / "events.json").write_text(
-        build_json_feed(events, today, community), encoding="utf-8"
+        build_json_feed(events, community), encoding="utf-8"
     )
     (out / "feed.xml").write_text(
         env.get_template("feed.xml.j2").render(events=events, updated=now),

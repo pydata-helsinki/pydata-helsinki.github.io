@@ -12,11 +12,8 @@ one YAML file per event in `events/` renders into
   video. Structured data is deliberately maximalist — it serves not just
   Google's event search but any AI system parsing the pages.
 - `events.ics` — subscribable iCalendar feed
-- `feed.xml` (Atom) and `events.json` (JSON Feed). The JSON Feed carries a
-  `_schema_org` extension per item (the same schema.org Event node as the event
-  page) and a `_pydata_helsinki` extension with the group's member count, read
-  from `community.yaml` — refresh it with `uv run scrape_members.py`, or edit
-  by hand once we're off Meetup.
+- `feed.xml` (Atom) and `events.json` (JSON Feed), with custom extensions —
+  see [JSON Feed extensions](#json-feed-extensions) below
 - `sitemap.xml` (referenced from `robots.txt`, which allows all crawlers)
 
 Everything listed in `STATIC` in `build.py` (assets, slides, for-speakers,
@@ -61,6 +58,32 @@ only when they differ — e.g. Cactos sponsored but rented Sofia as the venue.
 Pub nights and picnics (no talks) get no sponsor.
 
 Commit to `main` and Cloudflare Pages builds and deploys.
+
+## JSON Feed extensions
+
+`events.json` uses two [JSON Feed custom extensions](https://www.jsonfeed.org/version/1.1/#extensions);
+their `about` fields link back to this section. Readers that don't understand
+them ignore them; event scrapers are welcome to use them. Empty/unknown fields
+are omitted.
+
+Top-level `_pydata_helsinki` — group metadata:
+
+- `member_count` (integer) and `member_count_as_of` (ISO date) — community
+  size, currently the meetup.com member count. Stored in `community.yaml`;
+  refresh with `uv run scrape_members.py`, or edit by hand once we're off
+  Meetup.
+- `links` — other places the group exists (Meetup, LinkedIn, Mastodon, YouTube)
+
+Per-item `_pydata_helsinki_event` — the event's machine-readable facts:
+
+- `start`, `end` — ISO 8601 with UTC offset (times are Europe/Helsinki); for
+  some historical events `start` is just `"YYYY-MM"`
+- `status` — `scheduled` or `cancelled`
+- `mode` — `offline` or `online`
+- `venue` — `{name, address, lat, lon}`
+- `registration_url` — where to RSVP
+- `talks` — list of `{title, speakers, video}`, where `speakers` is a list of
+  `{name, url}` and `video` is a recording link
 
 ## Building locally
 
