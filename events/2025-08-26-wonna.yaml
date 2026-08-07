@@ -11,7 +11,7 @@ registration:
   platform: Meetup
 talks:
   - speaker: Teemu Säilynoja
-    speaker_url: https://teemusailynoja.github.io/
+    speaker_url: https://www.linkedin.com/in/teemu-sailynoja/
     title: "Bayesian Beasts: Iterative modelling with PyMC to forecast Korkeasaari visits"
     video: https://youtu.be/VXrKLX5Wjs8
   - speaker: Allan Nevala
