@@ -382,10 +382,11 @@ def build_json_feed(
         content += "</p>"
         if ev.talks:
             content += "<ul>" + "".join(
-                f"<li>{html.escape(t['speaker_names'])}: "
-                f"{html.escape(str(t['title']))}</li>"
-                if t["speaker_names"]
-                else f"<li>{html.escape(str(t['title']))}</li>"
+                "<li>"
+                + (f"{html.escape(t['speaker_names'])}: " if t["speaker_names"] else "")
+                + html.escape(str(t["title"]))
+                + (f"<p>{html.escape(t['description'])}</p>" if t.get("description") else "")
+                + "</li>"
                 for t in ev.talks
             ) + "</ul>"
         ext = {
