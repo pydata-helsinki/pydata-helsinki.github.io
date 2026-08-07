@@ -1,0 +1,5 @@
+/events.json
+  Content-Type: application/feed+json
+
+/feed.xml
+  Content-Type: application/atom+xml

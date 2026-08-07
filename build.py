@@ -58,6 +58,7 @@ ORGANIZER = {
 
 # Files and directories copied into the output as-is.
 STATIC = [
+    "_headers",
     "style.css",
     "robots.txt",
     "assets",
