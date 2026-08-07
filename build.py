@@ -354,7 +354,7 @@ def build_ics(events: list[Event], updated: datetime | None = None) -> bytes:
     return cal.to_ical()
 
 
-def build_json_feed(events: list[Event]) -> str:
+def build_json_feed(events: list[Event], today: date, community: dict) -> str:
     items = []
     for ev in events:
         content = f"<p>{html.escape(ev.display_date)}"
@@ -374,6 +374,8 @@ def build_json_feed(events: list[Event]) -> str:
             "url": ev.url,
             "title": f"PyData Helsinki: {ev.title}",
             "content_html": content,
+            "image": DEFAULT_IMAGE,
+            "_schema_org": ev.jsonld(upcoming=ev.is_upcoming(today)),
         }
         if ev.start:
             item["date_published"] = ev.start.isoformat()
@@ -386,9 +388,14 @@ def build_json_feed(events: list[Event]) -> str:
         "home_page_url": f"{SITE_URL}/",
         "feed_url": f"{SITE_URL}/events.json",
         "description": "Events of the PyData Helsinki meetup group",
+        "language": "en",
+        "icon": f"{SITE_URL}/assets/web-app-manifest-512x512.png",
+        "favicon": f"{SITE_URL}/assets/favicon-96x96.png",
+        "authors": [{"name": "PyData Helsinki", "url": f"{SITE_URL}/"}],
+        "_pydata_helsinki": {**community, "links": ORGANIZER["sameAs"]},
         "items": items,
     }
-    return json.dumps(feed, indent=2, ensure_ascii=False)
+    return json.dumps(feed, indent=2, ensure_ascii=False, default=str)
 
 
 def main() -> None:
@@ -409,7 +416,22 @@ def main() -> None:
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    env.globals.update(site_url=SITE_URL, default_image=DEFAULT_IMAGE)
+    community_path = ROOT / "community.yaml"
+    community = (
+        yaml.safe_load(community_path.read_text(encoding="utf-8"))
+        if community_path.exists()
+        else {}
+    )
+    if community.get("member_count"):
+        ORGANIZER["interactionStatistic"] = {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/JoinAction",
+            "userInteractionCount": community["member_count"],
+        }
+
+    env.globals.update(
+        site_url=SITE_URL, default_image=DEFAULT_IMAGE, community=community
+    )
 
     events = load_events(ROOT / "events")
     today = datetime.now(TZ).date()
@@ -453,7 +475,9 @@ def main() -> None:
     # Feeds
     now = datetime.now(timezone.utc)
     (out / "events.ics").write_bytes(build_ics(events, now))
-    (out / "events.json").write_text(build_json_feed(events), encoding="utf-8")
+    (out / "events.json").write_text(
+        build_json_feed(events, today, community), encoding="utf-8"
+    )
     (out / "feed.xml").write_text(
         env.get_template("feed.xml.j2").render(events=events, updated=now),
         encoding="utf-8",

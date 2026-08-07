@@ -1,6 +1,9 @@
 build:
     uv run build.py
 
+scrape-members:
+    uv run scrape_members.py
+
 # Create a skeleton event file, e.g. `just new-event 2026-09-15-acme`
 new-event slug:
     #!/usr/bin/env bash

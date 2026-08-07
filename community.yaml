@@ -1,0 +1,4 @@
+# Group-level metadata surfaced in feeds (see build.py).
+# Refresh with `uv run scrape_members.py`, or by hand once we leave Meetup.
+member_count: 1219
+member_count_as_of: 2026-08-07

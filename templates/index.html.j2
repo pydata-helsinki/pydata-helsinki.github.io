@@ -18,6 +18,13 @@
         "name": "Helsinki",
         "address": {"@type": "PostalAddress", "addressCountry": "FI"}
       },
+{% if community.member_count %}
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/JoinAction",
+        "userInteractionCount": {{ community.member_count }}
+      },
+{% endif %}
       "sameAs": [
         "https://www.meetup.com/pydata-helsinki/",
         "https://www.linkedin.com/company/pydata-helsinki/",

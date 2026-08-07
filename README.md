@@ -12,7 +12,11 @@ one YAML file per event in `events/` renders into
   video. Structured data is deliberately maximalist — it serves not just
   Google's event search but any AI system parsing the pages.
 - `events.ics` — subscribable iCalendar feed
-- `feed.xml` (Atom) and `events.json` (JSON Feed)
+- `feed.xml` (Atom) and `events.json` (JSON Feed). The JSON Feed carries a
+  `_schema_org` extension per item (the same schema.org Event node as the event
+  page) and a `_pydata_helsinki` extension with the group's member count, read
+  from `community.yaml` — refresh it with `uv run scrape_members.py`, or edit
+  by hand once we're off Meetup.
 - `sitemap.xml` (referenced from `robots.txt`, which allows all crawlers)
 
 Everything listed in `STATIC` in `build.py` (assets, slides, for-speakers,
