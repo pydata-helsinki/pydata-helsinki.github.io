@@ -430,6 +430,16 @@ def build_json_feed(
         ev.updated = (
             datetime.fromisoformat(prev_date) if prev_date and prev == item else now
         )
+        # ONE-TIME SEED — delete this block after the next deploy. Every past
+        # event currently carries the same build timestamp, so feed readers sort
+        # them arbitrarily; date them to when they actually happened. Once that
+        # is deployed, the comparison above carries the dates forward and only a
+        # real content change bumps them again.
+        if ev.start:
+            if (ev.end or ev.start) < now:
+                ev.updated = ev.end or ev.start
+        else:
+            ev.updated = _as_datetime(f"{ev.month}-01")
         item["date_modified"] = ev.updated.isoformat()
         items.append(item)
     feed = {
