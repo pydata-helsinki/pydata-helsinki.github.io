@@ -200,7 +200,8 @@ add-to-calendar-button::part(atcb-list)::before {
     font-size: 0.85em;
 }
 
-add-to-calendar-button::part(atcb-button) {
+/* The icon-only 📅 button in the header; event pages keep the default look. */
+.feed-links add-to-calendar-button::part(atcb-button) {
     padding: 0;
     margin: 0;
     min-width: 0;
