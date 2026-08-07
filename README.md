@@ -12,7 +12,10 @@ one YAML file per event in `events/` renders into
   video. Structured data is deliberately maximalist — it serves not just
   Google's event search but any AI system parsing the pages.
 - `events.ics` — subscribable iCalendar feed
-- `feed.xml` (Atom) and `events.json` (JSON Feed), with custom extensions —
+- `feed.xml` (Atom) with event dates, venue, and coordinates in the RSS 1.0
+  event module (`ev:`) and W3C basic geo (`geo:`) namespaces, plus a
+  `rel="related"` registration link per entry
+- `events.json` (JSON Feed) with custom extensions —
   see [JSON Feed extensions](#json-feed-extensions) below
 - `sitemap.xml` (referenced from `robots.txt`, which allows all crawlers)
 

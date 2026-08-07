@@ -25,6 +25,7 @@ import argparse
 import html
 import json
 import shutil
+import urllib.request
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -83,6 +84,7 @@ class Event:
     joint_with: list = field(default_factory=list)
     summary: str = ""
     talks: list = field(default_factory=list)
+    updated: datetime | None = None
 
     @property
     def url(self) -> str:
@@ -278,6 +280,19 @@ def _as_datetime(val) -> datetime:
     return datetime.combine(val, datetime.min.time(), TZ)  # plain date
 
 
+def fetch_deployed_items() -> dict[str, dict]:
+    """The live feed's items by id — the state that lets unchanged events keep
+    their date_modified. Unreachable deployment intentionally fails the build."""
+    req = urllib.request.Request(
+        f"{SITE_URL}/events.json",
+        # Cloudflare 403s the default Python-urllib user agent
+        headers={"User-Agent": f"pydata-helsinki-build (+{SITE_URL}/)"},
+    )
+    with urllib.request.urlopen(req, timeout=30) as r:
+        prev = json.load(r)
+    return {it["id"]: it for it in prev["items"]}
+
+
 def load_events(events_dir: Path) -> list[Event]:
     events = []
     for path in sorted(events_dir.glob("*.yaml")):
@@ -355,7 +370,9 @@ def build_ics(events: list[Event], updated: datetime | None = None) -> bytes:
     return cal.to_ical()
 
 
-def build_json_feed(events: list[Event], community: dict) -> str:
+def build_json_feed(
+    events: list[Event], community: dict, prev_items: dict[str, dict], now: datetime
+) -> str:
     items = []
     for ev in events:
         content = f"<p>{html.escape(ev.display_date)}"
@@ -406,6 +423,12 @@ def build_json_feed(events: list[Event], community: dict) -> str:
             item["date_published"] = ev.start.isoformat()
         if ev.registration.get("url"):
             item["external_url"] = ev.registration["url"]
+        prev = {k: v for k, v in prev_items.get(ev.url, {}).items() if k != "date_modified"}
+        prev_date = prev_items.get(ev.url, {}).get("date_modified")
+        ev.updated = (
+            datetime.fromisoformat(prev_date) if prev_date and prev == item else now
+        )
+        item["date_modified"] = ev.updated.isoformat()
         items.append(item)
     feed = {
         "version": "https://jsonfeed.org/version/1.1",
@@ -505,10 +528,13 @@ def main() -> None:
     now = datetime.now(timezone.utc)
     (out / "events.ics").write_bytes(build_ics(events, now))
     (out / "events.json").write_text(
-        build_json_feed(events, community), encoding="utf-8"
+        build_json_feed(events, community, fetch_deployed_items(), now),
+        encoding="utf-8",
     )
     (out / "feed.xml").write_text(
-        env.get_template("feed.xml.j2").render(events=events, updated=now),
+        env.get_template("feed.xml.j2").render(
+            events=events, updated=max(e.updated for e in events)
+        ),
         encoding="utf-8",
     )
 

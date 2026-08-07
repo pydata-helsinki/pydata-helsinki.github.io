@@ -1,20 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:ev="http://purl.org/rss/1.0/modules/event/"
+      xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
   <title>PyData Helsinki events</title>
+  <subtitle>Events of the PyData Helsinki meetup group</subtitle>
   <id>{{ site_url }}/feed.xml</id>
-  <link href="{{ site_url }}/" />
+  <link rel="alternate" type="text/html" href="{{ site_url }}/" />
   <link rel="self" href="{{ site_url }}/feed.xml" />
-  <updated>{{ updated.strftime("%Y-%m-%dT%H:%M:%SZ") }}</updated>
-  <author><name>PyData Helsinki</name></author>
+  <icon>{{ site_url }}/assets/favicon-96x96.png</icon>
+  <logo>{{ default_image }}</logo>
+  <updated>{{ updated.isoformat() }}</updated>
+  <author><name>PyData Helsinki</name><uri>{{ site_url }}/</uri></author>
   {% for event in events %}
   <entry>
     <title>PyData Helsinki: {{ event.title }}</title>
     <id>{{ event.url }}</id>
-    <link href="{{ event.url }}" />
-    <updated>{% if event.start %}{{ event.start.isoformat() }}{% else %}{{ event.month }}-01T00:00:00Z{% endif %}</updated>
+    <link rel="alternate" type="text/html" href="{{ event.url }}" />
+    {% if event.registration.url %}
+    <link rel="related" type="text/html" title="Register" href="{{ event.registration.url }}" />
+    {% endif %}
+    <updated>{{ event.updated.isoformat() }}</updated>
+    {% if event.summary %}
+    <summary>{{ event.summary }}</summary>
+    {% endif %}
+    {% if event.start %}
+    <ev:startdate>{{ event.start.isoformat() }}</ev:startdate>
+    {% endif %}
+    {% if event.end %}
+    <ev:enddate>{{ event.end.isoformat() }}</ev:enddate>
+    {% endif %}
+    {% if event.venue.name %}
+    <ev:location>{{ event.venue.name }}{% if event.venue.address %}, {{ event.venue.address }}{% endif %}</ev:location>
+    {% endif %}
+    {% if event.venue.lat and event.venue.lon %}
+    <geo:lat>{{ event.venue.lat }}</geo:lat>
+    <geo:long>{{ event.venue.lon }}</geo:long>
+    {% endif %}
+    <ev:organizer>PyData Helsinki</ev:organizer>
+    <ev:type>meetup</ev:type>
     <content type="html">
       &lt;p&gt;{{ event.display_date }}{% if event.venue.name %} at {{ event.venue.name }}{% endif %}&lt;/p&gt;
-      {% if event.talks %}&lt;ul&gt;{% for talk in event.talks %}&lt;li&gt;{% if talk.speaker %}{{ talk.speaker }}: {% endif %}{{ talk.title }}&lt;/li&gt;{% endfor %}&lt;/ul&gt;{% endif %}
+      {% if event.talks %}&lt;ul&gt;{% for talk in event.talks %}&lt;li&gt;{% if talk.speaker_names %}{{ talk.speaker_names }}: {% endif %}{{ talk.title }}&lt;/li&gt;{% endfor %}&lt;/ul&gt;{% endif %}
     </content>
   </entry>
   {% endfor %}
