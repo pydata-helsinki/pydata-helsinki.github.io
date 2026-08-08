@@ -137,7 +137,8 @@ class Event:
             "@context": "https://schema.org",
             "@type": "Event",
             "@id": self.url,
-            "name": self.title,
+            "name": f"{ORGANIZER['name']}: {self.title}",
+            "identifier": self.slug,
             "url": self.url,
             "image": DEFAULT_IMAGE,
             "eventStatus": (
@@ -500,8 +501,9 @@ def main() -> None:
     for e in upcoming:
         d = e.jsonld(upcoming=True)
         d.pop("@context")
-        # The page's graph already defines the Organization node in full.
-        d["organizer"] = {"@id": ORGANIZER["@id"]}
+        # Brainberg doesn't resolve @id
+        d["organizer"] = { field: ORGANIZER[field]
+                           for field in ('@id', 'name', 'url') }
         graph.append(d)
     (out / "index.html").write_text(
         env.get_template("index.html.j2").render(
