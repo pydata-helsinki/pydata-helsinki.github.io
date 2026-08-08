@@ -1,0 +1,10 @@
+{# Markdown talk line: speaker(s), talk title (linked to video if any). #}
+{% macro talk_line(talk) %}
+{%- for s in talk.speakers %}
+{%- if s.url %}[{{ s.name }}]({{ s.url }}){% else %}{{ s.name }}{% endif %}
+{%- if not loop.last %} & {% endif %}
+{%- endfor %}
+{%- if talk.speakers %}: {% endif %}
+{%- if talk.video %}[**{{ talk.title }}**]({{ talk.video }}){% else %}**{{ talk.title }}**{% endif %}
+{%- if talk.lightning %} (lightning talk){% endif %}
+{%- endmacro %}

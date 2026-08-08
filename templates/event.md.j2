@@ -1,0 +1,62 @@
+{% from "_talk.md.j2" import talk_line %}
+# {{ event.title }}
+
+{{ event.display_date }}
+{%- if event.venue.name %} · {% if event.venue.url %}[{{ event.venue.name }}]({{ event.venue.url }}){% else %}{{ event.venue.name }}{% endif %}{% if event.venue.address %}, {{ event.venue.address }}{% endif %}{% endif %}
+{%- if event.status == "cancelled" %} · **Cancelled**{% endif %}
+
+
+{% if event.summary %}
+{{ event.summary }}
+{% endif %}
+{% if event.effective_sponsor %}
+
+Sponsored by {% if event.effective_sponsor.url %}[{{ event.effective_sponsor.name }}]({{ event.effective_sponsor.url }}){% else %}{{ event.effective_sponsor.name }}{% endif %}.
+{% endif %}
+{% if is_upcoming and event.registration.url and event.status != "cancelled" %}
+
+**[Register on {{ event.registration.platform | default("Meetup") }}]({{ event.registration.url }})** — attendance is free of charge.
+{% elif is_upcoming and event.status != "cancelled" %}
+
+Registration is not open yet{% if event.registration.opens %} — it opens on {{ event.registration.opens }}{% endif %}.
+Subscribe to [our calendar]({{ site_url }}/events.ics) or the [Atom feed]({{ site_url }}/feed.xml)
+to hear when it does. Attendance is free of charge.
+{% endif %}
+{% if event.schedule %}
+
+## Schedule
+
+{% for row in event.schedule %}
+- {{ row.time }} — {{ row.item }}
+{% endfor %}
+{% endif %}
+{% if event.talks %}
+
+## Programme
+
+{% for talk in event.talks %}
+- {{ talk_line(talk) }}
+{% if talk.description %}
+
+  {{ talk.description | replace("\n", "\n  ") }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if event.venue.lat and event.venue.lon %}
+
+## Location
+
+[Map location](https://www.openstreetmap.org/?mlat={{ event.venue.lat }}&mlon={{ event.venue.lon }}#map=17/{{ event.venue.lat }}/{{ event.venue.lon }})
+{% endif %}
+{% if event.joint_with %}
+
+Organised together with {{ event.joint_with | join(", ") }}.
+{% endif %}
+{% if not is_upcoming and event.registration.url %}
+
+This event has taken place. The original event listing is [on {{ event.registration.platform | default("Meetup") }}]({{ event.registration.url }}).
+{% endif %}
+
+---
+
+[PyData Helsinki]({{ site_url }}/) · [Upcoming events]({{ site_url }}/#upcoming) · [Subscribe to our calendar]({{ site_url }}/events.ics)

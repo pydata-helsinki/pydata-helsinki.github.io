@@ -1,0 +1,20 @@
+# Events – PyData Helsinki
+
+Subscribe to our [calendar (iCal)]({{ site_url }}/events.ics), the
+[Atom feed]({{ site_url }}/feed.xml) or the [JSON feed]({{ site_url }}/events.json).
+
+## Upcoming events
+
+{% for event in upcoming %}
+{% include "_event_list_item.md.j2" %}
+{% endfor %}
+
+## Past events
+
+{% for event in past %}
+{% include "_event_list_item.md.j2" %}
+{% endfor %}
+
+---
+
+[PyData Helsinki]({{ site_url }}/) · [Give a talk]({{ site_url }}/for-speakers/) · [Host an event]({{ site_url }}/for-companies/)

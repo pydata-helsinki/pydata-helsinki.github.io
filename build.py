@@ -61,6 +61,7 @@ STATIC = [
     "_headers",
     "style.css",
     "robots.txt",
+    "llms.txt",
     "assets",
     "slides",
     "for-speakers",
@@ -518,6 +519,10 @@ def main() -> None:
         ),
         encoding="utf-8",
     )
+    (out / "index.md").write_text(
+        env.get_template("index.md.j2").render(upcoming=upcoming, past=past),
+        encoding="utf-8",
+    )
 
     # Event listing at /events/, where the event page URLs invite people to look
     (out / "events").mkdir(parents=True, exist_ok=True)
@@ -525,9 +530,14 @@ def main() -> None:
         env.get_template("events.html.j2").render(upcoming=upcoming, past=past),
         encoding="utf-8",
     )
+    (out / "events" / "index.md").write_text(
+        env.get_template("events.md.j2").render(upcoming=upcoming, past=past),
+        encoding="utf-8",
+    )
 
     # Event pages
     tpl = env.get_template("event.html.j2")
+    md_tpl = env.get_template("event.md.j2")
     for ev in events:
         page_dir = out / "events" / ev.slug
         page_dir.mkdir(parents=True)
@@ -535,6 +545,10 @@ def main() -> None:
         jsonld = json.dumps(ev.jsonld(upcoming=up), indent=2, ensure_ascii=False)
         page_dir.joinpath("index.html").write_text(
             tpl.render(event=ev, jsonld=jsonld, is_upcoming=up),
+            encoding="utf-8",
+        )
+        page_dir.joinpath("index.md").write_text(
+            md_tpl.render(event=ev, is_upcoming=up),
             encoding="utf-8",
         )
 

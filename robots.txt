@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://pydata-helsinki.fi/sitemap.xml
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
