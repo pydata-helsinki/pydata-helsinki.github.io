@@ -151,7 +151,7 @@ class Event:
                 if self.mode == "online"
                 else "https://schema.org/OfflineEventAttendanceMode"
             ),
-            "organizer": ORGANIZER,
+            "organizer": { key: ORGANIZER[key] for key in ORGANIZER if key != 'interactionStatistic' },
             "inLanguage": "en",
             "isAccessibleForFree": True,
         }
