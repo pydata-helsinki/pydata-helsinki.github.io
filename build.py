@@ -516,6 +516,13 @@ def main() -> None:
         encoding="utf-8",
     )
 
+    # Event listing at /events/, where the event page URLs invite people to look
+    (out / "events").mkdir(parents=True, exist_ok=True)
+    (out / "events" / "index.html").write_text(
+        env.get_template("events.html.j2").render(upcoming=upcoming, past=past),
+        encoding="utf-8",
+    )
+
     # Event pages
     tpl = env.get_template("event.html.j2")
     for ev in events:
@@ -543,7 +550,12 @@ def main() -> None:
     )
 
     # Sitemap
-    urls = [f"{SITE_URL}/", f"{SITE_URL}/for-speakers/", f"{SITE_URL}/for-companies/"]
+    urls = [
+        f"{SITE_URL}/",
+        f"{SITE_URL}/events/",
+        f"{SITE_URL}/for-speakers/",
+        f"{SITE_URL}/for-companies/",
+    ]
     urls += [e.url for e in events]
     (out / "sitemap.xml").write_text(
         env.get_template("sitemap.xml.j2").render(urls=urls), encoding="utf-8"

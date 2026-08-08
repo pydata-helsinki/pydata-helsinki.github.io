@@ -1,0 +1,30 @@
+{% extends "base.html.j2" %}
+{% block title %}Events – PyData Helsinki{% endblock %}
+{% block canonical %}{{ site_url }}/events/{% endblock %}
+{% block og_title %}PyData Helsinki events{% endblock %}
+{% block description %}All PyData Helsinki meetups, upcoming and past, with their talks and speakers.{% endblock %}
+{% block body %}
+    <nav><a href="/">← PyData Helsinki</a></nav>
+    <h1>Events</h1>
+    <p>Subscribe to our <a href="/events.ics">calendar (iCal)</a>, the
+    <a href="/feed.xml">Atom feed</a> or the <a href="/events.json">JSON feed</a>.</p>
+
+    <h2 id="upcoming">Upcoming events</h2>
+    <ul>
+      {% for event in upcoming %}
+      {% include "_event_list_item.html.j2" %}
+      {% endfor %}
+    </ul>
+
+    <h2 id="past">Past events</h2>
+    <ul>
+      {% for event in past %}
+      {% include "_event_list_item.html.j2" %}
+      {% endfor %}
+    </ul>
+
+    <footer>
+    <p><a href="/">PyData Helsinki</a> · <a href="/for-speakers/">Give a talk</a> ·
+       <a href="/for-companies/">Host an event</a></p>
+    </footer>
+{% endblock %}
