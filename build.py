@@ -197,7 +197,9 @@ class Event:
                 "url": self.registration["url"],
                 "price": 0,
                 "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock",
+                "availability": "https://schema.org/InStock"
+                if upcoming
+                else "https://schema.org/SoldOut",
             }
         elif upcoming and self.status != "cancelled":
             # RSVPs not open yet: no registration url in the YAML.
@@ -497,9 +499,10 @@ def main() -> None:
 
     # Index. Upcoming events join the page's @graph so aggregators can pick up
     # all event data in one fetch; same @id as the detail pages, so no dupes.
+    # The most recent past event comes along so scrapers see some continuity.
     graph = []
-    for e in upcoming:
-        d = e.jsonld(upcoming=True)
+    for e in upcoming + past[:1]:
+        d = e.jsonld(upcoming=e.is_upcoming(today))
         d.pop("@context")
         # Brainberg doesn't resolve @id
         d["organizer"] = { field: ORGANIZER[field]
