@@ -3,3 +3,18 @@
 
 /feed.xml
   Content-Type: application/atom+xml
+
+/
+  Vary: Accept
+
+/index.md
+  Vary: Accept
+
+/events/*
+  Vary: Accept
+
+/for-speakers/*
+  Vary: Accept
+
+/for-companies/*
+  Vary: Accept

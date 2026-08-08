@@ -1,8 +1,15 @@
 {
   "name": "pydata-helsinki",
+  "main": "worker.js",
   "compatibility_date": "2026-08-06",
   "assets": {
-    "directory": "./_site/"
+    "directory": "./_site/",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/",
+      "/events/*",
+      "/for-speakers/*",
+      "/for-companies/*"
+    ]
   }
 }
-
