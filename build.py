@@ -497,6 +497,8 @@ def main() -> None:
         [e for e in events if e.is_upcoming(today)], key=lambda e: e.sort_key
     )
     past = [e for e in events if not e.is_upcoming(today)]
+    recent_past_cutoff = (today - timedelta(days=365)).isoformat()
+    recent_past = [e for e in past if e.sort_key >= recent_past_cutoff]
 
     # Index. Upcoming events join the page's @graph so aggregators can pick up
     # all event data in one fetch; same @id as the detail pages, so no dupes.
@@ -512,7 +514,7 @@ def main() -> None:
     (out / "index.html").write_text(
         env.get_template("index.html.j2").render(
             upcoming=upcoming,
-            past=past,
+            past=recent_past,
             upcoming_jsonld=",\n".join(
                 json.dumps(d, indent=2, ensure_ascii=False) for d in graph
             ),
@@ -520,7 +522,7 @@ def main() -> None:
         encoding="utf-8",
     )
     (out / "index.md").write_text(
-        env.get_template("index.md.j2").render(upcoming=upcoming, past=past),
+        env.get_template("index.md.j2").render(upcoming=upcoming, past=recent_past),
         encoding="utf-8",
     )
 

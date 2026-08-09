@@ -1,6 +1,9 @@
 build:
     uv run build.py
 
+serve:
+    uv run -m http.server -d _site/
+
 scrape-members:
     uv run scrape_members.py
 
