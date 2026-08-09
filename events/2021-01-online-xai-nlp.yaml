@@ -1,6 +1,11 @@
 title: "Online meetup: xAI & NLP"
-month: "2021-01"
+start: 2021-01-28 18:30
 mode: online
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/275750302/
   platform: Meetup
+talks:
+  - speaker: Sara Tähtinen
+    title: "Explainable AI: Alternative Methods"
+  - speaker: Aapo Tanskanen
+    title: Zero-Shot Text Classification Without GPT-3

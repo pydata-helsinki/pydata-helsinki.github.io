@@ -1,6 +1,9 @@
 title: "Online meetup: MLOps"
-month: "2021-02"
+start: 2021-02-25 18:30
 mode: online
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/276441920/
   platform: Meetup
+talks:
+  - speaker: Emmanuel Raj
+    title: "MLOps: Automated Machine Learning"

@@ -1,6 +1,11 @@
 title: "Online meetup: NLP & Feature Store"
-month: "2021-03"
+start: 2021-03-25 18:30
 mode: online
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/277015246/
   platform: Meetup
+talks:
+  - speaker: Le Hoang Minh Anh
+    title: Faster Intent Training for Chatbot Using SBERT
+  - speaker: David Hershey
+    title: How Feature Stores Enable Operational ML

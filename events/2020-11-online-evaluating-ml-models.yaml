@@ -1,6 +1,9 @@
 title: "Online meetup: Evaluating Machine Learning Models"
-month: "2020-11"
+start: 2020-11-26 18:30
 mode: online
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/274697689/
   platform: Meetup
+talks:
+  - speaker: András Beke
+    title: Evaluating Machine Learning Models

@@ -1,6 +1,11 @@
 title: "Online meetup: The Kick-Off Meetup"
-month: "2020-10"
+start: 2020-10-29 18:00
 mode: online
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/273855308/
   platform: Meetup
+talks:
+  - speaker: Oguzhan Gencoglu
+    title: Best Practices for Data Augmentation
+  - speaker: Denis Vorotyntsev
+    title: "Explaining ML Models in 2020"
