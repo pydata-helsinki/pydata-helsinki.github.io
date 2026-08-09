@@ -24,6 +24,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 import shutil
 import urllib.request
 from dataclasses import dataclass, field
@@ -264,11 +265,17 @@ class Event:
                     "@type": "VideoObject",
                     "name": t["title"],
                     "url": t["video"],
+                    "thumbnailUrl": _youtube_thumbnail(t["video"]),
                 }
             sub_events.append(se)
         if sub_events:
             data["subEvent"] = sub_events
         return data
+
+
+def _youtube_thumbnail(video_url: str) -> str:
+    m = re.search(r"(?:youtu\.be/|[?&]v=)([\w-]{11})", video_url)
+    return f"https://img.youtube.com/vi/{m.group(1)}/hqdefault.jpg" if m else DEFAULT_IMAGE
 
 
 def _person(s: dict) -> dict:
