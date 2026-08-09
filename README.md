@@ -48,7 +48,16 @@ talks:                       # optional, add as the programme firms up
     title: Notes on the Analytical Engine
     lightning: true          # optional
     video: https://youtu.be/…  # optional, add after the recording is up
+    description: |-  # optional, Markdown; rendered to HTML on the event page
+      Ada's abstract or the video's description, once known.
+
+      Blank lines start new paragraphs; use `|-` (not `>-`) so they survive
+      YAML's line folding.
 ```
+
+`description` is plain text in JSON-LD and the feeds, but rendered as
+Markdown (via [markdown-it-py](https://markdown-it-py.readthedocs.io/en/latest/),
+with linkify enabled) into HTML on the event page.
 
 **RSVPs not open yet?** Just leave `registration:` out (or url-less). The
 event page then says "Registration is not open yet" and points at the feeds,

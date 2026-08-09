@@ -14,7 +14,21 @@ talks:
     speaker_url: https://www.linkedin.com/in/teemu-sailynoja/
     title: "Bayesian Beasts: Iterative modelling with PyMC to forecast Korkeasaari visits"
     video: https://youtu.be/VXrKLX5Wjs8
+    description: |-
+      How do you turn uncertainty into decisions? In this talk, Teemu
+      Säilynoja walks through a practical Bayesian workflow—from priors to
+      posterior predictions—using a real-world case study: daily visitor
+      counts at Korkeasaari (Helsinki Zoo). You’ll see how to build and
+      iterate probabilistic models in PyMC, orchestrate them in Marimo
+      notebooks, and reason about causality (rain, events, and even
+      tiger-cub hype 🐯) .
   - speaker: Allan Nevala
     speaker_url: https://allannevala.com/
     title: "The Model Kitchen: Live Python Performance Lab"
     video: https://youtu.be/HXSAfFz2R8g
+    description: |-
+      Most of us don’t need “magic agents” to get real work done—we need
+      stable, fast, and cheap LLM workflows. In this talk Allan Nevala
+      shows practical patterns that tame hallucinations, control costs, and
+      improve reliability, plus a live benchmark dashboard (“model
+      kitchen”) that scores models on real-world document images.

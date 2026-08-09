@@ -16,27 +16,70 @@ talks:
     speaker_url: https://www.linkedin.com/in/jussi-py%C3%B6rre-5a11571/
     title: "Intro to Cactos: Energy, but better"
     video: https://youtu.be/bzXZHWK_ZHs
+    description: |-
+      Jussi Pyörre, CTO at Cactos, introduces their work in battery energy
+      storage systems and the data science challenges involved in
+      operating them at scale.
   - speaker: Olli Ruokojoki
     speaker_url: https://www.linkedin.com/in/olli-ruokojoki-864a20223/
     title: "Data-Driven Batteries: Modeling State of Charge and Health from Operational Data"
     video: https://youtu.be/GaBrvgLTMI4
+    description: |-
+      Olli Ruokojoki from Cactos presents his Master's thesis work on
+      creating battery models directly from operational data, skipping
+      expensive laboratory testing entirely.
+
+      Learn how Cactos uses data science to solve a critical challenge in
+      battery energy storage: accurately estimating state of charge (SoC)
+      when you can't measure it directly. Olli demonstrates an innovative
+      iterative approach that extracts battery parameters from messy
+      real-world data, achieving remarkable accuracy (7.65 mV RMSE) that
+      outperforms traditional laboratory-based models.
   - speaker: Tuomas Sivula
     speaker_url: https://www.linkedin.com/in/tuomas-sivula/
     title: Stochastic Models in Energy Storage Operating Environments
     video: https://youtu.be/kDGvEBUfSmo
+    description: |-
+      Tuomas Sivula from Cactos presents how stochastic optimization
+      improves battery energy storage system (BESS) operations. Learn how
+      probabilistic programming frameworks like Stan help model
+      uncertainty in ancillary service markets, specifically AFR (Automatic
+      Frequency Restoration Reserve) activation patterns.
   - title: PyData Helsinki Quiz
   - speaker: Quentin Salomé
     speaker_url: https://www.linkedin.com/in/quentin-salome/
     title: Estimating the surface area of lakes using satellite images
     video: https://youtu.be/mYo9WQpb0ZY
     lightning: true
+    description: |-
+      Quentin Salomé presents a project using Earth observation data to
+      track changes in Mexico's Lake Pátzcuaro over a 10-year period. Using
+      satellite imagery from the European Union's Copernicus program, he
+      demonstrates how to process cloud coverage, apply spectral indices to
+      identify water bodies, and calculate surface area changes over time.
+      The analysis reveals a 6.2% reduction in lake area, potentially
+      linked to both meteorological factors and human activities such as
+      avocado farming.
   - speaker: Osvaldo Martin
     speaker_url: https://aloctavodia.github.io/
     title: "ArviZ 1.0: Refactoring for flexibility, extensibility, and power"
     video: https://youtu.be/cDp8fxLWiXI
     lightning: true
+    description: |-
+      Osvaldo Martin presents the upcoming ArviZ 1.0 release, a complete
+      refactor of this essential Python library for Bayesian modelling.
+      Learn about the split into three modular libraries (arviz-base,
+      arviz-stats, arviz-plots), improved dependency management, and a new
+      flexible plotting syntax inspired by grammar of graphics. The
+      redesign enables minimal dependencies for statistical computing while
+      maintaining batteries-included functionality for users who want the
+      full package.
   - speaker: Jouni Seppänen
     speaker_url: https://jouniseppanen.com/
     title: Python Visualisation Tools
     video: https://youtu.be/ZUnZoblropk
     lightning: true
+    description: |-
+      A lightning talk surveying the Python visualization landscape, from
+      Matplotlib's origins as a MATLAB-compatible plotting library to
+      modern alternatives like Seaborn, UltraPlot, Plotnine, and Bokeh.

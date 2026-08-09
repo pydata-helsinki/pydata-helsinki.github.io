@@ -87,7 +87,7 @@
       {% for talk in event.talks %}
       <li>{{ talk_line(talk) }}
         {%- if talk.description %}
-        <p>{{ talk.description | safe }}</p>
+        {{ talk.description | markdown }}
         {%- endif %}
       </li>
       {% endfor %}

@@ -13,22 +13,102 @@ talks:
     speaker_url: https://www.linkedin.com/in/heikki-arponen-24859034/
     title: Reinforcement learning for games at Supercell
     video: https://youtu.be/agi67rZKvjA
+    description: |-
+      Heikki Arponen from Supercell presents how reinforcement learning is
+      used to balance mo.co, Supercell's newest multiplayer PvE game. Learn
+      how thousands of AI bots are trained to test new gear, content, and
+      game features before release, helping designers iterate quickly on
+      game balance.
+
+      Topics: building a headless game simulator that runs 1,000+ parallel
+      environments per GPU; training recurrent neural networks with PPO
+      (Proximal Policy Optimization); reward shaping challenges and the
+      credit assignment problem; discovering game exploits through AI
+      testing (like the 1-second dungeon completion bug); exploration
+      techniques including k-nearest neighbor state entropy maximization;
+      genetic algorithms for gear optimization; the "squid blades" problem
+      — when RL agents can't learn stealth strategies.
+
+      Heikki shares practical insights from 20 months of RL development at
+      Supercell, including what worked (position-based exploration), what
+      didn't (latent space k-NN), and ongoing challenges in creating a
+      generalizable RL solution for game testing.
   - speaker: Chandreyee Roy
     speaker_url: https://www.linkedin.com/in/chandreyeeroy89/
     title: Exploring sleep and activity using wearables
     video: https://youtu.be/8wVO10BJEyU
+    description: |-
+      Chandreyee Roy from Aalto University presents research on chronotypes
+      (owls, larks, and neither types) using wearable devices to objectively
+      measure sleep patterns and activity levels.
+
+      Topics covered: what are chronotypes and why they matter; limitations
+      of traditional questionnaires (recall bias); mid-sleep time as
+      chronotype indicator; sleep quality analysis using entropy and
+      hypnograms; activity tracking differences between chronotypes; stress
+      reporting patterns; wearable device comparison and user experience;
+      future research on gender differences, body temperature, and
+      objective chronotype detection.
+
+      Morningness-Eveningness Questionnaire:
+      https://qxmd.com/calculate/calculator_829/morningness-eveningness-questionnaire-meq
   - speaker: Allan Nevala
     speaker_url: https://allannevala.com/
     title: Meeting your people. For real.
     video: https://youtu.be/fEybelD2CyI
     lightning: true
+    description: |-
+      Allan Nevala demonstrates a prototype app that helps you find the
+      most compatible people to meet at networking events. Using AI
+      embeddings and community detection algorithms, the system analyses
+      attendee profiles to identify your best matches based on shared
+      interests, location, and lifestyle compatibility.
+
+      In this 10-minute lightning talk, Allan walks through: profile
+      matching using OpenAI embeddings; AI-generated conversation starters
+      and meeting suggestions; community detection to identify interest
+      clusters at events; an analytics dashboard showing compatibility
+      algorithms; and privacy controls for safe networking.
   - speaker: Alexander Kevin Gilbert
     speaker_url: https://www.linkedin.com/in/alexander-kevin-gilbert-2449b5237/
     title: Estimating weight of cars from their dimensions
     video: https://youtu.be/9w7NaH_QF90
     lightning: true
+    description: |-
+      Kevin demonstrates how to estimate car kerb weight using only
+      dimensional measurements through supervised machine learning. He
+      compares three approaches: scikit-learn's Random Forest, TensorFlow,
+      and PyTorch neural networks.
+
+      Using data from Open Canada, Kevin builds models that predict car
+      weight from features like overall length, width, height, and
+      front-end length. He explains his neural network architecture
+      (256-128-64 neurons), choice of ReLU activation, Adam optimizer, and
+      why he uses Mean Absolute Percentage Error (MAPE) instead of MSE for
+      this problem.
+
+      Code repository: https://github.com/axle217/MLexercise_CarDimensions
   - speaker: Teemu Säilynoja
     speaker_url: https://www.linkedin.com/in/teemu-sailynoja/
     title: Marimo - a reactive, git-friendly Python notebook
     video: https://youtu.be/mHerPwsPwgc
     lightning: true
+    description: |-
+      Teemu Säilynoja presents Marimo, a modern alternative to Jupyter
+      Notebook that solves common pain points in interactive Python
+      development.
+
+      Highlights: reactive execution, where cells automatically re-run when
+      dependencies change; git-friendly notebooks saved as pure Python
+      files, not JSON; no more out-of-sync cells, since the dependency
+      graph ensures consistency; app mode to instantly turn notebooks into
+      interactive web apps; LLM-friendly clean Python code that AI tools
+      can easily read and fix; and native database integrations and
+      testing support.
+
+      Perfect for data scientists and Python developers frustrated with
+      traditional notebook limitations. Marimo brings modern development
+      practices to exploratory data analysis while maintaining the
+      interactive coding experience you love.
+
+      More about Marimo: https://marimo.io/

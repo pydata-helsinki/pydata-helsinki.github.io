@@ -12,7 +12,13 @@ registration:
 talks:
   - speaker: Ville Rantanen
     title: Bottling AI
+    video: https://youtu.be/t3PJbWs-f_E
+    description: |-
+      Ville Rantanen from Reaktor shows how to run language models locally,
+      including on computers not connected to the Internet. We also learn
+      what the letters GPT stand for.
   - title: "Panel Discussion: How to Land a (Data) Job in Today's Market"
+    video: https://youtu.be/AekH1uCXgCw
     description: >-
       Our panelists:
       <a href="https://www.linkedin.com/in/marko-aalto-0b73862/">Marko Aalto</a>

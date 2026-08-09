@@ -5,6 +5,8 @@
 #     "jinja2",
 #     "pyyaml",
 #     "icalendar",
+#     "markdown-it-py",
+#     "linkify-it-py",
 # ]
 # ///
 """Static site builder for pydata-helsinki.fi
@@ -37,6 +39,10 @@ from icalendar import Calendar as ICalendar
 from icalendar import Event as IEvent
 from icalendar import vCalAddress
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markdown_it import MarkdownIt
+from markupsafe import Markup
+
+MD = MarkdownIt("commonmark", {"linkify": True}).enable("linkify")
 
 ROOT = Path(__file__).parent
 SITE_URL = "https://pydata-helsinki.fi"
@@ -264,8 +270,11 @@ class Event:
                 se["recordedIn"] = {
                     "@type": "VideoObject",
                     "name": t["title"],
+                    "description": t.get("description") or t["title"],
                     "url": t["video"],
+                    "embedUrl": _youtube_embed(t["video"]),
                     "thumbnailUrl": _youtube_thumbnail(t["video"]),
+                    "uploadDate": se["startDate"],
                 }
             sub_events.append(se)
         if sub_events:
@@ -273,9 +282,19 @@ class Event:
         return data
 
 
-def _youtube_thumbnail(video_url: str) -> str:
+def _youtube_id(video_url: str) -> str | None:
     m = re.search(r"(?:youtu\.be/|[?&]v=)([\w-]{11})", video_url)
-    return f"https://img.youtube.com/vi/{m.group(1)}/hqdefault.jpg" if m else DEFAULT_IMAGE
+    return m.group(1) if m else None
+
+
+def _youtube_thumbnail(video_url: str) -> str:
+    vid = _youtube_id(video_url)
+    return f"https://img.youtube.com/vi/{vid}/hqdefault.jpg" if vid else DEFAULT_IMAGE
+
+
+def _youtube_embed(video_url: str) -> str:
+    vid = _youtube_id(video_url)
+    return f"https://www.youtube.com/embed/{vid}" if vid else video_url
 
 
 def _person(s: dict) -> dict:
@@ -481,6 +500,7 @@ def main() -> None:
         trim_blocks=True,
         lstrip_blocks=True,
     )
+    env.filters["markdown"] = lambda text: Markup(MD.render(text))
     community_path = ROOT / "community.yaml"
     community = (
         yaml.safe_load(community_path.read_text(encoding="utf-8"))
