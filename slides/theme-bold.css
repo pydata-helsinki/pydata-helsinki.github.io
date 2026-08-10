@@ -263,6 +263,10 @@
       padding-right: .8em;
     }
     & td { color: var(--text-color); }
+    & tr.talk td {
+      font-weight: 700;
+      color: var(--primary-color);
+    }
   }
 }
 

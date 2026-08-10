@@ -175,6 +175,10 @@
     & th {
       font-variant-numeric: tabular-nums;
     }
+    & tr.talk td {
+      font-weight: 700;
+      color: var(--primary-color);
+    }
   }
 
 }
