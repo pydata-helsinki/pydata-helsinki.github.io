@@ -97,6 +97,37 @@
     @media (prefers-reduced-motion: reduce) {
       .reveal .pill-cloud .pill { animation: none; }
     }
+
+    /* ---- Organisers grid ------------------------------------------------- */
+    .reveal .organiser-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 0.6em 1em;
+      margin-top: 0.5em;
+    }
+    .reveal .organiser {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.05em;
+    }
+    .reveal .organiser img {
+      width: 5.5em;
+      height: 5.5em;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .reveal .organiser span {
+      font-size: 0.456em;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.2;
+    }
+    #pydata-helsinki-organisers h1 {
+      font-size: 1.48em;
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
@@ -221,14 +252,32 @@ style="width:5em;height:5em" /></p>
 </section>
 <section id="pydata-helsinki-organisers" class="slide level1">
 <h1>PyData Helsinki organisers</h1>
-<ul>
-<li>Daniel Vahla</li>
-<li>Hugo van Kemenade</li>
-<li>Jouni Seppänen</li>
-<li>Niko Föhr</li>
-<li>Teemu Säilynoja</li>
-<li>Prerna Kumari</li>
-</ul>
+<div class="organiser-grid">
+  <div class="organiser">
+    <img src="assets/pydata-organizers/daniel-vahla.jpeg" alt="Daniel Vahla">
+    <span>Daniel Vahla</span>
+  </div>
+  <div class="organiser">
+    <img src="assets/pydata-organizers/hugo-van-kemenade.png" alt="Hugo van Kemenade">
+    <span>Hugo van Kemenade</span>
+  </div>
+  <div class="organiser">
+    <img src="assets/pydata-organizers/jouni-seppänen.jpeg" alt="Jouni Seppänen">
+    <span>Jouni Seppänen</span>
+  </div>
+  <div class="organiser">
+    <img src="assets/pydata-organizers/niko-fohr.jpeg" alt="Niko Föhr">
+    <span>Niko Föhr</span>
+  </div>
+  <div class="organiser">
+    <img src="assets/pydata-organizers/teemu-säilynoja.jpeg" alt="Teemu Säilynoja">
+    <span>Teemu Säilynoja</span>
+  </div>
+  <div class="organiser">
+    <img src="assets/pydata-organizers/prerna-kumari.png" alt="Prerna Kumari">
+    <span>Prerna Kumari</span>
+  </div>
+</div>
 </section>
 <section id="meetup-calendar" class="slide level1 calendar-slide">
 <h1 class="calendar-slide">Meetup Calendar</h1>
