@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>PyData Helsinki — Visma Solutions, 12 August 2026</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/black.css" id="theme">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme-bold.css"/>
+  <style>
+    /* ---- Network slide: a drifting tag-cloud of tools & topics ------------
+       Teal = tools (echoing the heading/link hue), orange = topics, dashed
+       neutral = "& more". Pills wander on a transform-only loop, desynced via
+       per-pill --dur/--delay/--rot so the cloud never marches in step. The
+       resting transform carries the scatter rotation, so reduced-motion (and
+       headless/print) renders a still, legibly scattered cloud.            */
+    .reveal section.network-slide .lead {
+      max-width: 24ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .reveal .pill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: .5em .55em;
+      max-width: 90%;
+      margin: 1em auto;
+    }
+    .reveal .pill-cloud .pill {
+      font-size: var(--fs, .64em);
+      font-weight: 700;
+      letter-spacing: .01em;
+      line-height: 1;
+      padding: .42em .85em;
+      border-radius: 999px;
+      white-space: nowrap;
+      will-change: transform;
+      transform: rotate(var(--rot, 0deg));
+      animation: pill-drift var(--dur, 6s) ease-in-out var(--delay, 0s) infinite;
+    }
+    .reveal .pill-cloud .pill.tech {
+      background: color-mix(in srgb, var(--primary-color) 16%, transparent);
+      color: var(--primary-bright);
+      border: 1px solid color-mix(in srgb, var(--primary-color) 48%, transparent);
+      box-shadow: 0 0 18px color-mix(in srgb, var(--primary-color) 16%, transparent);
+    }
+    .reveal .pill-cloud .pill.topic {
+      background: color-mix(in srgb, var(--secondary-color) 16%, transparent);
+      color: var(--secondary-color);
+      border: 1px solid color-mix(in srgb, var(--secondary-color) 48%, transparent);
+      box-shadow: 0 0 18px color-mix(in srgb, var(--secondary-color) 18%, transparent);
+    }
+    .reveal .pill-cloud .pill.more {
+      background: color-mix(in srgb, var(--text-color) 7%, transparent);
+      color: var(--secondary-text-color);
+      border: 1px dashed color-mix(in srgb, var(--text-color) 28%, transparent);
+    }
+    @keyframes pill-drift {
+      0%   { transform: translate(0, 0) rotate(var(--rot, 0deg)); }
+      25%  { transform: translate(.5em, -.5em) rotate(calc(var(--rot, 0deg) + 2deg)); }
+      50%  { transform: translate(-.4em, .35em) rotate(var(--rot, 0deg)); }
+      75%  { transform: translate(.35em, .5em) rotate(calc(var(--rot, 0deg) - 2deg)); }
+      100% { transform: translate(0, 0) rotate(var(--rot, 0deg)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal .pill-cloud .pill { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="pydata-helsinki" class="slide level1 title-slide">
+<h1 class="title-slide">PyData Helsinki</h1>
+<h2 id="at-visma-2026-08-12">at Visma Solutions, 2026-08-12</h2>
+<div class="kicker">
+<p>LLM benchmarks, survival models &amp; Kalman filters</p>
+</div>
+</section>
+<section id="tonights-host" class="slide level1">
+<h1>Tonight's host</h1>
+<p><img data-src="assets/visma-logo-white.svg" class="logo bare" alt="Visma" style="max-width: 400px; margin: .3em auto;" /></p>
+<div class="callout">
+<p>Welcome words from Visma at 18:00 👋</p>
+</div>
+</section>
+<section id="agenda" class="slide level1 agenda-slide">
+  <h1 class="agenda-slide">Agenda</h1>
+  <table class="agenda-table">
+    <tbody>
+      <tr>
+        <th><strong>17:30</strong></th>
+        <td>Doors open</td>
+      </tr>
+      <tr>
+        <th><strong>18:00</strong></th>
+        <td>Welcoming words from the host</td>
+      </tr>
+      <tr>
+        <th><strong>18:10</strong></th>
+        <td>Allan Nevala: <em>Mistral LLM – Custom Benchmarks</em></td>
+      </tr>
+      <tr>
+        <th><strong>18:40</strong></th>
+        <td>Babäk Firoozi Fooladi: <em>What is a survival model?</em></td>
+      </tr>
+      <tr>
+        <th><strong>19:10</strong></th>
+        <td>Break — snacks, drinks, networking</td>
+      </tr>
+      <tr>
+        <th><strong>19:40</strong></th>
+        <td>🔮 The (in)famous PyData Helsinki quiz</td>
+      </tr>
+      <tr>
+        <th><strong>19:50</strong></th>
+        <td>Anna Korolyuk: <em>Implementing Kalman filter in Python – from linear to non-linear</em></td>
+      </tr>
+      <tr>
+        <th><strong>20:30</strong></th>
+        <td>End of programme</td>
+      </tr>
+      <tr>
+        <th><strong>21:00</strong></th>
+        <td>Continue discussions at a nearby bar</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section id="pydata-helsinki-1" class="slide level1 network-slide">
+<h1>PyData Helsinki</h1>
+<p class="lead">PyData is a global network of users and developers of data
+analysis tools</p>
+<div class="pill-cloud" aria-label="Tools and topics: Pandas, NumPy, PySpark, R, Julia, statistics, neural networks, databases, visualisation, and more">
+<span class="pill tech"  style="--dur:6.5s;--delay:-1.2s;--rot:-3deg;--fs:.72em">Pandas</span>
+<span class="pill tech"  style="--dur:7.2s;--delay:-4.0s;--rot:2deg;--fs:.68em">NumPy</span>
+<span class="pill topic" style="--dur:6.8s;--delay:-3.3s;--rot:3deg;--fs:.66em">statistics</span>
+<span class="pill tech"  style="--dur:5.8s;--delay:-2.5s;--rot:-1deg;--fs:.62em">PySpark</span>
+<span class="pill topic" style="--dur:7.0s;--delay:-1.9s;--rot:-2deg;--fs:.7em">neural networks</span>
+<span class="pill tech"  style="--dur:6.0s;--delay:-5.1s;--rot:4deg;--fs:.66em">R</span>
+<span class="pill topic" style="--dur:5.6s;--delay:-4.6s;--rot:1deg;--fs:.64em">databases</span>
+<span class="pill tech"  style="--dur:7.6s;--delay:-0.6s;--rot:-2deg;--fs:.66em">Julia</span>
+<span class="pill topic" style="--dur:6.3s;--delay:-2.2s;--rot:-3deg;--fs:.66em">visualisation</span>
+<span class="pill more"  style="--dur:7.4s;--delay:-3.8s;--rot:2deg;--fs:.58em">&amp; more</span>
+</div>
+<p class="lead">Focus on open source tools and their real-world use</p>
+</section>
+<section id="call-for-talks" class="slide level1">
+<h1>We're looking for talks</h1>
+<ul>
+<li><strong>Regular talk</strong> — ~30 minutes</li>
+<li><strong>Lightning talk</strong> — 5–10 minutes</li>
+</ul>
+<p>A great way to share what you know, get feedback on your ideas, and connect with curious people from across the data community.</p>
+<div class="callout">
+<p>👉 pydata-helsinki@googlegroups.com 👈</p>
+</div>
+</section>
+<section id="sponsor-pydata-helsinki" class="slide level1">
+<h1>Sponsor PyData Helsinki</h1>
+<p>PyData Helsinki needs <strong>sponsors and venues</strong></p>
+<ul>
+<li>Venue with 40+ capacity, accessible by public transit</li>
+<li>IT setup (screen, microphones)</li>
+<li>Food and beverages</li>
+</ul>
+<p>Sponsors get a 5–10 min presentation slot and one speaker slot</p>
+<div class="callout">
+<p>👉 Ask your employer to host a meetup! 👈</p>
+</div>
+</section>
+<section id="offer-your-venue-or-talk" class="slide level1">
+<h1>Offer your venue or talk</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Email us at <strong>pydata-helsinki@<br>googlegroups.com</strong></p>
+<p><img data-src="assets/qrcode.email.png" class="qr"
+alt="QR code to email pydata-helsinki@googlegroups.com"
+style="width:5em;height:5em" /></p>
+</div><div class="column" style="width:40%;">
+<p>or message us on Discord</p>
+<p><img data-src="assets/qrcode.discord.png" class="qr"
+alt="QR code to the Helsinki Python Discord"
+style="width:5em;height:5em" /></p>
+</div>
+</div>
+</section>
+<section id="pydata-helsinki-organisers" class="slide level1">
+<h1>PyData Helsinki organisers</h1>
+<ul>
+<li>Daniel Vahla</li>
+<li>Hugo van Kemenade</li>
+<li>Jouni Seppänen</li>
+<li>Niko Föhr</li>
+<li>Teemu Säilynoja</li>
+<li>Prerna Kumari</li>
+</ul>
+</section>
+<section id="meetup-calendar" class="slide level1 calendar-slide">
+<h1 class="calendar-slide">Meetup Calendar</h1>
+<table>
+  <tbody>
+    <tr>
+      <td style="text-align: right;"><strong>Next meetup</strong></td>
+      <td style="text-align: left;">Date TBA — stay tuned!</td>
+    </tr>
+</tbody>
+</table>
+<img data-src="assets/qrcode.tribes.png" class="qr"
+alt="QR code to techtrib.es"
+style="width:6em;height:6em; margin-top: 30pt;" />
+<p style="font-size: 20pt;">See <strong>techtrib.es</strong> for more tech events</p>
+</section>
+<section id="social-media" class="slide level1">
+<h1>Social media</h1>
+<ul>
+<li>Discord: <strong>https://helsinki-python.github.io/discord</strong></li>
+<li>Email: <strong>pydata-helsinki@googlegroups.com</strong></li>
+<li>Fediverse: <strong>@pydata_helsinki@fosstodon.org</strong></li>
+<li>LinkedIn: <strong>https://linkedin.com/company/pydata-helsinki</strong></li>
+</ul>
+<p><img data-src="assets/qrcode.discord.png" class="qr"
+alt="QR code to the Helsinki Python Discord"
+style="width:5em;height:5em" /></p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@5/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@5/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+
+      // Light/dark theme for projectors that wash out the dark stage.
+      // Toggle with the `t` key; or load with ?theme=light. Choice persists.
+      (function () {
+        var root = document.documentElement, KEY = 'pydata-slide-theme';
+        var pref = new URLSearchParams(location.search).get('theme')
+                   || localStorage.getItem(KEY);
+        if (pref === 'light') root.setAttribute('data-theme', 'light');
+        document.addEventListener('keydown', function (e) {
+          if (e.key !== 't' || e.metaKey || e.ctrlKey || e.altKey) return;
+          var light = root.getAttribute('data-theme') === 'light';
+          if (light) root.removeAttribute('data-theme');
+          else root.setAttribute('data-theme', 'light');
+          localStorage.setItem(KEY, light ? 'dark' : 'light');
+        });
+      })();
+
+      // Attract loop for the pre-event wait: press `a` to auto-advance the deck
+      // on a 10s loop while people arrive; press `a` again — or just navigate
+      // manually — to stop it before the talks begin. Start it with ?attract.
+      (function () {
+        var on = false;
+        function setAuto(state) {
+          on = state;
+          Reveal.configure({ autoSlide: state ? 10000 : 0, loop: state });
+        }
+        if (new URLSearchParams(location.search).has('attract')) setAuto(true);
+        document.addEventListener('keydown', function (e) {
+          if (e.key !== 'a' || e.metaKey || e.ctrlKey || e.altKey) return;
+          setAuto(!on);
+        });
+      })();
+    </script>
+    </body>
+</html>
