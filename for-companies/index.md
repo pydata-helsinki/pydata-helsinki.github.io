@@ -56,10 +56,11 @@ A meetup lasts about 3 hours. A typical evening looks like this:
 | Time | Programme |
 |---|---|
 | 17:30 | Doors open |
-| 18:00 | Welcoming words from the host |
-| 18:10 | Talk 1 |
-| 18:40 | Talk 2 |
-| 19:10 | Break – food, drinks, networking |
+| 18:00 | PyData Helsinki introduction |
+| 18:05 | Welcoming words from the host |
+| 18:15 | Talk 1 |
+| 18:45 | Talk 2 |
+| 19:15 | Break – food, drinks, networking |
 | 19:40 | The (in)famous PyData Helsinki quiz |
 | 19:50 | Talk 3 |
 | 20:30 | End of programme |
