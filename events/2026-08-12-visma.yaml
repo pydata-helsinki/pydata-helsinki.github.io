@@ -21,6 +21,8 @@ schedule:
   - time: "17:30"
     item: Doors open
   - time: "18:00"
+    item: PyData Helsinki Opening
+  - time: "18:05"
     item: Welcoming words from the host
   - time: "18:10"
     item: "Talk: Mistral LLM – Custom Benchmarks (Allan Nevala)"
