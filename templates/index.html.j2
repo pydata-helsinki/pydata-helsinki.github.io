@@ -150,6 +150,16 @@
         See <a href="/for-speakers/">information for speakers</a> for ideas and practicalities,
         and contact us by email or on the Discord server if you're interested.
     </p>
+    {% set next_seeking = upcoming | rejectattr("status", "equalto", "cancelled") | selectattr("seeking_talks") | first %}
+    {% if next_seeking %}
+    <p>
+        We are looking for more talks, in particular for
+        <a href="/events/{{ next_seeking.slug }}/">{{ next_seeking.title }}</a>
+        on <time datetime="{{ next_seeking.machine_date }}">{{ next_seeking.display_date }}</time>!
+        Propose one on <a href="https://helsinki-python.github.io/discord">the Helsinki Python Discord</a>
+        or by email to <a href="mailto:pydata-helsinki-organisers@googlegroups.com">pydata-helsinki-organisers@googlegroups.com</a>.
+    </p>
+    {% endif %}
 
     <h2 id="upcoming">Upcoming events</h2>
     <ul>

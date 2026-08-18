@@ -42,6 +42,13 @@ the [Atom feed]({{ site_url }}/feed.xml) carries the update too. Attendance is f
 {% endif %}
 {% endfor %}
 {% endif %}
+{% if is_upcoming and event.seeking_talks and event.status != "cancelled" %}
+
+We are looking for more talks! Propose one on
+[the Helsinki Python Discord](https://helsinki-python.github.io/discord) or by email to
+[pydata-helsinki-organisers@googlegroups.com](mailto:pydata-helsinki-organisers@googlegroups.com).
+See [information for speakers]({{ site_url }}/for-speakers/index.md) for ideas and practicalities.
+{% endif %}
 {% if event.venue.lat and event.venue.lon %}
 
 ## Location

@@ -96,6 +96,14 @@
     </ul>
     {% endif %}
 
+    {% if is_upcoming and event.seeking_talks and event.status != "cancelled" %}
+    <p>We are looking for more talks! Propose one on
+    <a href="https://helsinki-python.github.io/discord">the Helsinki Python Discord</a>
+    or by email to
+    <a href="mailto:pydata-helsinki-organisers@googlegroups.com">pydata-helsinki-organisers@googlegroups.com</a>.
+    See <a href="/for-speakers/">information for speakers</a> for ideas and practicalities.</p>
+    {% endif %}
+
     {% if event.venue.lat and event.venue.lon %}
     <h2>Location</h2>
     <div id="map" class="map"></div>

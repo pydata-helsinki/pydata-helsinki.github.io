@@ -41,7 +41,8 @@ venue:
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/123456789/
   platform: Meetup           # or Luma, pretix, ...
-  # opens: 2026-09-01        # optional, only while url is absent
+  opens: 2026-09-08          # optional, when RSVPs open; omit if already open
+seeking_talks: false         # optional, default true: drops the call for talks
 talks:                       # optional, add as the programme firms up
   - speaker: Ada Lovelace
     speaker_url: https://example.com
@@ -59,10 +60,18 @@ talks:                       # optional, add as the programme firms up
 Markdown (via [markdown-it-py](https://markdown-it-py.readthedocs.io/en/latest/),
 with linkify enabled) into HTML on the event page.
 
-**RSVPs not open yet?** Just leave `registration:` out (or url-less). The
-event page then says "Registration is not open yet" and points at the feeds,
-and the JSON-LD offer gets `availability: PreSale` (plus `validFrom` if you
-set `registration.opens`). Adding the `url` later flips everything to open.
+**RSVPs not open yet?** Leave `registration:` out (or url-less), or set
+`registration.opens` to a future date — with a known Meetup url, the page
+still says "Registration is not open yet" until that date passes. Either way
+the JSON-LD offer gets `availability: PreSale` (plus `validFrom` from
+`opens`), and the feeds carry a "Registration opens …" line that disappears
+once RSVPs open, which bumps the event's `date_modified` in `events.json` and
+`<updated>` in `feed.xml` so subscribers hear about it — on the next build.
+
+**Looking for speakers?** Upcoming event pages carry a call for talks
+pointing at Discord and the organisers' email. Set `seeking_talks: false`
+once the programme is full, or on pub nights and picnics where there are no
+talks to propose.
 
 **Sponsors**: for a normal meetup the hosting venue is credited as sponsor
 automatically (any event with talks). Add an explicit `sponsor: {name, url}`

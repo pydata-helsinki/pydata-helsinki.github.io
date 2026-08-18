@@ -10,4 +10,7 @@ registration:
   url: https://www.meetup.com/pydatahelsinki/events/316164476/
   platform: Meetup
   opens: 2026-09-15
-talks: []
+talks:
+  - speaker: Jussi Pakkanen
+    speaker_url: https://github.com/jpakkane
+    title: Building a super 8 film scanner at home

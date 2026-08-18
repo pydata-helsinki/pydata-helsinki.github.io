@@ -92,6 +92,7 @@ class Event:
     sponsor: dict = field(default_factory=dict)
     joint_with: list = field(default_factory=list)
     summary: str = ""
+    seeking_talks: bool = True  # set false once the programme is full
     talks: list = field(default_factory=list)
     updated: datetime | None = None
 

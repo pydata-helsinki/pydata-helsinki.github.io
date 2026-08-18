@@ -34,6 +34,14 @@ We welcome speakers at any level, from beginner to advanced.
 Suitable topics include data science, AI, Python, Julia, R, etc.
 See [information for speakers]({{ site_url }}/for-speakers/index.md) for ideas and practicalities,
 and contact us by email or on the Discord server if you're interested.
+{% set next_seeking = upcoming | rejectattr("status", "equalto", "cancelled") | selectattr("seeking_talks") | first %}
+{% if next_seeking %}
+
+We are looking for more talks, in particular for
+[{{ next_seeking.title }}]({{ site_url }}/events/{{ next_seeking.slug }}/) on {{ next_seeking.display_date }}!
+Propose one on [the Helsinki Python Discord](https://helsinki-python.github.io/discord) or by email to
+[pydata-helsinki-organisers@googlegroups.com](mailto:pydata-helsinki-organisers@googlegroups.com).
+{% endif %}
 
 ## Upcoming events
 
