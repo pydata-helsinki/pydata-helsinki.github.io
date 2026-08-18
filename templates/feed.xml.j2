@@ -43,6 +43,7 @@
     <ev:type>meetup</ev:type>
     <content type="html">
       &lt;p&gt;{{ event.display_date }}{% if event.venue.name %} at {{ event.venue.name }}{% endif %}&lt;/p&gt;
+      {% if not event.rsvp_open and event.display_opens %}&lt;p&gt;Registration opens {{ event.display_opens }}.&lt;/p&gt;{% endif %}
       {% if event.talks %}&lt;ul&gt;{% for talk in event.talks %}&lt;li&gt;{% if talk.speaker_names %}{{ talk.speaker_names }}: {% endif %}{{ talk.title }}{% if talk.description %}&lt;p&gt;{{ talk.description }}&lt;/p&gt;{% endif %}&lt;/li&gt;{% endfor %}&lt;/ul&gt;{% endif %}
     </content>
   </entry>

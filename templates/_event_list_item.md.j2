@@ -1,6 +1,6 @@
 {% from "_talk.md.j2" import talk_line %}
 - [{{ event.title }}]({{ site_url }}/events/{{ event.slug }}/) on {{ event.display_date }}.
-{%- if event.talks %} Talks:{% elif not event.month %} No talks.{% endif %}
+{%- if event.talks %} Talks:{% elif event.is_upcoming(today) %} Talks to be announced.{% elif not event.month %} No talks.{% endif %}
 
 {% for talk in event.talks %}
   - {{ talk_line(talk) }}

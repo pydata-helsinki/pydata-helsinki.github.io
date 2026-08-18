@@ -115,11 +115,21 @@ class Event:
     @property
     def display_date(self) -> str:
         if self.start:
-            s = self.start.strftime("%-d %B %Y")
-            if (self.start.hour, self.start.minute) != (0, 0):
-                s += self.start.strftime(", %H:%M")
-            return s
+            return _display_dt(self.start)
         return datetime.strptime(self.month, "%Y-%m").strftime("%B %Y")
+
+    @property
+    def display_opens(self) -> str | None:
+        opens = self.registration.get("opens")
+        return _display_dt(opens) if opens else None
+
+    @property
+    def rsvp_open(self) -> bool:
+        """A registration url whose `opens` time (if any) has passed."""
+        opens = self.registration.get("opens")
+        return bool(self.registration.get("url")) and (
+            opens is None or opens <= datetime.now(TZ)
+        )
 
     @property
     def machine_date(self) -> str:
@@ -205,12 +215,14 @@ class Event:
                 "url": self.registration["url"],
                 "price": 0,
                 "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock"
-                if upcoming
-                else "https://schema.org/SoldOut",
+                "availability": "https://schema.org/SoldOut"
+                if not upcoming
+                else "https://schema.org/InStock"
+                if self.rsvp_open
+                else "https://schema.org/PreSale",
             }
         elif upcoming and self.status != "cancelled":
-            # RSVPs not open yet: no registration url in the YAML.
+            # RSVPs not open yet and no registration url in the YAML.
             offer = {
                 "@type": "Offer",
                 "@id": f"{self.url}#offer",
@@ -301,6 +313,13 @@ def _person(s: dict) -> dict:
     return {"@type": "Person", "name": s["name"], **(
         {"url": s["url"]} if s.get("url") else {}
     )}
+
+
+def _display_dt(dt: datetime) -> str:
+    s = dt.strftime("%-d %B %Y")
+    if (dt.hour, dt.minute) != (0, 0):
+        s += dt.strftime(", %H:%M")
+    return s
 
 
 def _as_datetime(val) -> datetime:
@@ -419,6 +438,10 @@ def build_json_feed(
                 + "</li>"
                 for t in ev.talks
             ) + "</ul>"
+        # Drops out of the item once RSVPs open, so the feed entry's
+        # date_modified bumps and subscribers see the change.
+        if not ev.rsvp_open and ev.display_opens:
+            content += f"<p>Registration opens {html.escape(ev.display_opens)}.</p>"
         ext = {
             "start": ev.start.isoformat() if ev.start else ev.month,
             "status": ev.status,
@@ -430,6 +453,8 @@ def build_json_feed(
             ext["venue"] = ev.venue
         if ev.registration.get("url"):
             ext["registration_url"] = ev.registration["url"]
+        if not ev.rsvp_open and ev.registration.get("opens"):
+            ext["registration_opens"] = ev.registration["opens"].isoformat()
         if not items:
             ext = {"about": EXT_DOCS, **ext}
         if ev.talks:
@@ -520,6 +545,7 @@ def main() -> None:
 
     events = load_events(ROOT / "events")
     today = datetime.now(TZ).date()
+    env.globals["today"] = today
     upcoming = sorted(
         [e for e in events if e.is_upcoming(today)], key=lambda e: e.sort_key
     )

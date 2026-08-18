@@ -13,14 +13,14 @@
 
 Sponsored by {% if event.effective_sponsor.url %}[{{ event.effective_sponsor.name }}]({{ event.effective_sponsor.url }}){% else %}{{ event.effective_sponsor.name }}{% endif %}.
 {% endif %}
-{% if is_upcoming and event.registration.url and event.status != "cancelled" %}
+{% if is_upcoming and event.rsvp_open and event.status != "cancelled" %}
 
 **[Register on {{ event.registration.platform | default("Meetup") }}]({{ event.registration.url }})** — attendance is free of charge.
 {% elif is_upcoming and event.status != "cancelled" %}
 
-Registration is not open yet{% if event.registration.opens %} — it opens on {{ event.registration.opens }}{% endif %}.
-Subscribe to [our calendar]({{ site_url }}/events.ics) or the [Atom feed]({{ site_url }}/feed.xml)
-to hear when it does. Attendance is free of charge.
+Registration is not open yet{% if event.registration.opens %}; it is scheduled to open on {{ event.display_opens }}{% endif %}.
+The best way to hear immediately when it does is [the Helsinki Python Discord](https://helsinki-python.github.io/discord);
+the [Atom feed]({{ site_url }}/feed.xml) carries the update too. Attendance is free of charge.
 {% endif %}
 {% if event.schedule %}
 
