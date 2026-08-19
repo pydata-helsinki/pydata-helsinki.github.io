@@ -19,8 +19,10 @@ Sponsored by {% if event.effective_sponsor.url %}[{{ event.effective_sponsor.nam
 {% elif is_upcoming and event.status != "cancelled" %}
 
 Registration is not open yet{% if event.registration.opens %}; it is scheduled to open on {{ event.display_opens }}{% endif %}.
-The best way to hear immediately when it does is [the Helsinki Python Discord](https://helsinki-python.github.io/discord);
-the [Atom feed]({{ site_url }}/feed.xml) carries the update too. Attendance is free of charge.
+The best way to hear immediately when it does is [the Helsinki Python Discord](https://helsinki-python.github.io/discord),
+or you can use any feed reader to subscribe to our updates:
+[Atom]({{ site_url }}/feed.xml) or [JSON]({{ site_url }}/events.json) feed.
+Attendance is free of charge.
 {% endif %}
 {% if event.schedule %}
 
