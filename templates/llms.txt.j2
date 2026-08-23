@@ -1,0 +1,29 @@
+# PyData Helsinki
+
+> A meetup group of Python and data enthusiasts in Helsinki, Finland. Free monthly meetups in English with talks on machine learning, data engineering, MLOps, visualization, and statistical modeling using open-source tools. Part of PyData, an educational program of NumFOCUS.
+
+Every page on this site has a markdown version at `index.md` next to the HTML, e.g. {{ site_url }}/events/2026-08-12-visma/index.md.
+{% set next = upcoming | rejectattr("status", "equalto", "cancelled") | first %}
+{% if next %}
+
+Next event: {{ next.title }} on {{ next.display_date }} ({{ next.url }}index.md)
+{% endif %}
+
+## Pages
+
+- [Home]({{ site_url }}/index.md): About the meetup, upcoming and past events, organisers, community links
+- [Events]({{ site_url }}/events/index.md): All meetups, upcoming and past, with talks and speakers, linking to a page per event
+- [For speakers]({{ site_url }}/for-speakers/index.md): How to give a talk — formats, topics, schedule, practicalities
+- [For companies]({{ site_url }}/for-companies/index.md): How to host or sponsor a meetup
+
+## Feeds
+
+- [JSON feed]({{ site_url }}/events.json): Events as JSON Feed 1.1, with structured event data (times, venue, talks, registration) in a `_pydata_helsinki_event` extension
+- [Atom feed]({{ site_url }}/feed.xml)
+- [Calendar]({{ site_url }}/events.ics): Events as iCalendar
+
+## Optional
+
+- [Sitemap]({{ site_url }}/sitemap.xml)
+- [YouTube channel](https://www.youtube.com/@PyData_Helsinki): Recordings of past talks
+- [Meetup group](https://www.meetup.com/pydata-helsinki/): Event registration (the registration platform is likely to change in the future)

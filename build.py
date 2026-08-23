@@ -68,7 +68,6 @@ STATIC = [
     "_headers",
     "style.css",
     "robots.txt",
-    "llms.txt",
     "assets",
     "slides",
     "for-speakers",
@@ -578,6 +577,10 @@ def main() -> None:
     (out / "index.md").write_text(
         env.get_template("index.md.j2").render(upcoming=upcoming, past=recent_past),
         encoding="utf-8",
+    )
+
+    (out / "llms.txt").write_text(
+        env.get_template("llms.txt.j2").render(upcoming=upcoming), encoding="utf-8"
     )
 
     # Event listing at /events/, where the event page URLs invite people to look
