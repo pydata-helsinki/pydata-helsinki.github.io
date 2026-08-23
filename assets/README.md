@@ -15,3 +15,8 @@ PyData Logos
 PyData Helsinki Banners
 ------------------------
 pydata-helsinki-banner-16x9.xcf: The master banner file. To create a new banner, start by editing this file and exporting as png.
+
+Vendored libraries
+------------------
+* atcb.min.js: add-to-calendar-button 2.15.0 (Elastic License 2.0), downloaded 2026-08-23 from https://cdn.jsdelivr.net/npm/add-to-calendar-button@2
+* maplibre-gl.js, maplibre-gl.css: MapLibre GL JS 5.24.0 (BSD-3-Clause), downloaded 2026-08-23 from https://unpkg.com/maplibre-gl@5/dist/

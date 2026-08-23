@@ -50,7 +50,7 @@
     {% endif %}
 
     {% if is_upcoming and event.status != "cancelled" and event.start %}
-    <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
+    <script src="/assets/atcb.min.js" async defer></script>
     <add-to-calendar-button
       name="PyData Helsinki: {{ event.title }}"
       startDate="{{ event.start.strftime('%Y-%m-%d') }}"
@@ -109,8 +109,8 @@
     <h2>Location</h2>
     <div id="map" class="map"></div>
     <p><a href="https://www.openstreetmap.org/?mlat={{ event.venue.lat }}&mlon={{ event.venue.lon }}#map=17/{{ event.venue.lat }}/{{ event.venue.lon }}">Map location</a></p>
-    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css">
-    <script defer src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+    <link rel="stylesheet" href="/assets/maplibre-gl.css">
+    <script defer src="/assets/maplibre-gl.js"></script>
     <script>
       addEventListener('DOMContentLoaded', () => {
         const center = [{{ event.venue.lon }}, {{ event.venue.lat }}];

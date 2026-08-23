@@ -25,3 +25,18 @@ scraped member count.
   `for-companies/index.md` are maintained by hand in sync with their HTML.
 - `llms.txt` links the markdown pages and feeds. When adding or modifying
   content pages other than individual events, consider updating `llms.txt`.
+
+## Vendored JS libraries
+
+`assets/atcb.min.js` (add-to-calendar-button) and `assets/maplibre-gl.{js,css}`
+are vendored copies, not CDN links. To update:
+
+```sh
+curl -sSL -o assets/atcb.min.js https://cdn.jsdelivr.net/npm/add-to-calendar-button@2
+curl -sSL -o assets/maplibre-gl.js https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js
+curl -sSL -o assets/maplibre-gl.css https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css
+sed -i '' '/sourceMappingURL=/d' assets/atcb.min.js assets/maplibre-gl.js assets/maplibre-gl.css
+```
+
+Then record the new version numbers (from the file headers) and date in
+`assets/README.md`.
