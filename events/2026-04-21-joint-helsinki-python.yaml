@@ -2,11 +2,24 @@ title: Joint meetup with Helsinki Python
 start: 2026-04-21 17:30
 venue:
   name: TEK & ILRY
+  address: Ratavartijankatu 2, 00520 Helsinki
   lat: 60.1979
   lon: 24.936829
 joint_with:
   - Helsinki Python
-summary: Hosted by TEK and ILRY.
+summary: >-
+  Joint meetup with Helsinki Python, hosted by the technology workers' unions
+  TEK and ILRY - talks, snacks, drinks, and networking.
+talks:
+  - speakers:
+      - name: Owain Hopeaketo
+        url: https://www.linkedin.com/in/owainhopeaketo/
+      - name: Anne Granat-Jukakoski
+        url: https://www.linkedin.com/in/anne-granat-jukakoski/
+    title: IT sector, collective agreement and the law
+  - speaker: Cal Paterson
+    speaker_url: https://calpaterson.com/about.html
+    title: '"Disregard that!" attacks'
 registration:
   url: https://www.meetup.com/helpy-meetups/events/314258115/
   platform: Meetup

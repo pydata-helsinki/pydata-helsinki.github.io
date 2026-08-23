@@ -1,8 +1,13 @@
 title: Meetup at RELEX
 start: 2026-02-26 17:30
 end: 2026-02-26 20:30
+summary: >-
+  An evening of talks at RELEX: refactoring integrations with dlt, how
+  database indexes work, and lightning talks on DuckDB and data connectors.
+  And the usual snacks, drinks, and networking.
 venue:
   name: RELEX
+  address: Postintaival 7, 00230 Helsinki
   url: https://www.relexsolutions.com/
   lat: 60.21268
   lon: 24.918219

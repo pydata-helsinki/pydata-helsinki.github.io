@@ -1,8 +1,14 @@
 title: Meetup at Elisa
 start: 2026-03-19 17:30
 end: 2026-03-19 20:30
+summary: >-
+  An evening of talks at Elisa: data and AI at Elisa, optimisation in
+  electricity markets, reading Delta Lake without a cluster, and lightning
+  talks on Typer and fine-tuning mBART for poetry; and snacks, drinks,
+  networking, and the PyData Helsinki quiz.
 venue:
   name: Elisa
+  address: Ratavartijankatu 5, 00520 Helsinki
   url: https://elisa.fi/
   lat: 60.19731
   lon: 24.936693

@@ -1,7 +1,11 @@
 title: Summer Picnic with Helsinki Python and DataTribe
 start: 2025-07-27 14:00
+summary: >-
+  Summer picnic in Meripuisto with Helsinki Python and DataTribe — bring
+  your own food and drinks.
 venue:
   name: Meripuisto
+  address: Merisatamanranta, 00150 Helsinki
   lat: 60.155388
   lon: 24.948711
 joint_with:

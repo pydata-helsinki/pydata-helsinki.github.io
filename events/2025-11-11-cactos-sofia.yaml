@@ -1,8 +1,14 @@
 title: Meetup sponsored by Cactos at Sofia Helsinki
 start: 2025-11-11 18:00
 end: 2025-11-11 20:30
+summary: >-
+  An evening of talks at Sofia Helsinki, sponsored by Cactos: data-driven
+  battery modelling, stochastic models for energy storage, and lightning
+  talks on satellite imagery, ArviZ 1.0, and Python visualisation; plus
+  snacks, drinks, networking, and the all-new PyData Helsinki quiz.
 venue:
   name: Sofia Helsinki
+  address: Sofiankatu 4 C, 00170 Helsinki
   lat: 60.168423
   lon: 24.952051
 sponsor:

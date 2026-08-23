@@ -1,7 +1,12 @@
 title: Joint meetup with Helsinki Python at Hive Helsinki
 start: 2026-01-27 17:30
+summary: >-
+  Joint meetup with Helsinki Python at Hive Helsinki: talks on wrapping
+  chatbots, refurbishing old PDFs, and a year at JetBrains, plus the
+  Helsinki Python quiz and networking.
 venue:
   name: Hive Helsinki
+  address: Haapaniemenkatu 5 A, 00530 Helsinki
   url: https://www.hive.fi/
   lat: 60.180832
   lon: 24.958258

@@ -1,7 +1,11 @@
 title: Pub Night at Thirsty Scholar
 start: 2026-08-04 17:00
+summary: >-
+  Informal pub night at Thirsty Scholar: no talks, just drinks and
+  conversation about data and Python.
 venue:
   name: Thirsty Scholar
+  address: Fabianinkatu 37, 00100 Helsinki
   lat: 60.171242
   lon: 24.949219
 registration:

@@ -1,9 +1,13 @@
 title: Meetup at Wonna
 start: 2025-08-26 18:00
 end: 2025-08-26 20:30
+summary: >-
+  An evening of talks at Wonna: iterative Bayesian modelling with PyMC to
+  forecast Korkeasaari visits, and a live Python performance lab for LLM
+  workflows. And pizza, drinks, and networking.
 venue:
   name: Wonna
-  address: Elimäenkatu 17-19
+  address: Elimäenkatu 17-19, 00510 Helsinki
   lat: 60.195023
   lon: 24.948183
 registration:

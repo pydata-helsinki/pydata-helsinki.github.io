@@ -1,8 +1,13 @@
 title: Meetup at Upcloud
 start: 2026-06-24 17:30
 end: 2026-06-24 20:30
+summary: >-
+  An evening of talks at UpCloud: NPS as (not proper) data science,
+  choosing projects under uncertain preferences, and learning data
+  engineering (not) from scratch; plus snacks, drinks, and networking.
 venue:
   name: UpCloud
+  address: Aleksanterinkatu 15 B, 00100 Helsinki
   lat: 60.169056
   lon: 24.94483
 registration:

@@ -1,9 +1,14 @@
 title: Meetup at Reaktor
 start: 2026-09-22 17:30
 end: 2026-09-22 20:30
+summary: >-
+  An evening of talks at Reaktor: building a super 8 film scanner at home,
+  and more to be announced — plus snacks, drinks, networking, and the
+  (in)famous PyData Helsinki quiz.
 venue:
   name: Reaktor
   url: https://reaktor.com/
+  address: Yliopistonkatu 4, 00100 Helsinki
   lat: 60.16979
   lon: 24.948776
 registration:

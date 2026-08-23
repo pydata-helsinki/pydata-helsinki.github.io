@@ -1,8 +1,14 @@
 title: Meetup at Supercell
 start: 2025-09-22 18:00
 end: 2025-09-22 20:30
+summary: >-
+  An evening of talks at Supercell: reinforcement learning for game
+  balancing, sleep and activity research with wearables, and lightning
+  talks on networking apps, estimating car weight, and Marimo notebooks.
+  And as always, food, drinks, and networking.
 venue:
   name: Supercell
+  address: Jätkäsaarenlaituri 1, 00180 Helsinki
   lat: 60.161007
   lon: 24.921534
 registration:

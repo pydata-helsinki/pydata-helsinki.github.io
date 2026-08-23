@@ -1,7 +1,11 @@
 title: Pub evening in Kaisla
 start: 2025-06-25 17:00
+summary: >-
+  Informal pub evening at Kaisla — no talks, just drinks and conversation
+  about data and Python.
 venue:
   name: Kaisla
+  address: Vilhonkatu 4, 00100 Helsinki
   lat: 60.171909
   lon: 24.946852
 registration:
