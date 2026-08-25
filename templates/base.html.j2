@@ -21,10 +21,10 @@
   <meta name="description" content="{% block description %}Join our meetup! We share real-world experiences solving problems using open-source tools in machine learning, data engineering, etc.{% endblock %}">
   <meta property="og:description" content="{{ self.description() }}">
   <meta property="og:type" content="{% block og_type %}website{% endblock %}">
-  <meta property="og:image" content="{{ default_image }}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image" content="{% block og_image %}{{ default_image }}{% endblock %}">
+  <meta property="og:image:width" content="{% block og_image_width %}1200{% endblock %}">
+  <meta property="og:image:height" content="{% block og_image_height %}630{% endblock %}">
+  <meta property="og:image:type" content="{% block og_image_type %}image/webp{% endblock %}">
 
   <meta name="twitter:card" content="summary_large_image">
 {% block head_extra %}{% endblock %}

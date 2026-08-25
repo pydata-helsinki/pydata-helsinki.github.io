@@ -94,6 +94,7 @@ class Event:
     seeking_talks: bool = True  # set false once the programme is full
     talks: list = field(default_factory=list)
     updated: datetime | None = None
+    banner: str | None = None
 
     @property
     def url(self) -> str:
@@ -150,6 +151,22 @@ class Event:
             return self.venue
         return {}
 
+    @property
+    def og_image(self) -> str:
+        if self.banner:
+            return f"{SITE_URL}/assets/banners/{self.banner}-og.avif"
+        return DEFAULT_IMAGE
+
+    @property
+    def jsonld_images(self) -> list[str] | str:
+        """Per Google's guidance, one image each in 16:9, 4:3 and 1:1."""
+        if self.banner:
+            return [
+                f"{SITE_URL}/assets/banners/{self.banner}-{ratio}.avif"
+                for ratio in ("1x1", "4x3", "16x9")
+            ]
+        return DEFAULT_IMAGE
+
     def jsonld(self, upcoming: bool = False) -> dict:
         data: dict = {
             "@context": "https://schema.org",
@@ -158,7 +175,7 @@ class Event:
             "name": f"{ORGANIZER['name']}: {self.title}",
             "identifier": self.slug,
             "url": self.url,
-            "image": DEFAULT_IMAGE,
+            "image": self.jsonld_images,
             "eventStatus": (
                 "https://schema.org/EventCancelled"
                 if self.status == "cancelled"
@@ -263,7 +280,7 @@ class Event:
                 "eventStatus": data["eventStatus"],
                 "location": {"@id": data["location"]["@id"]},
                 "organizer": {"@id": ORGANIZER["@id"]},
-                "image": DEFAULT_IMAGE,
+                "image": self.jsonld_images,
                 "inLanguage": "en",
                 "isAccessibleForFree": True,
                 "startDate": t["start"].isoformat() if t.get("start") else data["startDate"],
@@ -473,7 +490,7 @@ def build_json_feed(
             "url": ev.url,
             "title": f"PyData Helsinki: {ev.title}",
             "content_html": content,
-            "image": DEFAULT_IMAGE,
+            "image": ev.og_image,
             "_pydata_helsinki_event": ext,
         }
         if ev.start:
