@@ -16,6 +16,14 @@ PyData Helsinki Banners
 ------------------------
 pydata-helsinki-banner-16x9.xcf: The master banner file. To create a new banner, start by editing this file and exporting as png.
 
+Event banners
+-------------
+assets/banners/<event-slug>-{og,1x1,4x3,16x9}.avif: per-event social sharing
+images, referenced via the `banner` field in the event's YAML file. `og` is
+1200x630, used for the Open Graph/Twitter card; the other three are the
+aspect ratios schema.org/Google recommend listing in an Event's JSON-LD
+`image` array.
+
 Vendored libraries
 ------------------
 * atcb.min.js: add-to-calendar-button 2.15.0 (Elastic License 2.0), downloaded 2026-08-23 from https://cdn.jsdelivr.net/npm/add-to-calendar-button@2
