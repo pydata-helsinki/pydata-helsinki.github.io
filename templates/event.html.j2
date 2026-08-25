@@ -8,7 +8,7 @@
 {% block og_image %}{{ event.og_image }}{% endblock %}
 {% block og_image_width %}1200{% endblock %}
 {% block og_image_height %}630{% endblock %}
-{% block og_image_type %}image/avif{% endblock %}
+{% block og_image_type %}image/webp{% endblock %}
 {% endif %}
 {% block description %}{{ event.display_date }}{% if event.venue.name %} at {{ event.venue.name }}{% endif %}. {% if event.summary %}{{ event.summary }}{% else %}PyData Helsinki: {{ event.title }}.{% endif %}{% endblock %}
 {% block head_extra %}

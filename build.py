@@ -154,7 +154,7 @@ class Event:
     @property
     def og_image(self) -> str:
         if self.banner:
-            return f"{SITE_URL}/assets/banners/{self.banner}-og.avif"
+            return f"{SITE_URL}/assets/banners/{self.banner}-og.webp"
         return DEFAULT_IMAGE
 
     @property
@@ -162,7 +162,7 @@ class Event:
         """Per Google's guidance, one image each in 16:9, 4:3 and 1:1."""
         if self.banner:
             return [
-                f"{SITE_URL}/assets/banners/{self.banner}-{ratio}.avif"
+                f"{SITE_URL}/assets/banners/{self.banner}-{ratio}.webp"
                 for ratio in ("1x1", "4x3", "16x9")
             ]
         return DEFAULT_IMAGE
