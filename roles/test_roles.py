@@ -97,7 +97,9 @@ class RolesTests(unittest.TestCase):
                 member.is_active(month) and month in member.unavailable
                 for member in members
             )
-            self.assertEqual(statuses.count("—"), active - unavailable - 3)
+            self.assertEqual(
+                statuses.count("—"), active - unavailable - len(rota.ROLES)
+            )
         self.assertIn("(N/A)", statuses_for(schedule[0], members))
         self.assertIn("(inactive)", statuses_for(schedule[0], members))
 

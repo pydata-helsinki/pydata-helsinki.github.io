@@ -18,10 +18,11 @@ by role, and a summary. In the team table, an em dash (`—`) means no role and
 
 ## How fairness works
 
-- Three available people work each month. Other available people get no role.
-  Unavailable and inactive people are labelled separately.
-- If `A` people are available, each person's fair share is `3/A` shifts and
-  `1/A` of each role.
+- Let `R` be the number of configured roles. `R` available people work each
+  month, one per role. Other available people get no role. Unavailable and
+  inactive people are labelled separately.
+- If `A` people are available, each person's fair share is `R/A` shifts and
+  `1/A` of each individual role.
 - An unavailable person earns no shift credit. Missed shifts are not saved or
   added later.
 - Role credit changes only when a person works. Being unavailable does not
@@ -29,10 +30,11 @@ by role, and a summary. In the team table, an em dash (`—`) means no role and
 - The algorithm balances shift and role credits over time. If choices are
   equally fair, it prefers wider spacing and fewer repeated roles.
 - Each month has exactly
-  `active organisers - unavailable organisers - 3` no-role em dashes.
+  `active organisers - unavailable organisers - configured roles` no-role em
+  dashes.
 
 An absence must affect the remaining people's chance that month. For example,
-with five available people each shift chance is `3/5`; with four it is `3/4`.
+with five available people each shift chance is `R/5`; with four it is `R/4`.
 In this credit-based algorithm, it can also change later assignments because
 the people who covered that month now have different credits. It does not
 create catch-up work for the absent person or rewrite earlier months.
@@ -47,7 +49,7 @@ actual counts and shares for the requested period.
 Run the tests with:
 
 ```sh
-python3 -m unittest discover
+uv run -m unittest discover
 ```
 
 ## Why not a rotating list?
@@ -83,5 +85,5 @@ Member("Former member", active_until="2028-06")
 ```
 
 A membership change affects the fair shares from its effective month onward;
-it cannot change earlier assignments. At least three people must be available
-in every month.
+it cannot change earlier assignments. At least as many people as configured
+roles must be available in every month.
