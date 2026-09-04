@@ -22,4 +22,11 @@ talks:
     title: Building a super 8 film scanner at home
   - speaker: Alban King
     speaker_url: https://www.linkedin.com/in/alban-king/
-    title: Talk to be announced
+    title: Intuitive understanding for Survival Models
+  - speaker: Aji Samudra
+    speaker_url: https://www.linkedin.com/in/aji-samudra
+    title: Training an Agent to Play the Pokémon TCG Using Reinforcement Learning
+  - speaker: Sajal Choudhary
+    speaker_url: https://www.linkedin.com/in/sajal24x7/
+    title: How to learn AI?
+    lightning: true
