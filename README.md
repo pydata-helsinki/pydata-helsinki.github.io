@@ -113,3 +113,9 @@ just build
 uv run -m http.server -d _site
 ```
 
+## Analytics
+
+[Counterscale](https://counterscale.dev/), no cookies or fingerprinting
+
+Analytics dashboard: https://counterscale.pydata-helsinki.workers.dev/
+(see 1Password for the password)
