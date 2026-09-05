@@ -1,6 +1,8 @@
 title: Meetup at Visma
 start: 2026-08-12 17:30
 end: 2026-08-12 20:30
+meta_description: >-
+  Talks on custom benchmarks for Mistral LLMs, what a survival model is, and implementing Kalman filters in Python, plus the PyData Helsinki quiz.
 venue:
   name: Visma
   address: Mall of Tripla, Workery East D, Pasilan asema-aukio 1, 00520 Helsinki

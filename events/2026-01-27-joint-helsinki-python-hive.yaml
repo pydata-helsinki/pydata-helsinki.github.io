@@ -4,6 +4,8 @@ summary: >-
   Joint meetup with Helsinki Python at Hive Helsinki: talks on wrapping
   chatbots, refurbishing old PDFs, and a year at JetBrains, plus the
   Helsinki Python quiz and networking.
+meta_description: >-
+  Joint PyData and Helsinki Python meetup: talks on wrapping chatbots, refurbishing old PDFs, and a year at JetBrains, plus the Helsinki Python quiz.
 venue:
   name: Hive Helsinki
   address: Haapaniemenkatu 5 A, 00530 Helsinki

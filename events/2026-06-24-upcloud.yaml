@@ -5,6 +5,8 @@ summary: >-
   An evening of talks at UpCloud: NPS as (not proper) data science,
   choosing projects under uncertain preferences, and learning data
   engineering (not) from scratch; plus snacks, drinks, and networking.
+meta_description: >-
+  Talks on NPS as (not proper) data science, choosing projects under uncertain preferences, and learning data engineering (not) from scratch.
 venue:
   name: UpCloud
   address: Aleksanterinkatu 15 B, 00100 Helsinki

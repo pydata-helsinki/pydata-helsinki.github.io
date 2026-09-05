@@ -6,6 +6,8 @@ summary: >-
   electricity markets, reading Delta Lake without a cluster, and lightning
   talks on Typer and fine-tuning mBART for poetry; and snacks, drinks,
   networking, and the PyData Helsinki quiz.
+meta_description: >-
+  Talks on data and AI at Elisa, electricity market optimisation, reading Delta Lake without a cluster, Typer, and fine-tuning mBART for poetry.
 venue:
   name: Elisa
   address: Ratavartijankatu 5, 00520 Helsinki

@@ -5,6 +5,8 @@ summary: >-
   An evening of talks at RELEX: refactoring integrations with dlt, how
   database indexes work, and lightning talks on DuckDB and data connectors.
   And the usual snacks, drinks, and networking.
+meta_description: >-
+  Talks on refactoring integrations with dlt, how relational database indexes work, and lightning talks on DuckDB and data connectors.
 venue:
   name: RELEX
   address: Postintaival 7, 00230 Helsinki
