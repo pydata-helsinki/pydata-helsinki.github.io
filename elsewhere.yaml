@@ -1,0 +1,35 @@
+# Events and initiatives from elsewhere in the community, shown on the front
+# page's "Community" section until the `until` date has passed.
+# Keep entries short. Expired entries can be deleted.
+- title: Junior Data Analyst portfolio group
+  url: https://docs.google.com/forms/d/e/1FAIpQLSfGpi4WqhI1rjdm-aHmZWj1TAPkETARZ4CWp2gEucdU4D8zPQ/viewform
+  when: mid-September to mid-December 2026
+  until: 2026-09-22
+  description: >-
+    A three-month peer group for junior data analysts building a public
+    analytics portfolio, with mentor sessions and peer feedback. Community
+    members are gauging interest – fill in the survey if this sounds relevant.
+- title: All Day AI
+  url: https://www.alldayai.com/
+  when: Thursday 22 October 2026, online
+  until: 2026-10-22
+  description: >-
+    A free online conference where practitioners who have shipped AI in
+    production explain what held up and what broke. Four tracks: Build, Lead,
+    Secure, Ship. The call for speakers is open too.
+- title: Helsinki Data Week 2026
+  url: https://www.helsinkidataweek.fi/
+  when: 26–30 October 2026, Helsinki
+  until: 2026-10-30
+  description: >-
+    An annual week of data events across Helsinki with talks on data
+    strategy, analytics and AI.
+- title: Since AI Hackathon 2026
+  url: https://sinceai.ai/hackathon
+  when: 6–8 November 2026, Turku
+  until: 2026-11-08
+  description: >-
+    A free 72-hour AI build weekend organised by a student-led nonprofit,
+    with a €50,000 prize pool and challenges from Finnish companies and
+    public-sector organisations. You can apply individually – no team or
+    startup needed.

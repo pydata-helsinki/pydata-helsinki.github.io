@@ -2,6 +2,44 @@
 
 A group of Python and data enthusiasts in Helsinki, Finland.
 
+{% set live = upcoming | rejectattr("status", "equalto", "cancelled") | list %}
+{% if live %}
+## Next event{{ "s" if live | length > 1 }}
+
+{% for event in live %}
+{% include "_event_list_item.md.j2" %}
+{% endfor %}
+
+{% elif past %}
+## Latest event
+
+No upcoming event scheduled yet – watch this space, or
+[offer your venue]({{ site_url }}/for-companies/index.md) for the next one.
+
+{% with event = past[0] %}{% include "_event_list_item.md.j2" %}{% endwith %}
+
+{% endif %}
+See [all events]({{ site_url }}/events/index.md), past and upcoming.
+
+## Community
+
+{% if elsewhere %}
+### Coming up
+
+{% for item in elsewhere %}
+- [{{ item.title }}]({{ item.url }}) ({{ item.when }}): {{ item.description }}
+{% endfor %}
+
+### Friends of PyData Helsinki
+
+{% endif %}
+- [Helsinki Python](https://helsinki-python.github.io/) is a local Python user group in the Greater Helsinki region.
+- [DataTribe](https://www.meetup.com/datatribe-meetup-group/) is a community for data professionals, engineers, analysts and anyone interested in data.
+- [Helsinki Data Week](https://www.helsinkidataweek.fi/) is not only an annual week but a community that runs data meetups.
+- [PyLadies Tampere](https://www.linkedin.com/company/pyladies-tampere/) is a mentorship group focused on helping more women become active participants and leaders in the Python open-source community.
+- [Archipylago](https://archipylago.dev/) is a community in Turku with meetups and sprints.
+- [Techtribes](https://techtrib.es/) lists more communities.
+
 ## About
 
 This meetup is for those who work or aspire to work in fields like
@@ -21,20 +59,20 @@ and we'll set up a discussion where everyone can take part.
 - And on LinkedIn: [PyData Helsinki](https://www.linkedin.com/company/pydata-helsinki/)
 - If we succeed in recording talks (no promises), we'll put them up on [YouTube](https://www.youtube.com/@PyData_Helsinki)
 
-## Sponsors
+### Sponsor us
 
 - We are always looking for sponsors who can provide us a venue and food and drinks for our meetup.
   In return, you can present your company or product at the meetup.
   See [information for companies]({{ site_url }}/for-companies/index.md) for details.
 - The Meetup group is sponsored by [NumFOCUS](https://numfocus.org/): Promoting open code for better science.
 
-## Give a talk
+### Give a talk
 
 We welcome speakers at any level, from beginner to advanced.
 Suitable topics include data science, AI, Python, Julia, R, etc.
 See [information for speakers]({{ site_url }}/for-speakers/index.md) for ideas and practicalities,
 and contact us by email or on the Discord server if you're interested.
-{% set next_seeking = upcoming | rejectattr("status", "equalto", "cancelled") | selectattr("seeking_talks") | first %}
+{% set next_seeking = live | selectattr("seeking_talks") | first %}
 {% if next_seeking %}
 
 We are looking for more talks, in particular for
@@ -43,23 +81,7 @@ Propose one on [the Helsinki Python Discord](https://helsinki-python.github.io/d
 [pydata-helsinki-organisers@googlegroups.com](mailto:pydata-helsinki-organisers@googlegroups.com).
 {% endif %}
 
-## Upcoming events
-
-{% for event in upcoming %}
-{% include "_event_list_item.md.j2" %}
-{% endfor %}
-- Please [offer your venue]({{ site_url }}/for-companies/) by contacting us at
-  [pydata-helsinki-organisers@googlegroups.com](mailto:pydata-helsinki-organisers@googlegroups.com)
-  or on [the Helsinki Python Discord](https://helsinki-python.github.io/discord).
-
-## Past events
-
-{% for event in past %}
-{% include "_event_list_item.md.j2" %}
-{% endfor %}
-See the [full event history]({{ site_url }}/events/index.md).
-
-## Organisers
+### Organisers
 
 - Daniel Vahla
 - [Hugo van Kemenade](https://hugovk.dev)
@@ -67,15 +89,6 @@ See the [full event history]({{ site_url }}/events/index.md).
 - [Niko Föhr](https://www.linkedin.com/in/nikofohr/)
 - [Prerna Kumari](https://www.linkedin.com/in/prerna-k-sharma/)
 - [Teemu Säilynoja](https://www.linkedin.com/in/teemu-sailynoja/)
-
-## Community
-
-- [Helsinki Python](https://helsinki-python.github.io/) is a local Python user group in the Greater Helsinki region.
-- [DataTribe](https://www.meetup.com/datatribe-meetup-group/) is a community for data professionals, engineers, analysts and anyone interested in data.
-- [Helsinki Data Week](https://www.helsinkidataweek.fi/) is not only an annual week but a community that runs data meetups.
-- [PyLadies Tampere](https://www.linkedin.com/company/pyladies-tampere/) is a mentorship group focused on helping more women become active participants and leaders in the Python open-source community.
-- [Archipylago](https://archipylago.dev/) is a community in Turku with meetups and sprints.
-- [Techtribes](https://www.techtrib.es/) collects the tech meetups in Finland in one place.
 
 ## Our events are also listed on
 

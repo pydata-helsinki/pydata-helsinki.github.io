@@ -114,6 +114,43 @@
       </span>
     </p>
     </hgroup>
+    {% set live = upcoming | rejectattr("status", "equalto", "cancelled") | list %}
+    {% if live %}
+    <h2 id="upcoming">Next event{{ "s" if live | length > 1 }}</h2>
+    <ul>
+      {% for event in live %}
+      {% include "_event_list_item.html.j2" %}
+      {% endfor %}
+    </ul>
+    {% elif past %}
+    <h2 id="latest">Latest event</h2>
+    <p>No upcoming event scheduled yet – watch this space, or
+      <a href="/for-companies/">offer your venue</a> for the next one.</p>
+    <ul>
+      {% with event = past[0] %}{% include "_event_list_item.html.j2" %}{% endwith %}
+    </ul>
+    {% endif %}
+    <p>See <a href="/events/">all events</a>, past and upcoming.</p>
+
+    <h2 id="community">Community</h2>
+    {% if elsewhere %}
+    <h3 id="elsewhere">Coming up</h3>
+    <ul>
+      {% for item in elsewhere %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a> ({{ item.when }}): {{ item.description }}</li>
+      {% endfor %}
+    </ul>
+    <h3>Friends of PyData Helsinki</h3>
+    {% endif %}
+    <ul>
+        <li><a href="https://helsinki-python.github.io/">Helsinki Python</a> is a local Python user group in the Greater Helsinki region.</li>
+        <li><a href="https://www.meetup.com/datatribe-meetup-group/">DataTribe</a> is a community for data professionals, engineers, analysts and anyone interested in data.</li>
+        <li><a href="https://www.helsinkidataweek.fi/">Helsinki Data Week</a> is not only an annual week but a community that runs data meetups.</li>
+        <li><a href="https://www.linkedin.com/company/pyladies-tampere/">PyLadies Tampere</a> is a mentorship group focused on helping more women become active participants and leaders in the Python open-source community.</li>
+        <li><a href="https://archipylago.dev/">Archipylago</a> is a community in Turku with meetups and sprints.</li>
+        <li><a href="https://techtrib.es/">Techtribes</a> lists more communities.</li>
+    </ul>
+
     <h2 id="about">About</h2>
     <p>
         This meetup is for those who work or aspire to work in fields like
@@ -135,7 +172,7 @@
         <li>And on LinkedIn: <a href="https://www.linkedin.com/company/pydata-helsinki/" rel="me">PyData Helsinki</a></li>
         <li>If we succeed in recording talks (no promises), we'll put them up on <a href="https://www.youtube.com/@PyData_Helsinki" rel="me">YouTube</a></li>
     </ul>
-    <h2 id="sponsors">Sponsors</h2>
+    <h3 id="sponsors">Sponsor us</h3>
     <ul>
         <li> We are always looking for sponsors who can provide us a venue and food and drinks for our meetup.
              In return, you can present your company or product at the meetup.
@@ -144,14 +181,14 @@
         <li> The Meetup group is sponsored by <a href="https://numfocus.org/">NumFOCUS</a>: Promoting open code for better science.
         </li>
     </ul>
-    <h2 id="give-talk">Give a talk</h2>
+    <h3 id="give-talk">Give a talk</h3>
     <p>
         We welcome speakers at any level, from beginner to advanced.
         Suitable topics include data science, AI, Python, Julia, R, etc.
         See <a href="/for-speakers/">information for speakers</a> for ideas and practicalities,
         and contact us by email or on the Discord server if you're interested.
     </p>
-    {% set next_seeking = upcoming | rejectattr("status", "equalto", "cancelled") | selectattr("seeking_talks") | first %}
+    {% set next_seeking = live | selectattr("seeking_talks") | first %}
     {% if next_seeking %}
     <p>
         We are looking for more talks, in particular for
@@ -161,25 +198,7 @@
         or by email to <a href="mailto:pydata-helsinki-organisers@googlegroups.com">pydata-helsinki-organisers@googlegroups.com</a>.
     </p>
     {% endif %}
-
-    <h2 id="upcoming">Upcoming events</h2>
-    <ul>
-      {% for event in upcoming %}
-      {% include "_event_list_item.html.j2" %}
-      {% endfor %}
-      <li>Please <a href="/for-companies/">offer your venue</a>
-      by contacting us at <a href="mailto:pydata-helsinki-organisers@googlegroups.com">pydata-helsinki-organisers@googlegroups.com</a>
-      or on <a href="https://helsinki-python.github.io/discord">the Helsinki Python Discord</a>.</li>
-    </ul>
-
-    <h2>Past events</h2>
-    <ul>
-      {% for event in past %}
-      {% include "_event_list_item.html.j2" %}
-      {% endfor %}
-    </ul>
-    <p>See the <a href="/events/">full event history</a>.</p>
-    <h2>Organisers</h2>
+    <h3 id="organisers">Organisers</h3>
     <ul>
         <li>Daniel Vahla</li>
         <li><a href="https://hugovk.dev">Hugo van Kemenade</a></li>
@@ -187,16 +206,6 @@
         <li><a href="https://www.linkedin.com/in/nikofohr/">Niko Föhr</a></li>
         <li><a href="https://www.linkedin.com/in/prerna-k-sharma/">Prerna Kumari</a></li>
         <li><a href="https://www.linkedin.com/in/teemu-sailynoja/">Teemu Säilynoja</a></li>
-    </ul>
-
-    <h2>Community</h2>
-    <ul>
-        <li><a href="https://helsinki-python.github.io/">Helsinki Python</a> is a local Python user group in the Greater Helsinki region.</li>
-        <li><a href="https://www.meetup.com/datatribe-meetup-group/">DataTribe</a> is a community for data professionals, engineers, analysts and anyone interested in data.</li>
-        <li><a href="https://www.helsinkidataweek.fi/">Helsinki Data Week</a> is not only an annual week but a community that runs data meetups.</li>
-        <li><a href="https://www.linkedin.com/company/pyladies-tampere/">PyLadies Tampere</a> is a mentorship group focused on helping more women become active participants and leaders in the Python open-source community.</li>
-        <li><a href="https://archipylago.dev/">Archipylago</a> is a community in Turku with meetups and sprints.</li>
-        <li><a href="https://www.techtrib.es/">Techtribes</a> collects the tech meetups in Finland in one place.</li>
     </ul>
 
     <h2>Our events are also listed on</h2>
@@ -212,6 +221,12 @@
         <a href="https://www.meetabit.com/communities/pydata-helsinki"
            aria-label="Meetabit">{% include "_meetabit_logo.svg" %}</a>
     </p>
+    <script>
+      // Old links pointed at #YYYY-MM-DD anchors on this page; the event
+      // listing with those ids now lives on /events/.
+      if (/^#\d{4}-\d{2}-\d{2}$/.test(location.hash) && !document.getElementById(location.hash.slice(1)))
+        location.replace("/events/" + location.hash);
+    </script>
 
     <footer>
     <h2>About PyData</h2>

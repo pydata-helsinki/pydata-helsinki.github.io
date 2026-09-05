@@ -571,6 +571,17 @@ def main() -> None:
     recent_past_cutoff = (today - timedelta(days=365)).isoformat()
     recent_past = [e for e in past if e.sort_key >= recent_past_cutoff]
 
+    # Links to other communities' events and initiatives, dropped once past.
+    elsewhere_path = ROOT / "elsewhere.yaml"
+    elsewhere = (
+        yaml.safe_load(elsewhere_path.read_text(encoding="utf-8")) or []
+        if elsewhere_path.exists()
+        else []
+    )
+    elsewhere = sorted(
+        [x for x in elsewhere if x["until"] >= today], key=lambda x: x["until"]
+    )
+
     # Index. Upcoming events join the page's @graph so aggregators can pick up
     # all event data in one fetch; same @id as the detail pages, so no dupes.
     # The most recent past event comes along so scrapers see some continuity.
@@ -586,6 +597,7 @@ def main() -> None:
         env.get_template("index.html.j2").render(
             upcoming=upcoming,
             past=recent_past,
+            elsewhere=elsewhere,
             upcoming_jsonld=",\n".join(
                 json.dumps(d, indent=2, ensure_ascii=False) for d in graph
             ),
@@ -593,7 +605,9 @@ def main() -> None:
         encoding="utf-8",
     )
     (out / "index.md").write_text(
-        env.get_template("index.md.j2").render(upcoming=upcoming, past=recent_past),
+        env.get_template("index.md.j2").render(
+            upcoming=upcoming, past=recent_past, elsewhere=elsewhere
+        ),
         encoding="utf-8",
     )
 
