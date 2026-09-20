@@ -1,7 +1,7 @@
 title: Meetup at Reaktor
 banner: reaktor-2026-09-22
 start: 2026-09-22 17:30
-end: 2026-09-22 20:30
+end: 2026-09-22 21:00
 summary: >-
   An evening of talks at Reaktor: Jussi Pakkanen on building a super 8 film
   scanner at home, Alban King on an intuitive understanding of survival
@@ -9,6 +9,12 @@ summary: >-
   Pokémon Trading Card Game, and a lightning talk by Sajal Choudhary on how
   to learn AI — plus snacks, drinks, networking, and the (in)famous PyData
   Helsinki quiz.
+
+  Doors open at 17:30 and talks start at 18:00. Please arrive between those
+  times; earlier than that you won't be able to get in. Registered attendees
+  will receive an access code for the elevator. The entrance is at the corner
+  of Yliopistonkatu and Fabianinkatu, marked with a Reaktor R logo. It is not
+  the prominent Tiedekulma entrance.
 meta_description: >-
   Talks on a DIY super 8 film scanner, survival models, and reinforcement
   learning for the Pokémon TCG, plus the PyData Helsinki quiz and networking.
@@ -21,6 +27,27 @@ venue:
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/316164476/
   platform: Meetup
+schedule:
+  - time: "17:30"
+    item: Doors open
+  - time: "18:00"
+    item: Introductions
+  - time: "18:15"
+    item: "Talk: Intuitive understanding for Survival Models (Alban King)"
+  - time: "18:45"
+    item: "Talk: Training an Agent to Play the Pokémon TCG Using Reinforcement Learning (Aji Samudra)"
+  - time: "19:15"
+    item: Break — snacks, drinks, networking
+  - time: "19:45"
+    item: The (in)famous PyData Helsinki quiz
+  - time: "19:55"
+    item: "Lightning talk: How to learn AI? (Sajal Choudhary)"
+  - time: "20:05"
+    item: "Talk: Building a super 8 film scanner at home (Jussi Pakkanen)"
+  - time: "20:50"
+    item: Networking
+  - time: "21:00"
+    item: End of programme
 seeking_talks: false
 talks:
   - speaker: Jussi Pakkanen
