@@ -44,6 +44,10 @@ from the slug (the filename becomes the URL slug). Then edit. Full example:
 title: Meetup at Acme
 start: 2026-09-15 17:30
 end: 2026-09-15 20:30
+summary: >-                  # optional, plain text; a blank line starts a new paragraph
+  First paragraph.
+
+  Second paragraph.
 venue:
   name: Acme
   address: Katukatu 1        # street address helps event SEO, add when known

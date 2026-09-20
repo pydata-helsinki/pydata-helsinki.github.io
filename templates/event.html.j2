@@ -33,7 +33,8 @@
     </hgroup>
 
     {% if event.summary %}
-    <p>{{ event.summary }}</p>
+    {% for para in event.summary.split("\n") %}<p>{{ para }}</p>
+    {% endfor %}
     {% endif %}
 
     {% if event.effective_sponsor %}

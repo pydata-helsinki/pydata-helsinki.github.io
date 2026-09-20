@@ -7,7 +7,7 @@
 
 
 {% if event.summary %}
-{{ event.summary }}
+{{ event.summary.replace("\n", "\n\n") }}
 {% endif %}
 {% if event.effective_sponsor %}
 
