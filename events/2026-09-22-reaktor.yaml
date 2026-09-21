@@ -7,8 +7,8 @@ summary: >-
   scanner at home, Alban King on an intuitive understanding of survival
   models, Aji Samudra on training a reinforcement learning agent to play the
   Pokémon Trading Card Game, and a lightning talk by Sajal Choudhary on how
-  to learn AI — plus snacks, drinks, networking, and the (in)famous PyData
-  Helsinki quiz.
+  to learn using AI — plus snacks, drinks, networking, and the (in)famous
+  PyData Helsinki quiz.
 
   Doors open at 17:30 and talks start at 18:00. Please arrive between those
   times; earlier than that you won't be able to get in. Registered attendees
@@ -41,7 +41,7 @@ schedule:
   - time: "19:45"
     item: The (in)famous PyData Helsinki quiz
   - time: "19:55"
-    item: "Lightning talk: How to learn AI? (Sajal Choudhary)"
+    item: "Lightning talk: How to learn using AI? (Sajal Choudhary)"
   - time: "20:05"
     item: "Talk: Building a super 8 film scanner at home (Jussi Pakkanen)"
   - time: "20:50"
@@ -61,5 +61,5 @@ talks:
     title: Training an Agent to Play the Pokémon TCG Using Reinforcement Learning
   - speaker: Sajal Choudhary
     speaker_url: https://www.linkedin.com/in/sajal24x7/
-    title: How to learn AI?
+    title: How to learn using AI?
     lightning: true
