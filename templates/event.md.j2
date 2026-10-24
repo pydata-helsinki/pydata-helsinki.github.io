@@ -1,5 +1,9 @@
 {% from "_talk.md.j2" import talk_line %}
 # {{ event.title }}
+{% if event.draft %}
+
+**Draft:** this page is a preview for checking the details and is not yet published.
+{% endif %}
 
 {{ event.display_date }}
 {%- if event.venue.name %} · {% if event.venue.url %}[{{ event.venue.name }}]({{ event.venue.url }}){% else %}{{ event.venue.name }}{% endif %}{% if event.venue.address %}, {{ event.venue.address }}{% endif %}{% endif %}

@@ -91,6 +91,11 @@ automatically (any event with talks). Add an explicit `sponsor: {name, url}`
 only when they differ — e.g. Cactos sponsored but rented Sofia as the venue.
 Pub nights and picnics (no talks) get no sponsor.
 
+**Drafts**: `draft: true` (which `just new-event` sets) still renders the
+event page, with a "Draft" notice and `noindex`, so you can share the URL with
+hosts and speakers to check the details. Drafts are left out of the index, the
+events page, feeds, `llms.txt` and the sitemap. Delete the line to publish.
+
 Commit to `main` and Cloudflare Pages builds and deploys.
 
 ## JSON Feed extensions

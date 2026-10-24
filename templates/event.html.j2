@@ -12,12 +12,18 @@
 {% endif %}
 {% block description %}{% if event.meta_description %}{{ event.meta_description }}{% else %}{{ event.display_date }}{% if event.venue.name %} at {{ event.venue.name }}{% endif %}. {% if event.summary %}{{ event.summary }}{% else %}PyData Helsinki: {{ event.title }}.{% endif %}{% endif %}{% endblock %}
 {% block head_extra %}
+{% if event.draft %}
+  <meta name="robots" content="noindex">
+{% endif %}
   <script type="application/ld+json">
 {{ jsonld | safe }}
   </script>
 {% endblock %}
 {% block body %}
     <nav><a href="/">← PyData Helsinki</a></nav>
+    {% if event.draft %}
+    <p><mark><strong>Draft:</strong> this page is a preview for checking the details and is not yet published.</mark></p>
+    {% endif %}
     <hgroup>
     <h1>{{ event.title }}</h1>
     <p>

@@ -96,6 +96,7 @@ class Event:
     talks: list = field(default_factory=list)
     updated: datetime | None = None
     banner: str | None = None
+    draft: bool = False  # page renders (noindex) but is linked from nowhere
 
     @property
     def url(self) -> str:
@@ -561,7 +562,8 @@ def main() -> None:
         site_url=SITE_URL, default_image=DEFAULT_IMAGE, community=community
     )
 
-    events = load_events(ROOT / "events")
+    all_events = load_events(ROOT / "events")
+    events = [e for e in all_events if not e.draft]
     today = datetime.now(TZ).date()
     env.globals["today"] = today
     upcoming = sorted(
@@ -629,7 +631,7 @@ def main() -> None:
     # Event pages
     tpl = env.get_template("event.html.j2")
     md_tpl = env.get_template("event.md.j2")
-    for ev in events:
+    for ev in all_events:
         page_dir = out / "events" / ev.slug
         page_dir.mkdir(parents=True)
         up = ev.is_upcoming(today)
@@ -679,6 +681,12 @@ def main() -> None:
             shutil.copytree(src, out / name, ignore=shutil.ignore_patterns("*.xcf"))
         else:
             shutil.copy2(src, out / name)
+
+    with (out / "_headers").open("a", encoding="utf-8") as f:
+        for ev in all_events:
+            if ev.draft:
+                f.write(f"\n/events/{ev.slug}/*\n  X-Robots-Tag: noindex\n")
+                print(f"draft: {ev.url}")
 
     print(f"built {len(events)} events -> {out}")
 

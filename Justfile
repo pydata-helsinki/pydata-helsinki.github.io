@@ -15,6 +15,7 @@ new-event slug:
     if [ -e "$f" ]; then echo "$f already exists" >&2; exit 1; fi
     d="$(echo "{{slug}}" | cut -c1-10)"
     cat > "$f" <<EOF
+    draft: true  # remove to publish: list on the site, feeds and sitemap
     title: Meetup at TODO
     start: $d 17:30
     end: $d 20:30
