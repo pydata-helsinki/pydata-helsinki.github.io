@@ -2,7 +2,7 @@ draft: true  # remove to publish: list on the site, feeds and sitemap
 title: Meetup at Sievo
 banner: sievo-2026-11-24
 start: 2026-11-24 17:30
-end: 2026-11-24 20:30
+end: 2026-11-24 21:00
 venue:
   name: Sievo
   url: https://sievo.com/
@@ -13,14 +13,38 @@ venue:
 # registration:
 #   url: https://www.meetup.com/pydatahelsinki/events/317117204/
 #   platform: Meetup
-talks:
-  - speaker: Chandreyee Roy
-    speaker_url: https://www.linkedin.com/in/chandreyeeroy89/
-    title: Chronotypes and their social networks using mobile data
-  - speaker: Kasper Paavolainen
-    speaker_url: https://www.linkedin.com/in/kasper-paavolainen/
-    title: Making algorithms faster
-  - speaker: Seija Sirkiä
-    speaker_url: https://www.linkedin.com/in/seija/
-    title: What is an average
-    lightning: true
+schedule:
+  - time: "17:30"
+    item: Doors open
+  - time: "18:00"
+    item: Welcoming words from the host
+  - time: "18:20"
+    talk:
+      speaker: Chandreyee Roy
+      speaker_url: https://www.linkedin.com/in/chandreyeeroy89/
+      title: TBA
+  - time: "18:50"
+    talk:
+      speaker: Quentin Salomé
+      speaker_url: https://www.linkedin.com/in/quentin-salome/
+      title: TBA
+  - time: "19:20"
+    item: Break — snacks, drinks, networking
+  - time: "19:45"
+    item: The (in)famous PyData Helsinki quiz
+  - time: "19:55"
+    talk:
+      speaker: Seija Sirkiä
+      speaker_url: https://www.linkedin.com/in/seija/
+      title: What is the average, actually?
+      lightning: true
+  - time: "20:10"
+    talk:
+      speaker: Kasper Paavolainen
+      speaker_url: https://www.linkedin.com/in/kasper-paavolainen/
+      title: Optimizing algorithms
+  - time: "20:50"
+    item: Networking
+  - time: "21:00"
+    item: End of programme. Discussions continue in a nearby pub.
+seeking_talks: false

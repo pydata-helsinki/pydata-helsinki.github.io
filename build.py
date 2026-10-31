@@ -103,6 +103,11 @@ class Event:
         return f"{SITE_URL}/events/{self.slug}/"
 
     @property
+    def programme_talks(self) -> list:
+        """Talks not already rendered as part of the detailed schedule."""
+        return [t for t in self.talks if not t.get("_scheduled")]
+
+    @property
     def sort_key(self) -> str:
         if self.start:
             return self.start.isoformat()
@@ -375,6 +380,10 @@ def load_events(events_dir: Path) -> list[Event]:
             raise ValueError(f"{path.name}: needs either 'start' or 'month'")
         if ev.registration.get("opens"):
             ev.registration["opens"] = _as_datetime(ev.registration["opens"])
+        for row in ev.schedule:
+            if talk := row.get("talk"):
+                talk["_scheduled"] = True
+                ev.talks.append(talk)
         for t in ev.talks:
             for key in ("start", "end"):
                 if t.get(key):
