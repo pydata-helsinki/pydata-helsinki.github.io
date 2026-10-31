@@ -32,18 +32,18 @@ schedule:
     item: Break — snacks, drinks, networking
   - time: "19:45"
     item: The (in)famous PyData Helsinki quiz
-  - time: "19:55"
+  - time: "20:00"
     talk:
       speaker: Seija Sirkiä
       speaker_url: https://www.linkedin.com/in/seija/
       title: What is the average, actually?
       lightning: true
-  - time: "20:10"
+  - time: "20:15"
     talk:
       speaker: Kasper Paavolainen
       speaker_url: https://www.linkedin.com/in/kasper-paavolainen/
       title: Optimizing algorithms
-  - time: "20:50"
+  - time: "20:45"
     item: Networking
   - time: "21:00"
     item: End of programme. Discussions continue in a nearby pub.
