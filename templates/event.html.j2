@@ -92,15 +92,15 @@
     <h2>Schedule</h2>
     <ul>
       {% for row in event.schedule %}
-      <li><time>{{ row.time }}</time> — {{ row.item }}</li>
+      <li><time>{{ row.time }}</time> — {% if row.talk %}{{ talk_line(row.talk) }}{% else %}{{ row.item }}{% endif %}</li>
       {% endfor %}
     </ul>
     {% endif %}
 
-    {% if event.talks %}
+    {% if event.programme_talks %}
     <h2>Programme</h2>
     <ul>
-      {% for talk in event.talks %}
+      {% for talk in event.programme_talks %}
       <li>{{ talk_line(talk) }}
         {%- if talk.description %}
         {{ talk.description | markdown }}

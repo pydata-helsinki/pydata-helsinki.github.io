@@ -33,14 +33,14 @@ Attendance is free of charge.
 ## Schedule
 
 {% for row in event.schedule %}
-- {{ row.time }} — {{ row.item }}
+- {{ row.time }} — {% if row.talk %}{{ talk_line(row.talk) }}{% else %}{{ row.item }}{% endif %}{{ "\n" -}}
 {% endfor %}
 {% endif %}
-{% if event.talks %}
+{% if event.programme_talks %}
 
 ## Programme
 
-{% for talk in event.talks %}
+{% for talk in event.programme_talks %}
 - {{ talk_line(talk) }}
 {% if talk.description %}
 
