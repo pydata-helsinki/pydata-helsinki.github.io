@@ -173,6 +173,10 @@ footer {
     border-radius: 8px;
 }
 
+.venue-photo {
+    border-radius: 8px;
+}
+
 .title-row {
     display: flex;
     justify-content: space-between;

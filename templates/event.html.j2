@@ -88,6 +88,10 @@
     ></add-to-calendar-button>
     {% endif %}
 
+    {% if event.notes %}
+    {{ event.notes | markdown }}
+    {% endif %}
+
     {% if event.schedule %}
     <h2>Schedule</h2>
     <ul>
@@ -122,6 +126,10 @@
     <h2>Location</h2>
     <div id="map" class="map"></div>
     <p><a href="https://www.openstreetmap.org/?mlat={{ event.venue.lat }}&mlon={{ event.venue.lon }}#map=17/{{ event.venue.lat }}/{{ event.venue.lon }}">Map location</a></p>
+    {% if event.venue.directions %}{{ event.venue.directions | markdown }}{% endif %}
+    {% if event.venue.photo %}
+    <img class="venue-photo" src="/assets/venues/{{ event.venue.photo.file }}" alt="{{ event.venue.photo.alt }}" loading="lazy">
+    {% endif %}
     <link rel="stylesheet" href="/assets/maplibre-gl.css">
     <script defer src="/assets/maplibre-gl.js"></script>
     <script>

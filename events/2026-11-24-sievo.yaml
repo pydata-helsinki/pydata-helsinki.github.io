@@ -8,9 +8,24 @@ venue:
   address: Elielinaukio 5 B, 00100 Helsinki
   lat: 60.172338
   lon: 24.939935
+  directions: >-
+    Follow the ELIELINAUKIO 5 sign. The entrance is near track 19 of the railway
+    station and Arnold's.
+  photo:
+    file: sievo-entrance.webp
+    alt: >-
+      Elielinaukio 5 at night, with the illuminated ELIELINAUKIO 5 sign above
+      the street-level entrance, between Arnold's and the track 19 sign.
 registration:
   url: https://www.meetup.com/pydatahelsinki/events/317117204/
   platform: Meetup
+notes: |
+  **Please arrive on time!** Doors open at 17:30 and close at 18:00, with
+  a 30-minute grace period after that. Entrance is not possible after 18:30
+  (if you miss it, see you in the pub!).
+
+  🚫👟 There is a no-shoe policy on the premises. If you want, you can bring
+  your indoor shoes or slippers.
 schedule:
   - time: "17:30"
     item: Doors open

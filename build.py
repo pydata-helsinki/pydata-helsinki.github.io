@@ -91,6 +91,7 @@ class Event:
     sponsor: dict = field(default_factory=dict)
     joint_with: list = field(default_factory=list)
     summary: str = ""
+    notes: str = ""  # markdown, practical info shown above the schedule
     meta_description: str = ""  # short SEO text; falls back to date + venue + summary
     seeking_talks: bool = True  # set false once the programme is full
     talks: list = field(default_factory=list)

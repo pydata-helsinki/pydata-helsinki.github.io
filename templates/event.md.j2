@@ -28,6 +28,10 @@ or you can use any feed reader to subscribe to our updates:
 [Atom]({{ site_url }}/feed.xml) or [JSON]({{ site_url }}/events.json) feed.
 Attendance is free of charge.
 {% endif %}
+{% if event.notes %}
+
+{{ event.notes }}
+{% endif %}
 {% if event.schedule %}
 
 ## Schedule
@@ -60,6 +64,14 @@ See [information for speakers]({{ site_url }}/for-speakers/index.md) for ideas a
 ## Location
 
 [Map location](https://www.openstreetmap.org/?mlat={{ event.venue.lat }}&mlon={{ event.venue.lon }}#map=17/{{ event.venue.lat }}/{{ event.venue.lon }})
+{% if event.venue.directions %}
+
+{{ event.venue.directions }}
+{% endif %}
+{% if event.venue.photo %}
+
+![{{ event.venue.photo.alt }}]({{ site_url }}/assets/venues/{{ event.venue.photo.file }})
+{% endif %}
 {% endif %}
 {% if event.joint_with %}
 
